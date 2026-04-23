@@ -3,6 +3,7 @@ import { Routes, Route, Navigate, useLocation } from "react-router-dom";
 import { Navbar } from "./components/Navbar.jsx";
 import AtlasPage from "./routes/AtlasPage.jsx";
 import LandingPage from "./routes/LandingPage.jsx";
+import SharedAtlasPage from "./routes/SharedAtlasPage.jsx";
 import { warmBackend } from "./lib/api.js";
 
 // App shell: fills the viewport. Navbar is a fixed-height row; everything
@@ -21,6 +22,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/app" element={<AtlasPage />} />
+        <Route path="/atlas/:id" element={<SharedAtlasPage />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </AppShell>

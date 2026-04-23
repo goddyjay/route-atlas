@@ -10,6 +10,9 @@ import {
   Columns3,
   CheckCircle2,
   Printer,
+  Share2,
+  Copy,
+  Check,
 } from "lucide-react";
 import { RouteCard } from "./RouteCard.jsx";
 import { CompareView } from "./CompareView.jsx";
@@ -20,6 +23,7 @@ import {
   setActionDone,
   countAtlasProgress,
 } from "../lib/progress.js";
+import { createSharedAtlas } from "../lib/api.js";
 
 export function AtlasView({
   loading,
@@ -96,6 +100,44 @@ function Atlas({ atlas }) {
     setTimeout(cleanup, 2000);
   };
 
+  // Share flow: POST the atlas to the backend, get a short ID back,
+  // build the share URL and copy it to clipboard (with Web Share API
+  // fallback on mobile). Three states: idle → busy → copied (for 2s).
+  const [shareState, setShareState] = useState("idle");
+  const [shareUrl, setShareUrl] = useState("");
+  const handleShare = async () => {
+    if (shareState === "busy") return;
+    setShareState("busy");
+    try {
+      const id = await createSharedAtlas(atlas);
+      const url = `${window.location.origin}/atlas/${id}`;
+      setShareUrl(url);
+      // Web Share API on mobile, clipboard everywhere else.
+      if (navigator.share) {
+        try {
+          await navigator.share({
+            title: "My Route Atlas",
+            text: "Here's my Route Atlas — 4 paths mapped from my situation:",
+            url,
+          });
+          setShareState("copied");
+        } catch {
+          // User cancelled share sheet — still copy as fallback.
+          await navigator.clipboard?.writeText(url);
+          setShareState("copied");
+        }
+      } else {
+        await navigator.clipboard?.writeText(url);
+        setShareState("copied");
+      }
+      setTimeout(() => setShareState("idle"), 2500);
+    } catch (err) {
+      console.error("[share]", err);
+      setShareState("idle");
+      alert("Couldn't create share link. Please try again.");
+    }
+  };
+
   return (
     <motion.section
       initial={{ opacity: 0 }}
@@ -126,7 +168,39 @@ function Atlas({ atlas }) {
             {routes.length} routes · ranked best-fit first · expand any route to open the full map
           </p>
         </div>
-        <div className="flex items-center gap-2 no-print">
+        <div className="flex items-center gap-2 no-print flex-wrap">
+          <motion.button
+            type="button"
+            onClick={handleShare}
+            disabled={shareState === "busy"}
+            whileTap={{ scale: 0.96 }}
+            className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-[12px] font-semibold border transition min-h-[36px] ${
+              shareState === "copied"
+                ? "bg-emerald-500/20 border-emerald-400/40 text-emerald-200"
+                : "bg-white/[0.04] hover:bg-white/[0.09] border-white/10 hover:border-emerald-400/30 text-slate-200"
+            }`}
+            aria-label="Share this atlas"
+          >
+            {shareState === "copied" ? (
+              <>
+                <Check size={12} />
+                <span className="hidden sm:inline">Link copied</span>
+                <span className="sm:hidden">Copied</span>
+              </>
+            ) : shareState === "busy" ? (
+              <>
+                <Copy size={12} className="animate-pulse" />
+                <span className="hidden sm:inline">Creating link…</span>
+                <span className="sm:hidden">…</span>
+              </>
+            ) : (
+              <>
+                <Share2 size={12} />
+                <span className="hidden sm:inline">Share</span>
+                <span className="sm:hidden">Share</span>
+              </>
+            )}
+          </motion.button>
           <button
             type="button"
             onClick={handleExportPdf}
@@ -134,11 +208,20 @@ function Atlas({ atlas }) {
             aria-label="Save atlas as PDF"
           >
             <Printer size={12} />
-            <span className="hidden sm:inline">Save as PDF</span>
+            <span className="hidden sm:inline">PDF</span>
             <span className="sm:hidden">PDF</span>
           </button>
           <ViewSwitcher view={view} onChange={setView} />
         </div>
+        {shareState === "copied" && shareUrl && (
+          <motion.div
+            initial={{ opacity: 0, y: -4 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="basis-full text-[11px] text-emerald-300 tabular truncate"
+          >
+            {shareUrl}
+          </motion.div>
+        )}
       </motion.header>
 
       <AnimatePresence mode="wait">

@@ -43,6 +43,35 @@ export function fetchRouteAtlas(intake) {
 }
 
 /**
+ * Persist an atlas server-side so it can be shared via a short URL.
+ * Returns the short ID on success. Uses a direct fetch rather than
+ * postJson because /api/atlas returns { id } at the top level (not
+ * wrapped in { data: { id } } like the recommendations endpoint).
+ */
+export async function createSharedAtlas(atlas) {
+  const res = await fetch(`${API_BASE}/api/atlas`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ data: atlas }),
+  });
+  const body = await res.json().catch(() => null);
+  if (!res.ok || !body?.success) {
+    throw new Error(body?.message || `Failed to share (${res.status})`);
+  }
+  return body.id;
+}
+
+/** Load a previously-shared atlas by its short ID. */
+export async function fetchSharedAtlas(id) {
+  const res = await fetch(`${API_BASE}/api/atlas/${encodeURIComponent(id)}`);
+  const body = await res.json().catch(() => null);
+  if (!res.ok || !body?.success) {
+    throw new Error(body?.message || `Failed to load atlas (${res.status})`);
+  }
+  return body.data;
+}
+
+/**
  * Streaming fetcher. Opens an SSE connection to /api/recommendations/stream,
  * parses `event: <name>\ndata: <json>\n\n` chunks, and calls `onEvent(name, data)`
  * for each one. Resolves with the final data on `done`; rejects on `error`.
