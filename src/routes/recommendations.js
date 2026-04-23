@@ -2,6 +2,7 @@ import { Router } from "express";
 import {
   handleRecommendations,
   handleRecommendationsStream,
+  handleFollowupStream,
 } from "../controllers/recommendationsController.js";
 import { MODULE_TYPES } from "../modules/index.js";
 
@@ -12,6 +13,10 @@ router.post("/", handleRecommendations);
 
 // SSE streaming. Emits start → progress (many) → done | error.
 router.post("/stream", handleRecommendationsStream);
+
+// SSE streaming follow-up Q&A about a single route. Emits start → delta
+// (many, each with a text chunk) → done (with final text) | error.
+router.post("/followup", handleFollowupStream);
 
 router.get("/types", (req, res) => {
   res.json({ success: true, data: { types: MODULE_TYPES } });

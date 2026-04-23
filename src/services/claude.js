@@ -134,6 +134,13 @@ export async function runClaudeModuleStream(mod, input, onDelta) {
       .map((b) => b.text)
       .join("");
 
+  // Plain-text modules (e.g. the follow-up Q&A) skip JSON parsing and
+  // just hand the raw text back to the caller. Identified by the module
+  // setting `plainText: true`.
+  if (mod.plainText) {
+    return { data: rawText, usage: finalResponse.usage };
+  }
+
   let jsonString;
   try {
     jsonString = extractJson(rawText);

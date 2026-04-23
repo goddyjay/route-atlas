@@ -16,6 +16,7 @@ import {
 } from "lucide-react";
 import { RouteCard } from "./RouteCard.jsx";
 import { CompareView } from "./CompareView.jsx";
+import { FollowupDrawer } from "./FollowupDrawer.jsx";
 import { Logo } from "./Logo.jsx";
 import {
   atlasIdFromIntake,
@@ -82,6 +83,11 @@ function Atlas({ atlas }) {
     progress,
     routes
   );
+
+  // Follow-up drawer state — holds the single route the user clicked
+  // "Ask a follow-up" on. Lifted here so only one drawer can be open
+  // at a time regardless of which card triggered it.
+  const [followupRoute, setFollowupRoute] = useState(null);
 
   // When triggered, expand every route card temporarily, wait one paint,
   // open the browser print dialog, then restore normal expansion state
@@ -243,6 +249,7 @@ function Atlas({ atlas }) {
                 progress={progress}
                 onToggleAction={toggleAction}
                 forceExpanded={forceExpandAll}
+                onAskFollowup={setFollowupRoute}
               />
             ))}
           </motion.div>
@@ -254,6 +261,13 @@ function Atlas({ atlas }) {
       </AnimatePresence>
 
       {filtered.length > 0 && <FilteredOut items={filtered} />}
+
+      <FollowupDrawer
+        open={Boolean(followupRoute)}
+        onClose={() => setFollowupRoute(null)}
+        route={followupRoute}
+        intake={atlas.user}
+      />
     </motion.section>
   );
 }

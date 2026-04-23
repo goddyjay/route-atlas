@@ -61,6 +61,80 @@ export async function createSharedAtlas(atlas) {
   return body.id;
 }
 
+/**
+ * Stream a follow-up Q&A answer about a specific route. Same SSE flow as
+ * the atlas stream but different event shape: each `delta` carries a raw
+ * text chunk (not a chars counter). `done` carries the final text string.
+ *
+ * The caller receives onDelta callbacks for each chunk so it can append
+ * text to the UI as Claude writes. Resolves with the full answer string.
+ */
+export async function streamFollowup(payload, onDelta) {
+  const res = await fetch(`${API_BASE}/api/recommendations/followup`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(payload),
+  });
+
+  if (!res.ok) {
+    let msg = `Request failed (${res.status})`;
+    try {
+      const body = await res.json();
+      const fieldErrors = body.errors?.map((e) => `${e.path}: ${e.msg}`).join(", ");
+      msg = fieldErrors || body.message || msg;
+    } catch {
+      /* ignore parse failure */
+    }
+    throw new Error(msg);
+  }
+
+  const reader = res.body.getReader();
+  const decoder = new TextDecoder();
+  let buffer = "";
+  let finalText = null;
+
+  while (true) {
+    const { done, value } = await reader.read();
+    if (done) break;
+    buffer += decoder.decode(value, { stream: true });
+
+    let sepIdx;
+    while ((sepIdx = buffer.indexOf("\n\n")) !== -1) {
+      const raw = buffer.slice(0, sepIdx);
+      buffer = buffer.slice(sepIdx + 2);
+      if (raw.startsWith(":")) continue;
+
+      let eventName = "message";
+      let dataLine = "";
+      for (const line of raw.split("\n")) {
+        if (line.startsWith("event:")) eventName = line.slice(6).trim();
+        else if (line.startsWith("data:")) dataLine += line.slice(5).trim();
+      }
+      if (!dataLine) continue;
+
+      let body;
+      try {
+        body = JSON.parse(dataLine);
+      } catch {
+        continue;
+      }
+
+      if (eventName === "delta") {
+        onDelta?.(body.text ?? "");
+      } else if (eventName === "done") {
+        finalText = body.text ?? "";
+      } else if (eventName === "error") {
+        throw new Error(body.message || "Stream failed");
+      }
+    }
+  }
+
+  if (finalText === null) {
+    throw new Error("Stream ended without a final answer.");
+  }
+  return finalText;
+}
+
 /** Load a previously-shared atlas by its short ID. */
 export async function fetchSharedAtlas(id) {
   const res = await fetch(`${API_BASE}/api/atlas/${encodeURIComponent(id)}`);

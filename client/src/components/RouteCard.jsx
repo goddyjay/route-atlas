@@ -20,6 +20,7 @@ import {
   TrendingUp,
   ExternalLink,
   Globe,
+  MessageCircleQuestion,
 } from "lucide-react";
 
 const CATEGORY_STYLES = {
@@ -90,6 +91,7 @@ export function RouteCard({
   progress = {},
   onToggleAction,
   forceExpanded = false,
+  onAskFollowup,
 }) {
   const [localExpanded, setLocalExpanded] = useState(isTop);
   // Parent can force-expand (e.g. when the user triggers Export PDF and we
@@ -218,6 +220,7 @@ export function RouteCard({
               isDone={isDone}
               onToggleAction={onToggleAction}
               doneCount={doneCount}
+              onAskFollowup={onAskFollowup}
             />
           </motion.div>
         )}
@@ -227,7 +230,7 @@ export function RouteCard({
   );
 }
 
-function ExpandedDetail({ route, isDone, onToggleAction, doneCount }) {
+function ExpandedDetail({ route, isDone, onToggleAction, doneCount, onAskFollowup }) {
   const actions = route.monday_actions ?? [];
   return (
     <div className="pt-4 space-y-4">
@@ -471,6 +474,29 @@ function ExpandedDetail({ route, isDone, onToggleAction, doneCount }) {
             ))}
           </div>
         </Column>
+      )}
+
+      {onAskFollowup && (
+        <motion.button
+          type="button"
+          onClick={() => onAskFollowup(route)}
+          initial={{ opacity: 0, y: 6 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.35, delay: 0.1 }}
+          whileHover={{ y: -1 }}
+          whileTap={{ scale: 0.99 }}
+          className="w-full inline-flex items-center justify-between gap-2 rounded-xl
+                     px-4 py-3 text-[12.5px] font-semibold
+                     bg-emerald-500/10 hover:bg-emerald-500/20
+                     border border-emerald-400/25 hover:border-emerald-400/50
+                     text-emerald-200 transition min-h-[48px] no-print"
+        >
+          <span className="inline-flex items-center gap-2">
+            <MessageCircleQuestion size={14} />
+            Ask a follow-up about this route
+          </span>
+          <ArrowUpRight size={12} className="text-emerald-300" />
+        </motion.button>
       )}
 
       {/* PRO TIPS — lives at the bottom of the expanded detail. */}

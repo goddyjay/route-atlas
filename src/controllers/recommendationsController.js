@@ -6,6 +6,7 @@ import {
   ClaudeJsonError,
 } from "../services/claude.js";
 import { getModule, MODULE_TYPES } from "../modules/index.js";
+import followupModule from "../modules/followup.js";
 
 // Envelope validators always run before dispatching to a module.
 const typeValidator = body("type")
@@ -152,6 +153,59 @@ export async function handleRecommendationsStream(req, res) {
       send("error", { message: "AI returned an unexpected response." });
     } else {
       console.error(`[Stream:${mod.type}]`, err);
+      send("error", { message: "Something went wrong. Please try again." });
+    }
+  } finally {
+    clearInterval(heartbeat);
+    res.end();
+  }
+}
+
+/**
+ * SSE streaming handler for route follow-up Q&A. Unlike the atlas stream,
+ * this emits each raw text delta as it arrives (not just a chars counter)
+ * so the UI can show the answer typing in real time.
+ */
+export async function handleFollowupStream(req, res) {
+  const mod = followupModule;
+
+  // Run the module's validators directly (no envelope / type discriminator).
+  for (const chain of mod.validators) {
+    await chain.run(req);
+  }
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    return res.status(400).json({ success: false, errors: errors.array() });
+  }
+
+  res.setHeader("Content-Type", "text/event-stream");
+  res.setHeader("Cache-Control", "no-cache, no-transform");
+  res.setHeader("Connection", "keep-alive");
+  res.setHeader("X-Accel-Buffering", "no");
+  res.flushHeaders();
+
+  const send = (event, data) => {
+    res.write(`event: ${event}\ndata: ${JSON.stringify(data)}\n\n`);
+  };
+  const heartbeat = setInterval(() => res.write(`: ping\n\n`), 15000);
+
+  try {
+    send("start", { type: mod.type });
+
+    const result = await runClaudeModuleStream(mod, req.body, ({ chunk }) => {
+      // Ship each token chunk directly — this is what powers the typing
+      // animation on the frontend.
+      send("delta", { text: chunk });
+    });
+
+    send("done", { success: true, text: result.data, usage: result.usage });
+  } catch (err) {
+    if (err instanceof Anthropic.AuthenticationError) {
+      send("error", { message: "AI service authentication failed." });
+    } else if (err instanceof Anthropic.RateLimitError) {
+      send("error", { message: "AI rate limit reached. Try again shortly." });
+    } else {
+      console.error(`[Followup]`, err);
       send("error", { message: "Something went wrong. Please try again." });
     }
   } finally {
