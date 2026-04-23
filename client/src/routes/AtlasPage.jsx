@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
-import { motion } from "framer-motion";
-import { Play, Zap, ArrowUpRight } from "lucide-react";
+import { AnimatePresence, motion } from "framer-motion";
+import { Zap, ChevronDown } from "lucide-react";
 import { AtlasForm } from "../components/AtlasForm.jsx";
 import { AtlasView } from "../components/AtlasView.jsx";
 import { streamRouteAtlas } from "../lib/api.js";
@@ -173,76 +173,58 @@ export default function AtlasPage() {
   );
 }
 
-// Top-of-left-pane CTA bar. Hero "Try Demo" button fires the primary preset
-// (the Microbiology persona — most nuanced output). Three smaller persona
-// tiles below let judges see how the atlas shifts for different situations.
-// Lives INSIDE the form pane so it doesn't steal horizontal space from the
-// atlas.
+// Collapsed demo control. Shows one button — "Try a demo." Click it to
+// reveal a compact picker with the 4 preset personas. Click a persona to
+// run it (which auto-closes the picker). Keeps the form pane uncluttered
+// for users who want to fill their own intake.
 function PresetBar({ onRun }) {
-  const primary = DEMO_PRESETS[0];
-  const alternatives = DEMO_PRESETS.slice(1);
+  const [open, setOpen] = useState(false);
+
+  const handleRun = (preset) => {
+    setOpen(false);
+    onRun(preset);
+  };
+
   return (
     <motion.div
       initial={{ opacity: 0, y: -8 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.45, ease: [0.2, 0.7, 0.2, 1] }}
-      className="card p-4 relative overflow-hidden"
+      transition={{ duration: 0.4, ease: [0.2, 0.7, 0.2, 1] }}
     >
-      <motion.div
-        aria-hidden="true"
-        className="pointer-events-none absolute -top-16 -right-10 w-48 h-32 rounded-full bg-brand-500/15 blur-3xl ambient-pulse"
-      />
-
-      <div className="relative">
-        <div className="eyebrow text-brand-300/80 flex items-center gap-1.5">
-          <Play size={10} /> 30-second demo
-        </div>
-        <p className="text-[12px] text-slate-400 mt-1">
-          No typing. Click once — watch Opus 4.7 map a real Nigerian situation.
-        </p>
-
-        {/* PRIMARY CTA — hero "Try Demo" button */}
-        <motion.button
-          type="button"
-          onClick={() => onRun(primary)}
-          initial={{ opacity: 0, y: 6 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4, delay: 0.15, ease: [0.2, 0.7, 0.2, 1] }}
-          whileHover={{ scale: 1.015, y: -1 }}
-          whileTap={{ scale: 0.985 }}
-          className="mt-3 w-full inline-flex items-center justify-between gap-3
-                     rounded-xl px-4 py-3 text-white font-semibold text-[13.5px]
-                     gradient-shift
-                     border border-white/15 relative overflow-hidden"
-          style={{
-            background:
-              "linear-gradient(120deg, #059669 0%, #10b981 30%, #2dd4bf 50%, #14b8a6 70%, #059669 100%)",
-            boxShadow:
-              "inset 0 1px 0 rgba(255,255,255,0.25), 0 12px 30px -10px rgba(20,184,166,0.55)",
-          }}
-        >
-          <span className="relative flex items-center gap-2">
-            <motion.span
-              animate={{ rotate: [0, -10, 10, -6, 0] }}
-              transition={{ duration: 2.4, repeat: Infinity, repeatDelay: 3 }}
-              className="inline-flex"
-            >
-              <Zap size={16} className="text-amber-200 drop-shadow-[0_0_8px_rgba(253,224,71,0.7)]" />
-            </motion.span>
-            <span className="flex flex-col leading-tight text-left">
-              <span>Try Demo</span>
-              <span className="text-[10.5px] font-normal text-white/75">
-                {primary.title} · {primary.tagline}
-              </span>
-            </span>
-          </span>
+      <motion.button
+        type="button"
+        onClick={() => setOpen((v) => !v)}
+        whileHover={{ y: -1 }}
+        whileTap={{ scale: 0.99 }}
+        className="w-full inline-flex items-center justify-between gap-3
+                   rounded-xl px-4 py-3 text-white font-semibold text-[13.5px]
+                   gradient-shift border border-white/15 relative overflow-hidden
+                   min-h-[48px]"
+        style={{
+          background:
+            "linear-gradient(120deg, #059669 0%, #10b981 30%, #2dd4bf 50%, #14b8a6 70%, #059669 100%)",
+          boxShadow:
+            "inset 0 1px 0 rgba(255,255,255,0.25), 0 12px 30px -10px rgba(20,184,166,0.55)",
+        }}
+      >
+        <span className="relative flex items-center gap-2">
           <motion.span
-            animate={{ x: [0, 4, 0] }}
-            transition={{ duration: 1.6, repeat: Infinity, ease: "easeInOut" }}
+            animate={{ rotate: [0, -10, 10, -6, 0] }}
+            transition={{ duration: 2.4, repeat: Infinity, repeatDelay: 3 }}
             className="inline-flex"
           >
-            <ArrowUpRight size={14} className="text-white/90" />
+            <Zap size={16} className="text-amber-200 drop-shadow-[0_0_8px_rgba(253,224,71,0.7)]" />
           </motion.span>
+          <span>{open ? "Pick a demo" : "Try a demo"}</span>
+        </span>
+        <motion.span
+          animate={{ rotate: open ? 180 : 0 }}
+          transition={{ duration: 0.25, ease: [0.2, 0.7, 0.2, 1] }}
+          className="inline-flex"
+        >
+          <ChevronDown size={14} className="text-white/85" />
+        </motion.span>
+        {!open && (
           <motion.span
             aria-hidden="true"
             className="absolute inset-0 pointer-events-none"
@@ -259,55 +241,61 @@ function PresetBar({ onRun }) {
                 "linear-gradient(100deg, transparent 30%, rgba(255,255,255,0.25) 50%, transparent 70%)",
             }}
           />
-        </motion.button>
+        )}
+      </motion.button>
 
-        {/* Divider */}
-        <div className="flex items-center gap-3 my-3">
-          <div className="h-px flex-1 bg-white/[0.06]" />
-          <span className="text-[10px] uppercase tracking-[0.16em] text-slate-600 font-semibold">
-            or try another scenario
-          </span>
-          <div className="h-px flex-1 bg-white/[0.06]" />
-        </div>
-
-        {/* SECONDARY presets — the other personas for variety */}
-        <motion.div
-          className="grid grid-cols-1 sm:grid-cols-2 gap-2"
-          initial="hidden"
-          animate="visible"
-          variants={{ visible: { transition: { staggerChildren: 0.1, delayChildren: 0.3 } } }}
-        >
-          {alternatives.map((p) => (
-            <motion.button
-              key={p.id}
-              type="button"
-              onClick={() => onRun(p)}
-              variants={{
-                hidden: { opacity: 0, y: 8 },
-                visible: { opacity: 1, y: 0, transition: { duration: 0.35, ease: [0.2, 0.7, 0.2, 1] } },
-              }}
-              whileHover={{ y: -2, scale: 1.01 }}
-              whileTap={{ scale: 0.985 }}
-              transition={{ type: "spring", stiffness: 380, damping: 26 }}
-              className="group inline-flex items-start gap-2 rounded-xl
-                         bg-white/[0.04] hover:bg-white/[0.09]
-                         border border-white/[0.08] hover:border-brand-400/40
-                         text-slate-200 text-[12px] font-semibold
-                         px-3 py-2.5 text-left w-full"
+      <AnimatePresence initial={false}>
+        {open && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.3, ease: [0.2, 0.7, 0.2, 1] }}
+            className="overflow-hidden"
+          >
+            <motion.div
+              initial="hidden"
+              animate="visible"
+              variants={{ visible: { transition: { staggerChildren: 0.06 } } }}
+              className="mt-2 grid grid-cols-1 sm:grid-cols-2 gap-2"
             >
-              <span className="text-base leading-none mt-0.5 transition-transform group-hover:scale-110">
-                {p.emoji}
-              </span>
-              <span className="flex flex-col leading-tight min-w-0">
-                <span className="text-white truncate">{p.title}</span>
-                <span className="text-slate-500 text-[10.5px] font-normal line-clamp-2">
-                  {p.tagline}
-                </span>
-              </span>
-            </motion.button>
-          ))}
-        </motion.div>
-      </div>
+              {DEMO_PRESETS.map((p) => (
+                <motion.button
+                  key={p.id}
+                  type="button"
+                  onClick={() => handleRun(p)}
+                  variants={{
+                    hidden: { opacity: 0, y: 6 },
+                    visible: {
+                      opacity: 1,
+                      y: 0,
+                      transition: { duration: 0.3, ease: [0.2, 0.7, 0.2, 1] },
+                    },
+                  }}
+                  whileHover={{ y: -2 }}
+                  whileTap={{ scale: 0.985 }}
+                  transition={{ type: "spring", stiffness: 380, damping: 26 }}
+                  className="group inline-flex items-start gap-2 rounded-xl
+                             bg-white/[0.04] hover:bg-white/[0.09]
+                             border border-white/[0.08] hover:border-brand-400/40
+                             text-slate-200 text-[12px] font-semibold
+                             px-3 py-2.5 text-left w-full min-h-[56px]"
+                >
+                  <span className="text-base leading-none mt-0.5 transition-transform group-hover:scale-110">
+                    {p.emoji}
+                  </span>
+                  <span className="flex flex-col leading-tight min-w-0">
+                    <span className="text-white truncate">{p.title}</span>
+                    <span className="text-slate-500 text-[10.5px] font-normal line-clamp-2">
+                      {p.tagline}
+                    </span>
+                  </span>
+                </motion.button>
+              ))}
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </motion.div>
   );
 }
