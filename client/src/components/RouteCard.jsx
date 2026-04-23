@@ -17,6 +17,8 @@ import {
   Snowflake,
   Minus,
   TrendingUp,
+  ExternalLink,
+  Globe,
 } from "lucide-react";
 
 const CATEGORY_STYLES = {
@@ -58,6 +60,17 @@ function fmtNaira(n) {
   if (n >= 1_000_000) return `₦${(n / 1_000_000).toFixed(n >= 10_000_000 ? 0 : 1)}m`;
   if (n >= 1_000) return `₦${Math.round(n / 1_000)}k`;
   return `₦${n}`;
+}
+
+// Safe URL → hostname extractor. Falls back to the raw URL if parsing fails
+// (e.g. the model returns a malformed URL — shouldn't happen given the
+// validator, but we don't want a bad URL to crash the card render).
+function hostnameFromUrl(url) {
+  try {
+    return new URL(url).hostname.replace(/^www\./, "");
+  } catch {
+    return url;
+  }
 }
 
 function humanMonths(n) {
@@ -332,6 +345,44 @@ function ExpandedDetail({ route }) {
           ))}
         </motion.ol>
       </Column>
+
+      {route.job_sites?.length > 0 && (
+        <Column title="Where to apply" icon={Globe}>
+          <div className="flex flex-col gap-1.5">
+            {route.job_sites.map((site, i) => (
+              <motion.a
+                key={i}
+                href={site.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                initial={{ opacity: 0, x: -4 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.3, delay: 0.08 + i * 0.06 }}
+                whileHover={{ x: 2 }}
+                className="group flex items-start justify-between gap-3 rounded-lg border border-white/[0.06] bg-white/[0.02] hover:bg-white/[0.05] hover:border-emerald-400/30 px-3 py-2.5 transition min-h-[48px]"
+              >
+                <div className="flex items-start gap-2 min-w-0">
+                  <ExternalLink
+                    size={12}
+                    className="text-emerald-300 mt-0.5 shrink-0 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                  />
+                  <div className="min-w-0">
+                    <div className="text-[12.5px] font-semibold text-white truncate">
+                      {site.name}
+                    </div>
+                    <div className="text-[11.5px] text-slate-400 leading-snug mt-0.5">
+                      {site.why}
+                    </div>
+                  </div>
+                </div>
+                <span className="text-[10px] text-slate-600 font-mono shrink-0 hidden sm:inline self-center">
+                  {hostnameFromUrl(site.url)}
+                </span>
+              </motion.a>
+            ))}
+          </div>
+        </Column>
+      )}
 
       <Column title="Roadmap" icon={Clock}>
         <Timeline roadmap={route.roadmap ?? []} />

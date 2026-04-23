@@ -28,376 +28,454 @@
       "Yahoo / cybercrime"
     ]
   },
-  "user_snapshot": "Philosophy grad fresh out of NYSC in Kano, living with parents, zero savings, zero income. You have writing, research and public speaking — three portable skills — but no capital runway and a 12-month clock.",
-  "headline_insight": "Your ₦0 savings + low risk tolerance means any route costing more than ₦50k upfront is dead on arrival. But your writing + research + public speaking stack is exactly what NGOs in the North and remote content agencies pay for — and Kano is INGO-dense, which most southern grads don't know.",
+  "user_snapshot": "Philosophy grad in Kano, fresh off NYSC, zero savings, zero income, living with parents. You have writing, research, and speaking — three tools that travel far in Nigeria if pointed at the right door.",
+  "headline_insight": "Your ₦0 savings + ₦0 income + low risk tolerance means any route needing upfront cash (bootcamp, JAPA MSc, trade capital) is off the table in month one. But your writing/research/speaking skills can generate ₦50-150k within 60 days without spending a naira — and that's the unlock for everything else.",
   "routes": [
     {
-      "id": "ngo-programme-officer-north",
-      "title": "NGO Programme / Communications Officer (Northern INGO circuit)",
-      "category": "Local Formal",
-      "one_liner": "Enter the humanitarian sector as a communications or programme assistant, rise to Programme Officer in 2 years.",
-      "fit_score": 89,
-      "fit_reasons": [
-        {
-          "dimension": "Location",
-          "note": "Kano is the second-densest INGO hub in Nigeria after Abuja — Mercy Corps, IRC, MSF, UNICEF, FHI360 all have offices there."
-        },
-        {
-          "dimension": "Skills",
-          "note": "Your writing, research and public speaking are the exact skill stack NGOs screen for in comms and programme roles."
-        }
-      ],
-      "break_reasons": [
-        {
-          "risk": "Entry-level NGO roles need 1 good referral to clear CV screening; without networking into the circuit you stay invisible.",
-          "severity": "High"
-        }
-      ],
-      "who_this_fits": "Writers who can turn field data into clean reports and don't mind travel to Borno, Yobe, Adamawa.",
-      "who_this_breaks": "People who want predictable 9-5 or refuse to work in insecure LGAs.",
-      "real_cost": {
-        "money_ngn": 15000,
-        "time_months": 4,
-        "what_you_give_up": "4 months of unpaid volunteering or internship to get the first referral and line on CV."
-      },
-      "real_pay": {
-        "entry_ngn": 250000,
-        "mid_ngn": 600000,
-        "senior_ngn": 1500000,
-        "range_note": "INGO pays in NGN pegged to USD budgets; local NGOs pay half these figures. Field allowances add ₦50-150k/mo."
-      },
-      "demand": "High",
-      "two_year_projection": "In 2 years, if you work this route, you're a Programme Officer at an INGO in Kano or Maiduguri earning ₦550-700k/mo, ₦2m saved, and positioned for UN junior professional roles or an MSc scholarship.",
-      "pro_tips": [
-        "Apply via ReliefWeb and DevNetJobs, not Jobberman — that's where INGOs actually post.",
-        "Volunteer 2 months at a local CBO first to get your referral."
-      ],
-      "monday_actions": [
-        {
-          "step": "Create ReliefWeb and DevNetJobs profiles; filter 'Nigeria' + 'entry level'",
-          "deadline_days": 2
-        },
-        {
-          "step": "Email 5 local Kano NGOs (YIEDI, NEYIF, Albarka Health) offering unpaid research support",
-          "deadline_days": 7
-        },
-        {
-          "step": "Join 'Humanitarian Jobs Nigeria' Telegram and 'NGO Jobs in Nigeria' WhatsApp groups",
-          "deadline_days": 3
-        }
-      ],
-      "roadmap": [
-        {
-          "period": "0-90 days",
-          "focus": "Volunteer + first referral",
-          "milestones": [
-            "2 months unpaid at local CBO",
-            "1 published field report",
-            "3 INGO referees"
-          ],
-          "income_by_end_ngn": 30000
-        },
-        {
-          "period": "3-12 months",
-          "focus": "Programme Assistant role",
-          "milestones": [
-            "Land consultant or Programme Assistant contract",
-            "Complete Kaya Connect humanitarian training"
-          ],
-          "income_by_end_ngn": 280000
-        },
-        {
-          "period": "Year 2",
-          "focus": "Programme Officer promotion",
-          "milestones": [
-            "INGO full-time contract",
-            "Lead a small grant component",
-            "IELTS booked for MSc"
-          ],
-          "income_by_end_ngn": 600000
-        }
-      ],
-      "nigerian_notes": "Northern INGO work involves travel to insecure zones (Borno, Yobe). Hausa fluency is a massive advantage — if you have it, say so on every CV. Security clearances are standard."
-    },
-    {
-      "id": "remote-content-writer-usd",
-      "title": "Remote Content Writer / Researcher (USD clients)",
+      "id": "content-writer-remote-pivot",
+      "title": "Content & Copywriting → Remote USD Writer",
       "category": "Remote Digital",
-      "one_liner": "Build a writing portfolio, land foreign clients on Contra/Upwork, earn $500-2000/mo in 9-12 months.",
-      "fit_score": 82,
+      "one_liner": "Build a paid writing portfolio locally in 6 months, pivot to remote clients paying $500-2000/mo by month 12-18.",
+      "fit_score": 88,
       "fit_reasons": [
         {
           "dimension": "Skills",
-          "note": "Writing + research is a direct match — your Philosophy degree trained you to structure arguments, which is what B2B content needs."
+          "note": "Your Writing + Research skills are the literal job description — zero retraining cost."
         },
         {
           "dimension": "Savings",
-          "note": "₦0 savings is survivable here: Upwork, Contra, LinkedIn are free and you already have a laptop presumably at parents' house."
+          "note": "₦0 savings works here; portfolio needs only data and laptop time, no fees."
         }
       ],
       "break_reasons": [
         {
-          "risk": "First 4-6 months are ₦0 income while building portfolio; medium family pressure may crack before first client lands.",
+          "risk": "Kano location means low local agency density — you'll rely on LinkedIn/Twitter cold outreach, which punishes impatience",
           "severity": "Medium"
         }
       ],
-      "who_this_fits": "Self-disciplined writers who can work 6 hours/day alone without a boss and survive 5 months of zero output.",
-      "who_this_breaks": "People who need immediate validation or whose parents expect a visible 'job you go to'.",
+      "who_this_fits": "Writers who can publish 2 pieces weekly for 6 months with no applause and keep going.",
+      "who_this_breaks": "People who need external validation or a boss telling them what to write each day.",
       "real_cost": {
-        "money_ngn": 20000,
-        "time_months": 9,
-        "what_you_give_up": "6-9 months of evenings and weekends writing free samples with no income guarantee."
+        "money_ngn": 0,
+        "time_months": 12,
+        "what_you_give_up": "Evenings and weekends for 12 months; social life shrinks while portfolio grows."
       },
       "real_pay": {
-        "entry_ngn": 350000,
-        "mid_ngn": 900000,
-        "senior_ngn": 2500000,
-        "range_note": "Paid in USD ($300-$3000+/mo); NGN figures at ₦1550/$1. Volatile first year."
+        "entry_ngn": 60000,
+        "mid_ngn": 350000,
+        "senior_ngn": 1800000,
+        "range_note": "Entry is local NGN gigs. Mid/senior pegged to USD ($500-$3000/mo at ₦1500/$)."
       },
       "demand": "Medium",
-      "two_year_projection": "In 2 years, if you commit, you're a retained content writer for 2-3 B2B SaaS clients earning $1500-2500/mo (~₦2.3-3.8m/mo), working from Kano or relocated to Lagos, with a Stripe or Payoneer account active.",
+      "two_year_projection": "In 2 years, if you publish weekly and pitch monthly, you're earning ₦600k-₦1.2m/mo from 2-3 retainer clients (US/UK SaaS blogs), working from Kano or relocated to Lagos, with ₦3m+ saved.",
       "pro_tips": [
-        "Niche down to fintech, SaaS or HR tech — generalist writers starve.",
-        "Post 2 teardowns weekly on LinkedIn tagging founders — that's your pipeline."
+        "Publish on Medium + personal Substack — agencies Google your name before replying.",
+        "Pitch Nigerian fintechs (Paystack, Kuda) first — easier yes than cold US outreach."
+      ],
+      "job_sites": [
+        {
+          "name": "Contra",
+          "url": "https://contra.com",
+          "why": "Zero-commission freelance platform where writers land $500-2k content retainers without Upwork's race-to-bottom pricing."
+        },
+        {
+          "name": "Superpath Jobs",
+          "url": "https://www.superpath.co/jobs",
+          "why": "Content-marketing-only job board; remote-friendly SaaS brands post here before LinkedIn."
+        },
+        {
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs",
+          "why": "Filter 'remote content writer' — Nigerian fintechs and global SaaS post entry roles weekly."
+        }
       ],
       "monday_actions": [
         {
-          "step": "Publish 3 sample articles on Medium or Substack in one niche (fintech, health, or education)",
-          "deadline_days": 14
-        },
-        {
-          "step": "Create Contra + Upwork + LinkedIn profiles with the samples linked",
-          "deadline_days": 10
-        },
-        {
-          "step": "Join 'Nigerian Freelance Writers' Facebook group and 'Peak Freelance' Slack",
-          "deadline_days": 3
-        }
-      ],
-      "roadmap": [
-        {
-          "period": "0-90 days",
-          "focus": "Portfolio build",
-          "milestones": [
-            "10 published samples",
-            "Active LinkedIn with 500 followers",
-            "First pitch sent"
-          ],
-          "income_by_end_ngn": 0
-        },
-        {
-          "period": "3-12 months",
-          "focus": "First paying clients",
-          "milestones": [
-            "First $200 gig",
-            "First retained client at $500/mo",
-            "Payoneer set up"
-          ],
-          "income_by_end_ngn": 400000
-        },
-        {
-          "period": "Year 2",
-          "focus": "Scale to retainers",
-          "milestones": [
-            "2 retainers at $800+ each",
-            "Rates raised to $0.20/word"
-          ],
-          "income_by_end_ngn": 1800000
-        }
-      ],
-      "nigerian_notes": "Power and internet in Kano: budget ₦15-25k/mo for data + Spectranet backup. Clients ghosting is normal first year. Nigerian phone numbers flagged on some platforms — use Google Voice."
-    },
-    {
-      "id": "private-school-teacher-kano",
-      "title": "Private School Teacher → EdTech Content",
-      "category": "Local Formal",
-      "one_liner": "Teach English/Literature/CRS at a Kano private school for 12-18 months, pivot to EdTech content role.",
-      "fit_score": 71,
-      "fit_reasons": [
-        {
-          "dimension": "Risk",
-          "note": "Your low risk tolerance matches this route: stable monthly pay within 4-6 weeks of applying, no capital needed."
-        },
-        {
-          "dimension": "Skills",
-          "note": "Public speaking + writing are the core of classroom teaching and EdTech script work."
-        }
-      ],
-      "break_reasons": [
-        {
-          "risk": "Kano private school pay is ₦40-90k/mo for entry — won't satisfy medium family pressure for long if parents compare you to banking peers.",
-          "severity": "Medium"
-        }
-      ],
-      "who_this_fits": "Grads who want immediate income and use teaching as a 12-month springboard, not a career.",
-      "who_this_breaks": "Grads who drift — 5 years later still teaching at ₦120k with no exit built.",
-      "real_cost": {
-        "money_ngn": 5000,
-        "time_months": 1,
-        "what_you_give_up": "Weekdays 7am-3pm; limits how fast you can build a parallel remote/NGO track."
-      },
-      "real_pay": {
-        "entry_ngn": 70000,
-        "mid_ngn": 180000,
-        "senior_ngn": 400000,
-        "range_note": "Kano entry ₦40-90k; Abuja/Lagos international schools ₦200-500k; EdTech (uLesson, Opensesame) ₦250-500k after pivot."
-      },
-      "demand": "High",
-      "two_year_projection": "In 2 years, if you use this as a launchpad, you're either an EdTech content specialist at uLesson/Opensesame earning ₦350-450k/mo remote, or at a tier-1 international school in Abuja at ₦300k/mo.",
-      "pro_tips": [
-        "Only take schools that let you teach SS classes — that's the EdTech pipeline.",
-        "Record one lesson weekly for YouTube — that becomes your EdTech portfolio."
-      ],
-      "monday_actions": [
-        {
-          "step": "Apply to 10 Kano private schools on Jobberman + walk-in to 5 on Zoo Road and Nassarawa GRA",
+          "step": "Create Contra + Medium profiles, publish one 800-word piece on 'Philosophy applied to African business ethics' by Sunday",
           "deadline_days": 7
         },
         {
-          "step": "Draft a CV emphasizing Philosophy → critical thinking teaching angle",
-          "deadline_days": 3
+          "step": "DM 10 content managers at Paystack, Kuda, Moniepoint, Flutterwave, Stears on LinkedIn with a 3-line pitch + sample",
+          "deadline_days": 14
         },
         {
-          "step": "Email uLesson and Opensesame careers asking about content writer roles",
+          "step": "Join Superpath Slack and Nigerian Freelance Writers FB group; read 20 job posts to learn rate norms",
           "deadline_days": 5
         }
       ],
       "roadmap": [
         {
           "period": "0-90 days",
-          "focus": "Land teaching job",
+          "focus": "Portfolio + first local gig",
           "milestones": [
-            "Signed contract at private school",
-            "First ₦70k salary received"
+            "6 published pieces",
+            "First paid ₦30-80k gig from Nigerian startup",
+            "Twitter writing presence started"
           ],
-          "income_by_end_ngn": 70000
+          "income_by_end_ngn": 60000
         },
         {
           "period": "3-12 months",
-          "focus": "Build EdTech portfolio",
+          "focus": "Retainer + rate ladder",
           "milestones": [
-            "10 YouTube lessons published",
-            "EdTech applications sent",
-            "TRCN registration"
+            "First $300-500/mo retainer",
+            "10+ bylines",
+            "Upwork/Contra Top Rated status"
           ],
-          "income_by_end_ngn": 100000
+          "income_by_end_ngn": 350000
         },
         {
           "period": "Year 2",
-          "focus": "Pivot to EdTech or international school",
+          "focus": "USD-only clients",
           "milestones": [
-            "Land EdTech content role or Abuja international school offer"
+            "2-3 retainers totaling $1500+/mo",
+            "Relocate or stay remote",
+            "₦3m saved"
           ],
-          "income_by_end_ngn": 350000
+          "income_by_end_ngn": 900000
         }
       ],
-      "nigerian_notes": "TRCN (Teachers Registration Council) cert costs ₦15k and is mandatory for private schools from 2026. Hausa-speaking teachers in Kano have leverage — negotiate ₦20k above the offer."
+      "nigerian_notes": "Kano's internet + power costs eat into remote work. Budget ₦25-40k/mo for data + small inverter by month 3. PalmPay/Grey for USD receivables."
     },
     {
-      "id": "germany-ausbildung-pivot",
-      "title": "Germany Ausbildung (Paid Vocational Route)",
-      "category": "JAPA",
-      "one_liner": "Learn German to B1 over 12-18 months, apply for Ausbildung in hospitality/logistics/nursing, earn €900-1200/mo while training.",
-      "fit_score": 64,
+      "id": "ngo-programs-kano",
+      "title": "INGO Programs Officer (North-focused)",
+      "category": "Local Formal",
+      "one_liner": "Enter humanitarian sector in Kano/Maiduguri — Philosophy + research + writing is a near-perfect fit, and the North is where INGOs hire.",
+      "fit_score": 84,
       "fit_reasons": [
         {
-          "dimension": "Savings",
-          "note": "₦0 savings rules out Canada/UK MSc routes — Ausbildung is the only JAPA path that PAYS you instead of costing ₦20m+."
+          "dimension": "Location",
+          "note": "Kano is INGO-dense — Mercy Corps, IRC, MSF, UNICEF, NRC all have North-East/North-West ops hiring locally."
         },
         {
-          "dimension": "JAPA",
-          "note": "Your 'curious' appetite matches a slow-build 18-month plan, not a panic move."
+          "dimension": "Skills",
+          "note": "Writing + Research + Public speaking maps directly to reports, proposals, and community engagement roles."
         }
       ],
       "break_reasons": [
         {
-          "risk": "German B1 is a real 600-hour grind; medium family pressure may force you off before you finish, and ₦0 income for 12+ months during study is brutal.",
-          "severity": "High"
+          "risk": "Entry NGO roles often require volunteer time first; 2-4 months of ₦0-₦50k stipend work to break in",
+          "severity": "Medium"
         }
       ],
-      "who_this_fits": "Grads willing to trade 18 months of hard language study for a paid EU landing.",
-      "who_this_breaks": "Grads who want to leave Nigeria in under 12 months or hate rote study.",
+      "who_this_fits": "Graduates comfortable writing donor reports, attending community meetings, and working in field conditions.",
+      "who_this_breaks": "Anyone expecting corporate pace or predictable 9-5; INGO work is deadline-chaotic.",
       "real_cost": {
-        "money_ngn": 1500000,
-        "time_months": 18,
-        "what_you_give_up": "Goethe courses cost ₦300-500k per level; need a parallel income route to fund it. No direct income for 18 months."
+        "money_ngn": 10000,
+        "time_months": 6,
+        "what_you_give_up": "2-4 months of volunteer/intern pay before full role; possible short deployments to Borno/Yobe."
       },
       "real_pay": {
-        "entry_ngn": 1600000,
-        "mid_ngn": 3500000,
-        "senior_ngn": 6000000,
-        "range_note": "Ausbildung stipend €900-1200/mo (~₦1.5-2m); post-qualification €2500-4000/mo (~₦4-6.5m) in NGN at current rates."
+        "entry_ngn": 250000,
+        "mid_ngn": 600000,
+        "senior_ngn": 1500000,
+        "range_note": "Local NGOs pay ₦80-150k entry. INGOs (UN, MSF, Mercy Corps) pay ₦250k+ with hazard allowance in conflict zones."
       },
-      "demand": "Medium",
-      "two_year_projection": "In 2 years, if you commit, you're in Germany mid-Ausbildung earning €1000/mo (~₦1.6m), B2 German, with a 3-year residence permit and a clear path to EU Blue Card.",
+      "demand": "High",
+      "two_year_projection": "In 2 years, if you enter as program assistant at Mercy Corps Kano, you're a Programs Officer at ₦550-700k/mo, have led 2 donor proposals, and are eligible for UN roster roles.",
       "pro_tips": [
-        "Start with free Deutsche Welle 'Nicos Weg' before paying for Goethe classes.",
-        "Target hospitality and logistics Ausbildung — least competitive for Nigerians."
+        "Apply through ReliefWeb weekly — Nigerian INGO roles post there before local boards.",
+        "Volunteer 2 months at a local NGO for the reference letter — it unlocks INGO HR filters."
+      ],
+      "job_sites": [
+        {
+          "name": "ReliefWeb Jobs",
+          "url": "https://reliefweb.int/jobs",
+          "why": "Primary global INGO board — Mercy Corps, IRC, NRC post Kano/Maiduguri roles here first."
+        },
+        {
+          "name": "NGO Career Centre",
+          "url": "https://ngocareercentre.com",
+          "why": "Nigeria-specific NGO aggregator for local and INGO postings across the North."
+        },
+        {
+          "name": "UN Careers",
+          "url": "https://careers.un.org",
+          "why": "UNICEF and UNDP Nigeria operations hire Kano-based programs and comms staff here."
+        }
       ],
       "monday_actions": [
         {
-          "step": "Enroll in Goethe Institut Lagos online A1 course (~₦180k) or free Deutsche Welle Nicos Weg",
+          "step": "Create ReliefWeb profile, set email alerts for 'Kano', 'Nigeria', 'Programs', 'Communications'",
+          "deadline_days": 3
+        },
+        {
+          "step": "Email 5 Kano-based INGOs (Mercy Corps, IRC, CRS, NRC, Save the Children) offering 2-month volunteer time",
+          "deadline_days": 10
+        },
+        {
+          "step": "Write one 600-word LinkedIn post on a North Nigeria humanitarian issue using your Philosophy lens",
+          "deadline_days": 7
+        }
+      ],
+      "roadmap": [
+        {
+          "period": "0-90 days",
+          "focus": "Volunteer foothold",
+          "milestones": [
+            "Volunteer role at 1 INGO",
+            "2 donor reports drafted",
+            "3 INGO references collected"
+          ],
+          "income_by_end_ngn": 50000
+        },
+        {
+          "period": "3-12 months",
+          "focus": "First paid role",
+          "milestones": [
+            "Program Assistant role ₦200-350k",
+            "Field deployment experience",
+            "First proposal credit"
+          ],
+          "income_by_end_ngn": 280000
+        },
+        {
+          "period": "Year 2",
+          "focus": "Programs Officer",
+          "milestones": [
+            "Officer-level role ₦550-700k",
+            "UN consultant roster entry",
+            "MSc scholarship applications (Chevening/DAAD)"
+          ],
+          "income_by_end_ngn": 600000
+        }
+      ],
+      "nigerian_notes": "North-East INGO roles carry kidnapping/security risk — ask specifically about duty station before accepting. Hausa fluency is a massive hiring edge in Kano-based roles."
+    },
+    {
+      "id": "law-conversion-llb",
+      "title": "Law Conversion (LL.B + Nigerian Law School)",
+      "category": "Local Formal",
+      "one_liner": "Convert Philosophy into a 3-year direct-entry LL.B at ABU/BUK, then Law School — a slow but high-ceiling route.",
+      "fit_score": 72,
+      "fit_reasons": [
+        {
+          "dimension": "Skills",
+          "note": "Your Writing + Research + Public speaking are the three core tools of legal practice — no wasted foundation."
+        },
+        {
+          "dimension": "Location",
+          "note": "BUK and ABU Zaria offer direct-entry LL.B close to home, avoiding relocation and Lagos rent."
+        }
+      ],
+      "break_reasons": [
+        {
+          "risk": "₦0 savings + 4-5 year total timeline conflicts with medium family pressure and your 12-month horizon",
+          "severity": "High"
+        }
+      ],
+      "who_this_fits": "Graduates with family able to fund ₦300-700k/yr for 4 years and who want courtroom or corporate law ceiling.",
+      "who_this_breaks": "Anyone who needs income within 2 years or whose family cannot sustain fees + upkeep for 4 years.",
+      "real_cost": {
+        "money_ngn": 2500000,
+        "time_months": 48,
+        "what_you_give_up": "4-5 years of earning. Law School itself is ₦1m+. Need family or scholarship to fund."
+      },
+      "real_pay": {
+        "entry_ngn": 150000,
+        "mid_ngn": 450000,
+        "senior_ngn": 2500000,
+        "range_note": "Entry at small firms ₦80-150k is brutal. Top commercial firms (Aluko & Oyebode, Banwo) pay ₦400-700k entry."
+      },
+      "demand": "Medium",
+      "two_year_projection": "In 2 years, if you pass JUPEB/direct-entry, you're a 200-level LL.B student at BUK, earning ₦0 but with part-time writing retainer of ₦80-150k/mo keeping you afloat.",
+      "pro_tips": [
+        "Target ABU Zaria direct entry — cheaper fees and strong Northern Bar network.",
+        "Apply for MacArthur or TETFund scholarships in year 1 — many Philosophy-to-Law converts win them."
+      ],
+      "job_sites": [
+        {
+          "name": "JAMB Direct Entry Portal",
+          "url": "https://www.jamb.gov.ng",
+          "why": "Official direct-entry registration for LL.B conversion at ABU, BUK, UNILAG."
+        },
+        {
+          "name": "LawPavilion Jobs",
+          "url": "https://lawpavilion.com",
+          "why": "Nigerian legal sector job board for when you finish — tracks firms hiring junior associates."
+        },
+        {
+          "name": "MyJobMag Legal",
+          "url": "https://www.myjobmag.com/jobs-by-field/legal",
+          "why": "Nigerian aggregator for corporate legal roles — useful for scoping destination salaries now."
+        }
+      ],
+      "monday_actions": [
+        {
+          "step": "Download JAMB direct-entry brochure, confirm ABU/BUK LL.B cutoffs and fees for 2025 cycle",
+          "deadline_days": 5
+        },
+        {
+          "step": "Meet 2 practising lawyers in Kano (via parents' network or local NBA branch) to ask about funding + 4-year reality",
           "deadline_days": 14
         },
         {
-          "step": "Join 'Ausbildung Nigeria' WhatsApp group and follow @MakeItInGermany on Twitter",
-          "deadline_days": 2
+          "step": "Start running a paid writing side-hustle in parallel so this route doesn't depend on family alone",
+          "deadline_days": 30
+        }
+      ],
+      "roadmap": [
+        {
+          "period": "0-90 days",
+          "focus": "Admission prep",
+          "milestones": [
+            "JAMB DE registered",
+            "2 law mentors identified",
+            "₦50-100k/mo writing income started"
+          ],
+          "income_by_end_ngn": 60000
         },
         {
-          "step": "Pick ONE Ausbildung track (hospitality, logistics, nursing, IT) and research 3 German sponsors",
+          "period": "3-12 months",
+          "focus": "Year 1 LL.B",
+          "milestones": [
+            "Admitted to ABU/BUK",
+            "Law firm vacation job secured",
+            "Scholarship applied"
+          ],
+          "income_by_end_ngn": 80000
+        },
+        {
+          "period": "Year 2",
+          "focus": "Year 2 LL.B + income stack",
+          "milestones": [
+            "Moot court participation",
+            "₦150k/mo writing retainer",
+            "Clear trajectory to Law School 2028"
+          ],
+          "income_by_end_ngn": 150000
+        }
+      ],
+      "nigerian_notes": "Northern Nigerian LL.B programs are cheaper but Sharia-law heavy in electives — fine for most careers, matters only if you target specific commercial firms in Lagos. Call-to-Bar ceremony is ₦300k+ on its own."
+    },
+    {
+      "id": "edtech-content-producer",
+      "title": "EdTech Content Producer / Instructional Writer",
+      "category": "Hybrid",
+      "one_liner": "Write and voice educational content for uLesson, PrepClass, FlexiSAF — remote-first, uses all three of your skills, ₦150-400k/mo within 6 months.",
+      "fit_score": 78,
+      "fit_reasons": [
+        {
+          "dimension": "Skills",
+          "note": "Writing + Research + Public speaking is the exact stack for curriculum writing and video-script narration roles."
+        },
+        {
+          "dimension": "Risk",
+          "note": "Low risk tolerance fits — these are salaried remote roles, not freelance gambling."
+        }
+      ],
+      "break_reasons": [
+        {
+          "risk": "EdTech funding has tightened 2024-2026; hiring is slower and employers prefer 1+ yr teaching/content experience",
+          "severity": "Medium"
+        }
+      ],
+      "who_this_fits": "Graduates who can explain hard ideas simply and take direction from curriculum leads.",
+      "who_this_breaks": "People who hate rewriting the same lesson 5 times to fit a style guide.",
+      "real_cost": {
+        "money_ngn": 15000,
+        "time_months": 4,
+        "what_you_give_up": "~₦15k for a decent USB mic (needed for narration samples); 2-3 months of unpaid sample production."
+      },
+      "real_pay": {
+        "entry_ngn": 180000,
+        "mid_ngn": 400000,
+        "senior_ngn": 800000,
+        "range_note": "uLesson, FlexiSAF, Gradely pay ₦180-300k entry. Senior instructional designers at international EdTech (Andela-adjacent) hit ₦700k+."
+      },
+      "demand": "Medium",
+      "two_year_projection": "In 2 years, if you land a uLesson or Gradely content role, you're a Senior Content Producer at ₦500-650k/mo, remote from Kano, with a showreel strong enough for Coursera/edX contracts.",
+      "pro_tips": [
+        "Record 3 sample 5-minute lesson videos on JAMB/WAEC topics before applying.",
+        "Pitch FlexiSAF Abuja directly — they hire Northern grads and value Hausa-language content."
+      ],
+      "job_sites": [
+        {
+          "name": "MyJobMag",
+          "url": "https://www.myjobmag.com",
+          "why": "uLesson, PrepClass, and Gradely post EdTech content roles here weekly."
+        },
+        {
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs",
+          "why": "Filter 'instructional designer Nigeria' or 'content producer remote' — where EdTech recruiters source first."
+        },
+        {
+          "name": "Techpoint Africa Jobs",
+          "url": "https://techpoint.africa/jobs",
+          "why": "African tech/EdTech aggregator — smaller startups post here before LinkedIn."
+        }
+      ],
+      "monday_actions": [
+        {
+          "step": "Record 3 sample 5-min lesson videos (philosophy/critical-thinking angle on WAEC Government topics) and upload to YouTube unlisted",
+          "deadline_days": 14
+        },
+        {
+          "step": "Apply to uLesson, Gradely, FlexiSAF, PrepClass, Klas content-writer openings with showreel link",
+          "deadline_days": 21
+        },
+        {
+          "step": "DM 5 current content producers at those companies for a 15-min informational call",
           "deadline_days": 10
         }
       ],
       "roadmap": [
         {
           "period": "0-90 days",
-          "focus": "A1 German + parallel income",
+          "focus": "Showreel + applications",
           "milestones": [
-            "A1 complete",
-            "Parallel NGO or teaching job landed for funding"
+            "3-5 sample videos",
+            "10+ applications sent",
+            "1 freelance script gig ₦30-80k"
           ],
           "income_by_end_ngn": 80000
         },
         {
           "period": "3-12 months",
-          "focus": "A2-B1 + applications",
+          "focus": "Full-time EdTech role",
           "milestones": [
-            "B1 certificate",
-            "5 Ausbildung applications submitted",
-            "Passport + APS cert ready"
+            "Content Producer role ₦200-350k",
+            "50+ scripts shipped",
+            "Internal promotion track visible"
           ],
-          "income_by_end_ngn": 150000
+          "income_by_end_ngn": 300000
         },
         {
           "period": "Year 2",
-          "focus": "Land in Germany",
+          "focus": "Senior + side contracts",
           "milestones": [
-            "Visa approved",
-            "Ausbildung started",
-            "First €1000 stipend"
+            "Senior Producer ₦500k+",
+            "International EdTech side contract in USD",
+            "Chevening/Commonwealth scholarship applied"
           ],
-          "income_by_end_ngn": 1600000
+          "income_by_end_ngn": 550000
         }
       ],
-      "nigerian_notes": "APS certificate (Akademische Prüfstelle) now mandatory — ~₦150k and 6-8 weeks. Embassy in Abuja. Without a funding income route in Nigeria, ₦0 savings will break this plan by month 6."
+      "nigerian_notes": "Most EdTech content roles are Lagos/Abuja HQ but fully remote-friendly post-2021. uLesson and FlexiSAF specifically hire Northern content producers for Hausa-medium content — your Kano base is an edge, not a handicap."
     }
   ],
   "routes_filtered_out": [
     {
-      "route": "Canada / UK MSc JAPA route",
-      "reason": "₦0 savings + low risk tolerance makes the ₦18-30m tuition and proof-of-funds wall impossible without family money, which isn't indicated."
+      "route": "JAPA via MSc abroad (UK/Canada)",
+      "reason": "₦0 savings + low risk tolerance rules out ₦15-30m tuition + living costs route in your 12-month horizon."
     },
     {
-      "route": "Tech bootcamp → remote dev",
-      "reason": "₦500k-1m bootcamp fee blocked by ₦0 savings, and 12-18 month time-to-income clashes with your 12-month planning horizon and medium family pressure."
-    },
-    {
-      "route": "Law school conversion (LL.B top-up)",
-      "reason": "Requires ₦1m+ law school fees plus 3-4 extra years of study with no income — incompatible with ₦0 savings and low risk tolerance."
+      "route": "Tech bootcamp (AltSchool, Decagon, ALX)",
+      "reason": "₦500k-1m bootcamp fee impossible at ₦0 savings, and junior dev market is saturated in 2026 — poor ROI for your profile."
     },
     {
       "route": "Igba Boi apprenticeship",
-      "reason": "Entry at 23-26 post-NYSC as a non-Igbo Philosophy grad in Kano with no family connection into Onitsha/Aba trade networks is not a realistic on-ramp."
+      "reason": "Non-Igbo, Kano-based, post-NYSC age 23+ — entry into the system without family connection is near-impossible, and 5-7 years of ₦0 income conflicts with family pressure."
+    },
+    {
+      "route": "Ride-hailing / POS agent",
+      "reason": "Both require ₦300k-2m capital (car or POS float) which you don't have; they also lead nowhere given your stronger writing/research skill stack."
+    },
+    {
+      "route": "Big 4 audit graduate programme",
+      "reason": "Requires Accounting/Finance/Economics degree background and campus recruitment — Philosophy + post-NYSC window closed."
     }
   ]
 }

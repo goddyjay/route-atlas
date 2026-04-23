@@ -33,385 +33,450 @@
       "Night shifts"
     ]
   },
-  "user_snapshot": "Married Accounting grad in Abuja, 2 years post-NYSC, audit associate at tier-2 firm on ₦220k with partner adding ₦160k, one child, ₦1.2m saved, and committed to japa inside 24 months.",
-  "headline_insight": "Your combined ₦380k household income and ₦1.2m savings make you a rare profile: you can fund a real japa route while staying employed — but your Big 4 window has already closed, so the audit-to-PR pipeline runs through Canada Express Entry or UK ACCA-sponsored, not another Lagos firm.",
+  "user_snapshot": "Abuja-based married accounting grad, 2 years post-NYSC, already inside audit at ₦220k/mo with a spouse earning ₦160k and one child. ₦1.2m saved, committed to JAPA within 24 months.",
+  "headline_insight": "You already have the one thing 90% of JAPA-hopeful accountants lack: live audit experience that counts toward ACCA/CPA and Canadian/UK skilled-worker points. Your real bottleneck isn't skill or savings — it's whether you convert your current tier-2 audit seat into Big-4-adjacent experience or a professional qualification before you apply, because that's what pushes CRS scores past 485 and unlocks UK sponsor shortlists.",
   "routes": [
     {
-      "id": "canada-express-entry-accountant",
-      "title": "Canada Express Entry → Accountant PR (direct, no school)",
+      "id": "acca-canada-express-entry",
+      "title": "ACCA + Audit Experience → Canada Express Entry",
       "category": "JAPA",
-      "one_liner": "Leverage your 2+ years audit experience + ACCA/ICAN to land Canadian PR and a CA$55-75k accountant role within 18-24 months.",
+      "one_liner": "Stack ACCA papers and audit years in Abuja, then land in Canada as a permanent resident accountant.",
       "fit_score": 91,
       "fit_reasons": [
         {
           "dimension": "JAPA",
-          "note": "Japa appetite is 'committed' and 24-month horizon matches Express Entry timeline from profile to landing."
+          "note": "Your 'committed' JAPA appetite and 24-month horizon align exactly with Express Entry's realistic 12-18 month processing."
         },
         {
           "dimension": "Savings",
-          "note": "₦1.2m savings + ₦380k household income covers IELTS, WES, ICAS, and proof of funds for a family of 3."
+          "note": "₦1.2m covers IELTS, WES ECA, and ACCA exam fees with buffer; no tuition needed for this route."
         }
       ],
       "break_reasons": [
         {
-          "risk": "CRS score below 485 cutoff if IELTS comes back CLB 8 instead of CLB 9 — profile sits unused for 12+ months.",
+          "risk": "CRS scores have trended 485+ in 2026; without CLB 9 IELTS and 3+ years audit, you may never get an ITA.",
           "severity": "High"
         }
       ],
-      "who_this_fits": "Disciplined self-studiers who can grind IELTS to CLB 9 while working full-time audit hours.",
-      "who_this_breaks": "Anyone who hopes a 7.0 IELTS will be 'enough' — CRS math is brutal and ties are rare.",
+      "who_this_fits": "Disciplined accountants who can study nights, tolerate 2 years of delayed gratification, and execute IELTS + ACCA in parallel.",
+      "who_this_breaks": "Those expecting a visa within 6 months, or who can't sustain study after full-time audit hours.",
       "real_cost": {
-        "money_ngn": 3500000,
-        "time_months": 14,
-        "what_you_give_up": "Evenings and weekends for 6 months of IELTS + CFA/ACCA prep. ₦2m of savings converted to proof of funds (locked but recoverable)."
+        "money_ngn": 2500000,
+        "time_months": 18,
+        "what_you_give_up": "Evenings and most weekends for 18 months; ~₦600k spread across ACCA, IELTS, WES, and final PR fees."
       },
       "real_pay": {
-        "entry_ngn": 5500000,
-        "mid_ngn": 8500000,
-        "senior_ngn": 14000000,
-        "range_note": "Canadian accountant salaries CA$55-95k. NGN figures at ~₦1,200/CA$. First 6 months post-landing often survival jobs before accounting role lands."
+        "entry_ngn": 2800000,
+        "mid_ngn": 4500000,
+        "senior_ngn": 7000000,
+        "range_note": "Figures are CAD 55-120k/yr converted at ~₦1,150/CAD. Entry roles are staff accountant at mid-size Canadian firms; senior is manager-level 5-7 yrs in."
       },
       "demand": "High",
-      "two_year_projection": "In 2 years, if you execute the CRS playbook, you're landed in Calgary or Ottawa as a Staff Accountant earning CA$60k (₦6m/mo), partner reskilled into admin or healthcare support, child in public school, and CPA pathway started.",
+      "two_year_projection": "In 2 years, if you execute, you've cleared 6-9 ACCA papers, scored CLB 9 on IELTS, received an ITA, and are landing in Calgary or Ottawa as a PR earning CAD 60k (~₦5.7m/yr) at a mid-tier firm.",
       "pro_tips": [
-        "Book IELTS General — Academic doesn't count for Express Entry.",
-        "Claim spouse points: her formal job + IELTS adds 20+ CRS points."
+        "Write ACCA F-papers via ABWA exemption route — saves 4 papers with your BSc.",
+        "Target CRS boost via French TEF Canada — single biggest score lever."
+      ],
+      "job_sites": [
+        {
+          "name": "Job Bank Canada",
+          "url": "https://www.jobbank.gc.ca",
+          "why": "Official Canadian government board; LMIA-eligible accountant roles list here first."
+        },
+        {
+          "name": "CICNews Job Board",
+          "url": "https://www.cicnews.com/jobs",
+          "why": "Curated for newcomers; many firms open to PR candidates pre-landing."
+        },
+        {
+          "name": "LinkedIn Jobs Canada",
+          "url": "https://www.linkedin.com/jobs",
+          "why": "Canadian recruiters actively source Nigerian ACCA candidates with audit experience."
+        }
       ],
       "monday_actions": [
         {
-          "step": "Register for IELTS General at British Council Abuja for the nearest Saturday slot — ₦165k.",
+          "step": "Register ACCA account on accaglobal.com, claim BSc Accounting exemptions (likely F1-F4).",
           "deadline_days": 3
         },
         {
-          "step": "Open WES application for your B.Sc transcript; contact your uni's exams office for direct-send.",
+          "step": "Book IELTS General Training for March at British Council Abuja (Wuse 2 branch).",
           "deadline_days": 7
         },
         {
-          "step": "Join ConnectSafe Nigeria Telegram + r/ImmigrationCanada to benchmark your CRS against recent draws.",
-          "deadline_days": 2
+          "step": "Order WES ECA application at wes.org/ca using your federal university transcript.",
+          "deadline_days": 14
         }
       ],
       "roadmap": [
         {
           "period": "0-90 days",
-          "focus": "Credentials assembled",
+          "focus": "Credentials foundation",
           "milestones": [
-            "IELTS booked + studied",
-            "WES in progress",
-            "CRS calculator run"
+            "WES ECA submitted",
+            "IELTS booked + 2 months prep",
+            "ACCA exemptions confirmed, first 2 papers registered"
           ],
           "income_by_end_ngn": 220000
         },
         {
           "period": "3-12 months",
-          "focus": "Profile in pool + ITA",
+          "focus": "Score stacking",
           "milestones": [
-            "IELTS CLB 9 achieved",
-            "WES ECA returned",
-            "Express Entry profile submitted",
-            "ITA received"
+            "CLB 9 achieved on IELTS",
+            "4-6 ACCA papers passed",
+            "Express Entry profile live with CRS estimate"
           ],
-          "income_by_end_ngn": 260000
+          "income_by_end_ngn": 280000
         },
         {
           "period": "Year 2",
-          "focus": "Land + first Canadian role",
+          "focus": "ITA and landing",
           "milestones": [
-            "PR confirmed",
-            "Family landed",
-            "First Canadian accounting offer",
-            "CPA articling started"
+            "ITA received",
+            "Medicals + PCC completed",
+            "Landed in Canada, first staff accountant role secured"
           ],
-          "income_by_end_ngn": 6000000
+          "income_by_end_ngn": 2800000
         }
       ],
-      "nigerian_notes": "Do NOT use agents charging ₦2m+ — Express Entry is a self-serve system. Use IRCC direct site. Spouse's formal employment is a CRS asset most Nigerians waste by not documenting it properly.",
-      "pro_tips_note": null
+      "nigerian_notes": "Abuja gives you easier PCC processing at Force HQ than Lagos applicants. Your tier-2 firm letter must explicitly state NOC 11100 duties — ask HR to draft it using NOC language, not Nigerian job titles."
     },
     {
-      "id": "acca-remote-accountant-usd",
-      "title": "ACCA + Remote Accountant/Finance Ops (USD, from Abuja)",
-      "category": "Remote Digital",
-      "one_liner": "Stack ACCA on your audit base, pivot to remote accountant or FP&A for US/UK startups earning $1.5-4k/mo while staying in Abuja.",
+      "id": "big4-lateral-move",
+      "title": "Lateral Move into KPMG/PwC/EY/Deloitte Abuja",
+      "category": "Local Formal",
+      "one_liner": "Jump from tier-2 audit into Big 4 Abuja office as an experienced associate within 6 months.",
       "fit_score": 82,
       "fit_reasons": [
         {
           "dimension": "Skills",
-          "note": "Your SQL + Excel + audit experience maps directly to remote finance ops roles — rare combo for Nigerian accountants."
+          "note": "Your Excel + SQL + audit associate experience is the exact profile Big 4 Abuja experienced-hire pipelines want."
         },
         {
-          "dimension": "Degree",
-          "note": "Accounting 2:1 + 2 years tier-2 audit meets minimum bar for ACCA exemptions and US startup bookkeeper roles."
+          "dimension": "Location",
+          "note": "All Big 4 maintain substantial Abuja offices (KPMG, PwC especially) — no relocation needed from FCT."
         }
       ],
       "break_reasons": [
         {
-          "risk": "Remote finance roles require client overlap hours — you said no night shifts, which kills most US-based roles (EST overlap is 2pm-11pm Lagos).",
-          "severity": "High"
+          "risk": "Experienced-hire interviews are technical and brutal; 2 years at tier-2 may read as 'not enough' without ICAN progress.",
+          "severity": "Medium"
         }
       ],
-      "who_this_fits": "Accountants who can self-brand on LinkedIn and tolerate UK/EU client timezones (noon-8pm Lagos).",
-      "who_this_breaks": "People waiting for recruiters to find them — remote roles need active outbound.",
+      "who_this_fits": "Audit associates with clean technical skills who can speak IFRS, SOX, and risk frameworks in interviews.",
+      "who_this_breaks": "Those who've coasted in tier-2 without owning full audit cycles or touching listed-entity clients.",
       "real_cost": {
-        "money_ngn": 900000,
-        "time_months": 18,
-        "what_you_give_up": "Weekends for 12-18 months on ACCA papers. ₦900k across ACCA registration + 4-6 paper fees + study materials."
+        "money_ngn": 150000,
+        "time_months": 6,
+        "what_you_give_up": "~3 months of evenings preparing technical interviews; ICAN registration fees if not already started."
       },
       "real_pay": {
-        "entry_ngn": 1800000,
-        "mid_ngn": 3600000,
-        "senior_ngn": 6000000,
-        "range_note": "Remote bookkeeper/accountant $1.5-5k/mo at ₦1,500/$. UK-timezone roles only given your no-night-shift rule."
+        "entry_ngn": 400000,
+        "mid_ngn": 750000,
+        "senior_ngn": 1500000,
+        "range_note": "Big 4 Abuja experienced associate band; senior associate/manager within 3-4 years. Partner track adds bonuses."
       },
       "demand": "Medium",
-      "two_year_projection": "In 2 years, if you clear ACCA Applied Skills + land one solid UK client, you're billing £2,500/mo (₦3m+) remotely from Abuja, still with your partner, and using the USD runway to fund japa cleanly.",
+      "two_year_projection": "In 2 years, if you land a Big 4 seat now, you're a Senior Associate earning ₦650-800k/mo in PwC or KPMG Abuja, with ACA or ACCA mid-way, and a far stronger JAPA profile.",
       "pro_tips": [
-        "Target UK SMEs on LinkedIn — timezone works and ACCA is instantly legible.",
-        "List Xero + QuickBooks certifications — free and filter most job posts."
+        "Apply during Q2 (April-June) when Big 4 backfill post-busy-season attrition.",
+        "Name-drop specific audit methodologies (KAM, ISA 315) in cover letters."
+      ],
+      "job_sites": [
+        {
+          "name": "KPMG Nigeria Careers",
+          "url": "https://kpmg.com/ng/en/home/careers.html",
+          "why": "Direct portal for Abuja and Lagos experienced-hire audit roles."
+        },
+        {
+          "name": "PwC Nigeria Careers",
+          "url": "https://www.pwc.com/ng/en/careers.html",
+          "why": "Abuja office posts experienced associate openings quarterly here."
+        },
+        {
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs",
+          "why": "Big 4 recruiters in Abuja actively source tier-2 audit candidates via LinkedIn InMail."
+        }
       ],
       "monday_actions": [
         {
-          "step": "Register on ACCA Global website, claim exemptions with your B.Sc transcript (saves 4 papers).",
-          "deadline_days": 7
+          "step": "Rewrite LinkedIn headline to 'Audit Associate | IFRS | SQL | ACCA Student' and connect with 10 Big 4 Abuja managers.",
+          "deadline_days": 5
         },
         {
-          "step": "Complete free Xero Advisor Certification online — 6 hours, instantly visible on LinkedIn.",
+          "step": "Apply direct on KPMG, PwC, EY, Deloitte Nigeria careers portals for Experienced Associate Audit.",
+          "deadline_days": 10
+        },
+        {
+          "step": "Reach out to 3 ex-colleagues or school alumni now inside Big 4 Abuja for referral.",
+          "deadline_days": 14
+        }
+      ],
+      "roadmap": [
+        {
+          "period": "0-90 days",
+          "focus": "Position and apply",
+          "milestones": [
+            "Applications submitted to all 4 firms",
+            "2-3 referrals secured",
+            "ICAN skills competency registered"
+          ],
+          "income_by_end_ngn": 220000
+        },
+        {
+          "period": "3-12 months",
+          "focus": "Land and ramp",
+          "milestones": [
+            "Offer accepted at ~₦450k/mo",
+            "First busy season survived",
+            "ACCA 3+ papers passed"
+          ],
+          "income_by_end_ngn": 500000
+        },
+        {
+          "period": "Year 2",
+          "focus": "Senior Associate + PR parallel",
+          "milestones": [
+            "Promoted to Senior Associate",
+            "ACCA halfway",
+            "Express Entry profile stronger due to Big 4 line"
+          ],
+          "income_by_end_ngn": 700000
+        }
+      ],
+      "nigerian_notes": "Big 4 Abuja offices (PwC Tafawa Balewa Way, KPMG CBD) lean heavily into public sector and telco audits — prep differently than Lagos candidates who see banking/FMCG."
+    },
+    {
+      "id": "remote-us-accounting-ops",
+      "title": "Remote Accounting/FP&A for US or UK Startups",
+      "category": "Remote Digital",
+      "one_liner": "Leverage SQL + audit skills into a USD-paying remote finance operations role with a Western startup.",
+      "fit_score": 76,
+      "fit_reasons": [
+        {
+          "dimension": "Skills",
+          "note": "SQL + Excel + audit is the exact stack remote FP&A and finance-ops roles demand — rare combo for Nigerian accountants."
+        },
+        {
+          "dimension": "Risk",
+          "note": "Your medium risk tolerance and current ₦220k stable salary lets you job-hunt for 6 months without panic."
+        }
+      ],
+      "break_reasons": [
+        {
+          "risk": "Remote finance roles are competitive globally; without portfolio projects (SQL dashboards, financial models), applications get ignored.",
+          "severity": "Medium"
+        }
+      ],
+      "who_this_fits": "Accountants who can build a GitHub/Notion portfolio showing SQL queries over fake financial datasets and a 3-statement model.",
+      "who_this_breaks": "Those who think 'applying on LinkedIn' without a portfolio will work — it won't in 2026.",
+      "real_cost": {
+        "money_ngn": 200000,
+        "time_months": 6,
+        "what_you_give_up": "Evenings building portfolio + cold-applying; domain renewal, fast internet upgrade, maybe a Toptal/Braintrust annual fee."
+      },
+      "real_pay": {
+        "entry_ngn": 1200000,
+        "mid_ngn": 3500000,
+        "senior_ngn": 7000000,
+        "range_note": "USD $800-5000/mo converted at ~₦1,500/$. Entry is finance ops at seed-stage startup; senior is FP&A lead at Series B+."
+      },
+      "demand": "Medium",
+      "two_year_projection": "In 2 years, if you break in, you're a Finance Operations Analyst at a US Series A startup earning $2,500/mo (~₦3.7m/mo), still in Abuja, with USD savings and a parallel JAPA fund.",
+      "pro_tips": [
+        "Build a Notion portfolio: 3-statement model + SQL dashboard over Kaggle financial data.",
+        "Target 'Finance Ops' titles, not 'Accountant' — startups pay 2x for that framing."
+      ],
+      "job_sites": [
+        {
+          "name": "Wellfound",
+          "url": "https://wellfound.com/jobs",
+          "why": "Highest density of US/UK startup finance-ops roles open to remote international hires."
+        },
+        {
+          "name": "Contra",
+          "url": "https://contra.com",
+          "why": "Independent finance professionals land recurring FP&A retainers with US clients here."
+        },
+        {
+          "name": "Remotive",
+          "url": "https://remotive.com/remote-jobs/finance-legal",
+          "why": "Filters for remote finance roles that explicitly accept non-US applicants."
+        }
+      ],
+      "monday_actions": [
+        {
+          "step": "Set up Notion portfolio page; upload a 3-statement model built over a public company's filings.",
           "deadline_days": 14
         },
         {
-          "step": "DM 10 UK accounting firm owners on LinkedIn offering freelance month-end close support.",
+          "step": "Create Wellfound, Contra, and Remotive profiles with 'Finance Ops Analyst' headline.",
+          "deadline_days": 7
+        },
+        {
+          "step": "Follow 20 US finance-ops managers on LinkedIn, engage on 2 posts each weekly.",
           "deadline_days": 10
         }
       ],
       "roadmap": [
         {
           "period": "0-90 days",
-          "focus": "ACCA registered + Xero/QB certs",
+          "focus": "Portfolio and profile",
           "milestones": [
-            "ACCA exemptions confirmed",
-            "Xero + QuickBooks certified",
-            "LinkedIn rebranded"
+            "Notion portfolio live",
+            "SQL dashboard with financial data published",
+            "10 cold applications sent weekly"
           ],
-          "income_by_end_ngn": 250000
+          "income_by_end_ngn": 220000
         },
         {
           "period": "3-12 months",
           "focus": "First remote client",
           "milestones": [
-            "2-3 ACCA papers passed",
-            "First UK/EU client at $1-2k/mo retainer",
-            "Contra/Upwork profile at 5+ reviews"
+            "First USD contract at $800-1500/mo",
+            "Quit or reduce tier-2 audit hours",
+            "Second client added"
           ],
-          "income_by_end_ngn": 900000
+          "income_by_end_ngn": 1500000
         },
         {
           "period": "Year 2",
-          "focus": "Full remote + ACCA Applied",
+          "focus": "Full-time USD role",
           "milestones": [
-            "Resign from tier-2 firm",
-            "3+ retainers totalling $3-4k/mo",
-            "ACCA Applied Skills complete"
+            "Full-time remote FP&A at $2-3k/mo",
+            "USD savings building JAPA fund",
+            "Optional O-1 or UK Global Talent prep"
           ],
-          "income_by_end_ngn": 3200000
+          "income_by_end_ngn": 3500000
         }
       ],
-      "nigerian_notes": "Payoneer + Grey for USD receipt. Keep a domiciliary account. IRS W-8BEN if US clients. ACCA has Lagos + Abuja exam centres — book Abuja to save travel."
+      "nigerian_notes": "Payoneer, Grey, and Wise now serve Abuja clean; avoid receiving USD into Naira domiciliary directly — CBN pegs hurt conversion. Tax: register for voluntary FIRS filing once income crosses ₦3m/yr."
     },
     {
-      "id": "big4-experienced-hire-abuja",
-      "title": "Big 4 Experienced Hire → Senior Associate (Abuja/Lagos)",
-      "category": "Local Formal",
-      "one_liner": "Jump from tier-2 to KPMG/PwC/EY/Deloitte as a 2-year experienced hire, double your salary, and use the Big 4 brand as your japa accelerator.",
-      "fit_score": 76,
+      "id": "uk-aca-sponsor-route",
+      "title": "UK Skilled Worker Visa via Accountancy Sponsor",
+      "category": "JAPA",
+      "one_liner": "Secure a UK audit/accountancy firm sponsorship using your experience + ACCA progress within 18 months.",
+      "fit_score": 68,
       "fit_reasons": [
         {
-          "dimension": "Degree",
-          "note": "Second Class Upper in Accounting from a federal uni clears Big 4 academic screens; 2 years tier-2 audit is the exact profile they hire laterally."
+          "dimension": "JAPA",
+          "note": "Your 'committed' appetite plus audit background fits the narrow list of UK roles still sponsoring after 2024 reforms."
         },
         {
-          "dimension": "Location",
-          "note": "Abuja base works — KPMG, PwC, Deloitte all have Abuja offices with lighter competition than Lagos."
+          "dimension": "Dependents",
+          "note": "UK Skilled Worker allows spouse + child dependants, matching your married-with-one-child household shape."
         }
       ],
       "break_reasons": [
         {
-          "risk": "Big 4 Abuja offices hire far less than Lagos; you may need to relocate, disrupting your partner's ₦160k job and childcare.",
-          "severity": "Medium"
+          "risk": "2024 reforms pushed salary floor to £38,700 — most UK entry audit roles pay £28-32k, so sponsorship at your level is thin.",
+          "severity": "High"
         }
       ],
-      "who_this_fits": "Audit associates hungry for brand, ready to grind 60-hour weeks for 2 years in exchange for global mobility.",
-      "who_this_breaks": "Parents who need predictable 5pm evenings — busy season destroys family rhythm.",
+      "who_this_fits": "Accountants with 3+ years audit and a part-ACCA/ACA who can target mid-tier UK firms (BDO, Mazars, Azets) outside London.",
+      "who_this_breaks": "Those applying to Big 4 UK graduate schemes — those windows closed for you post-NYSC.",
       "real_cost": {
-        "money_ngn": 150000,
-        "time_months": 4,
-        "what_you_give_up": "Evenings for 2 months of technical interview prep. Possibly ₦600k/yr rent delta if forced to Lagos."
+        "money_ngn": 4500000,
+        "time_months": 15,
+        "what_you_give_up": "Big upfront cash on visa + IHS for family of 3 (~£4-5k); risk of no sponsor despite 12 months of applying."
       },
       "real_pay": {
-        "entry_ngn": 450000,
-        "mid_ngn": 900000,
-        "senior_ngn": 1800000,
-        "range_note": "Experienced-hire Senior Associate ₦450-650k start. Manager level ₦900k-1.4m in 3-4 years. Secondment to UK/Canada possible at Senior Manager level."
+        "entry_ngn": 4200000,
+        "mid_ngn": 6500000,
+        "senior_ngn": 11000000,
+        "range_note": "£28-75k/yr at ~₦1,850/£. Entry is audit senior at regional UK firm; senior is manager at mid-tier after 4-5 yrs."
       },
-      "demand": "Medium",
-      "two_year_projection": "In 2 years, if you land a Big 4 seat, you're a Senior Associate at PwC Abuja on ₦700k/mo, ICAN qualified, with an active secondment conversation to Canada or UAE — a cleaner japa path than Express Entry alone.",
+      "demand": "Low",
+      "two_year_projection": "In 2 years, if sponsorship lands, you're an Audit Senior at Azets or Mazars in Manchester/Birmingham earning £35k (~₦5.4m/mo), with family relocated on dependent visas.",
       "pro_tips": [
-        "Apply during Q1 — Big 4 hires heavy Jan-March post-busy-season resignations.",
-        "Name-drop specific clients you've audited; generalist CVs get binned."
+        "Target regional UK cities (Leeds, Bristol) — lower salary thresholds and hungrier firms.",
+        "Complete ACCA Strategic Professional before applying — non-negotiable signal."
+      ],
+      "job_sites": [
+        {
+          "name": "Totaljobs UK",
+          "url": "https://www.totaljobs.com",
+          "why": "Regional UK accountancy firms post sponsored senior-auditor roles here more than LinkedIn."
+        },
+        {
+          "name": "Reed Accountancy",
+          "url": "https://www.reed.co.uk/jobs/accountancy-jobs",
+          "why": "UK's largest accountancy-specific board; filters for sponsorship-available roles."
+        },
+        {
+          "name": "UK Gov Sponsor Register",
+          "url": "https://www.gov.uk/government/publications/register-of-licensed-sponsors-workers",
+          "why": "Verify any firm offers legit sponsorship before wasting applications."
+        }
       ],
       "monday_actions": [
         {
-          "step": "Apply on KPMG Nigeria, PwC Nigeria, EY Nigeria, Deloitte Nigeria career sites filtering 'Experienced Hire – Assurance'.",
-          "deadline_days": 7
+          "step": "Download UK Gov licensed sponsor register; filter for accountancy firms outside London.",
+          "deadline_days": 3
         },
         {
-          "step": "DM 5 Senior Associates at each firm on LinkedIn asking for a referral — referrals double interview rate.",
+          "step": "Shortlist 40 regional UK mid-tier firms (BDO, Mazars, Azets, Crowe) and track on spreadsheet.",
           "deadline_days": 10
         },
         {
-          "step": "Register for ICAN Skills level if not yet — mention in cover letter.",
+          "step": "Register ACCA and schedule Strategic Professional papers for next window.",
           "deadline_days": 14
         }
       ],
       "roadmap": [
         {
           "period": "0-90 days",
-          "focus": "Apply + interview",
+          "focus": "Qualification gap",
           "milestones": [
-            "4 applications live",
-            "5+ referrals requested",
-            "2 technical interviews done"
+            "ACCA Strategic Professional registered",
+            "Sponsor shortlist built",
+            "IELTS booked if needed"
           ],
           "income_by_end_ngn": 220000
         },
         {
           "period": "3-12 months",
-          "focus": "Onboard + deliver",
+          "focus": "Credential and apply",
           "milestones": [
-            "Offer signed ₦450-600k",
-            "First busy season survived",
-            "ICAN Skills completed"
-          ],
-          "income_by_end_ngn": 550000
-        },
-        {
-          "period": "Year 2",
-          "focus": "Senior Associate + secondment lobby",
-          "milestones": [
-            "Promotion to Senior Associate",
-            "Secondment application to Canada/UAE filed",
-            "ICAN qualified"
-          ],
-          "income_by_end_ngn": 800000
-        }
-      ],
-      "nigerian_notes": "Big 4 salaries in Abuja trail Lagos by ~10%. Your tier-2 audit brand matters less than your client names and technical depth — prepare IFRS 15/16 case studies."
-    },
-    {
-      "id": "cocoa-sesame-export-side",
-      "title": "Agri-Export Side Business (sesame/hibiscus, Abuja-based)",
-      "category": "Entrepreneurship",
-      "one_liner": "Use your ₦500k risk capital + SQL/Excel skills to run a small sesame or hibiscus export trade from Abuja, targeting ₦200-400k/mo net in 18 months.",
-      "fit_score": 64,
-      "fit_reasons": [
-        {
-          "dimension": "Savings",
-          "note": "₦1.2m savings allows ₦500-700k working capital without touching japa fund or emergency buffer."
-        },
-        {
-          "dimension": "Location",
-          "note": "Abuja sits within 4-hour trucking of Nasarawa, Benue, and Kano hibiscus/sesame belts — logistics are viable."
-        }
-      ],
-      "break_reasons": [
-        {
-          "risk": "First-timer export fraud is endemic — one bad aggregator can wipe your ₦500k inside one shipment.",
-          "severity": "High"
-        }
-      ],
-      "who_this_fits": "Methodical traders with rural family links or patience to visit farms physically before paying.",
-      "who_this_breaks": "Anyone trusting WhatsApp aggregators or skipping grading before payment.",
-      "real_cost": {
-        "money_ngn": 600000,
-        "time_months": 12,
-        "what_you_give_up": "₦500-700k of savings at real loss risk. Saturdays traveling to Nasarawa/Keffi aggregators for 6 months."
-      },
-      "real_pay": {
-        "entry_ngn": 150000,
-        "mid_ngn": 350000,
-        "senior_ngn": 800000,
-        "range_note": "Net profit, not revenue. Highly seasonal. First 6 months often break-even while you learn grading and aggregator trust."
-      },
-      "demand": "Medium",
-      "two_year_projection": "In 2 years, if you survive the learning tax, you're netting ₦300-400k/mo on top of your audit salary, with a small warehouse in Mararaba and a Dubai or Turkish buyer on retainer.",
-      "pro_tips": [
-        "Never pay aggregators upfront — grade at pickup, pay on load.",
-        "Start with local wholesale before chasing export LCs."
-      ],
-      "monday_actions": [
-        {
-          "step": "Visit Karu or Mararaba market this Saturday, price sesame/hibiscus per bag, meet 3 aggregators.",
-          "deadline_days": 7
-        },
-        {
-          "step": "Join 'Nigerian Agro Exporters' Telegram group — learn Bill of Lading + Form NXP basics.",
-          "deadline_days": 5
-        },
-        {
-          "step": "Register business name with CAC online (₦20k) — needed for domiciliary and export paperwork.",
-          "deadline_days": 21
-        }
-      ],
-      "roadmap": [
-        {
-          "period": "0-90 days",
-          "focus": "Market intel + first local trade",
-          "milestones": [
-            "CAC done",
-            "First ₦200k local wholesale flip",
-            "3 trusted aggregator contacts"
+            "4+ ACCA Strategic papers passed",
+            "50+ UK applications sent",
+            "2-3 interviews secured"
           ],
           "income_by_end_ngn": 280000
         },
         {
-          "period": "3-12 months",
-          "focus": "Scale + first export-adjacent sale",
-          "milestones": [
-            "₦500k inventory rolling",
-            "First sale to Lagos exporter (indirect export)",
-            "Consistent ₦150k/mo net"
-          ],
-          "income_by_end_ngn": 380000
-        },
-        {
           "period": "Year 2",
-          "focus": "Direct export relationship",
+          "focus": "Sponsor and relocate",
           "milestones": [
-            "Direct buyer in Dubai/Turkey",
-            "Apsense NEPC registration",
-            "₦300-400k/mo net"
+            "Certificate of Sponsorship received",
+            "Visa approved for family",
+            "Landed in UK, audit senior role begun"
           ],
-          "income_by_end_ngn": 650000
+          "income_by_end_ngn": 4200000
         }
       ],
-      "nigerian_notes": "NEPC registration (₦50k) needed for direct export. FX volatility can wipe margins — price in USD, hedge via domiciliary. Middle-belt security: avoid personal travel to border LGAs."
+      "nigerian_notes": "UK sponsorship for Nigerian accountants dropped ~40% post-2024. Canada Express Entry is statistically safer for your profile; treat this as the backup route, not primary."
     }
   ],
   "routes_filtered_out": [
     {
-      "route": "Big 4 Graduate Trainee Programme",
-      "reason": "Programme window requires entry within 12 months of NYSC; you are 2 years post-NYSC and must enter as experienced hire instead."
+      "route": "Big 4 Graduate Programme (campus recruitment)",
+      "reason": "You are 2 years post-NYSC; the graduate-intake window has closed. Experienced-hire is your only Big 4 door now."
     },
     {
-      "route": "MSc abroad (UK/Canada)",
-      "reason": "₦18-30m cost for a family of 3 is unreachable on ₦1.2m savings + ₦380k household income without debt; Express Entry delivers same outcome cheaper."
+      "route": "Tech bootcamp → remote software dev",
+      "reason": "Would discard 2 years of accounting-specific leverage (SQL + audit) and restart your clock; your married-with-child household can't absorb 12+ months of income dip."
     },
     {
-      "route": "US roles with EST hours / night audit shifts",
-      "reason": "Hard no on night shifts rules out most US-client remote finance roles (2pm-11pm Lagos overlap)."
+      "route": "Canada Student Visa (MSc Accounting)",
+      "reason": "Costs ₦18-30m you don't have; Express Entry direct PR is cheaper and faster given your audit experience."
     },
     {
-      "route": "Insurance/FMCG field sales commission stack",
-      "reason": "Hard no on MLM adjacencies and commission-only structures conflict with your medium risk tolerance and sole-earner-leaning household."
+      "route": "MLM insurance/financial products sales",
+      "reason": "Explicit hard no in your intake; also destroys the professional positioning your audit CV is building."
     }
   ]
 }

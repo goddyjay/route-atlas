@@ -216,6 +216,13 @@ OUTPUT SCHEMA (exact JSON structure — no deviation)
       "demand": "string — exactly ONE of: 'Low' | 'Medium' | 'High' — how hot this specific route is in the user's region/market in 2026, NOT global vibes. Junior remote dev = Medium; Sagamu pharma QA for a Microbiology grad = High; local journalism = Low.",
       "two_year_projection": "string — 1-2 sentences starting with 'In 2 years, if you...' that paint a concrete picture of where this user specifically ends up. MUST include a realistic monthly income figure and a specific milestone (role, city, JAPA stage). No vague 'you'll be successful' — a scene the user can see.",
       "pro_tips": ["string — 3-4 tips total. Each 14 words or fewer, specific to THIS route in Nigeria, not generic 'network more'. Example good tip: 'Apply to Sagamu pharma QA roles on Tuesday mornings — HR reviews CVs before weekly production meetings.' Example bad tip: 'Build your skills.'"],
+      "job_sites": [
+        {
+          "name": "string — real job board / portal name",
+          "url": "string — full URL with https://. Use real Nigerian or route-specific portals. Nigerian: myjobmag.com, jobberman.com, hotnigerianjobs.com, ngcareers.com, jobzilla.ng. Remote: linkedin.com/jobs, wellfound.com, contra.com, upwork.com, turing.com, remotive.com. JAPA-specific: jobs.ac.uk (UK academic/science), nhsjobs.com (UK health), bmz.de or make-it-in-germany.com (Germany), jobbank.gc.ca (Canada), seek.com.au (Australia). Industry-specific: pharmanews.ng (pharma), techcabal.com/jobs (tech), ngocareercentre.com (NGO). Company careers pages: emzor.com/careers, fidson.com, gtco.com, paystack.com/careers — include when the route targets a specific employer.",
+          "why": "string — ONE short sentence max 16 words explaining why THIS site for THIS route. Example good: 'Primary Nigerian pharma portal — Emzor and Fidson post QA openings here first.' Example bad: 'Good job site.'"
+        }
+      ],
       "cheapest_test": {
         "what": "string — one cheap action the user can take THIS WEEK to test if this route is real for them. Must be concrete, not aspirational.",
         "cost_ngn": 0,
@@ -287,6 +294,18 @@ RULES (non-negotiable)
 10b. two_year_projection: write it as a scene, not a slogan. Include one specific income figure in ₦ and one specific identity/location shift. Example GOOD: "In 2 years, if you stick with pharma QA, you're earning ₦280-320k/mo as a QA Analyst II at Emzor or Fidson, have ₦1.2m saved, and have booked IELTS for the Canada MLT route." Example BAD: "You'll be successful and happy." Cite realistic numbers from the real_pay range.
 
 10c. pro_tips: EXACTLY 2 tips, each under 14 words, each tied to something only someone IN this Nigerian route would know. No "be consistent" type filler.
+
+10d. job_sites: EXACTLY 3 sites per route. Must be REAL working portals with correct domain spelling. Match to the route:
+    - Local Formal Nigerian job: always include at least one of myjobmag.com / jobberman.com / hotnigerianjobs.com (the user-actionable ones), plus an industry board where relevant (pharmanews.ng, ngcareers.com, techcabal.com/jobs).
+    - Remote Digital: linkedin.com/jobs, wellfound.com, contra.com, upwork.com, turing.com, remotive.com, weworkremotely.com — pick 3 that fit.
+    - JAPA by country:
+      • Canada → jobbank.gc.ca, onthemovecanada.com, cicnews.com
+      • UK → nhsjobs.com (health), jobs.ac.uk (academic), uk.indeed.com
+      • Germany → make-it-in-germany.com, arbeitsagentur.de, ausbildung.de
+      • Australia → seek.com.au, jobactive.gov.au, iscah.com
+    - Entrepreneurship / Trade: focus on networks over boards — e.g. techpoint.africa, fundsforngos.org, aso-savings.com, or the apprenticeship network for that trade.
+    - Include a company careers page when the route names specific employers: emzor.com, fidson.com, gtco.com, paystack.com/careers, etc.
+    Every "why" line must mention why THAT site for THIS route — no generic "great portal" fillers.
 
 11. routes_filtered_out: include AT LEAST 2 common paths that were considered and rejected. This builds trust by showing the model actually evaluated options. Examples of things to filter out when they don't fit:
     - "MSc abroad" when savings are too low
@@ -592,6 +611,17 @@ function validateResponse(parsed) {
       assertString(tip, `${p}.pro_tips[${j}]`);
     });
 
+    assertArray(r.job_sites, `${p}.job_sites`, 1);
+    r.job_sites.forEach((site, j) => {
+      const sp = `${p}.job_sites[${j}]`;
+      assertString(site.name, `${sp}.name`);
+      assertString(site.url, `${sp}.url`);
+      assertString(site.why, `${sp}.why`);
+      if (!/^https?:\/\//i.test(site.url)) {
+        throw new Error(`${sp}.url must be a full URL starting with http(s)://`);
+      }
+    });
+
     if (r.cheapest_test) {
       assertString(r.cheapest_test.what, `${p}.cheapest_test.what`);
       assertNumber(r.cheapest_test.cost_ngn, `${p}.cheapest_test.cost_ngn`);
@@ -641,7 +671,7 @@ export default {
   type: "route_atlas",
   label: "Route Atlas",
   model: "claude-opus-4-7",
-  maxTokens: 10000,
+  maxTokens: 12000,
   validators,
   systemPrompt: SYSTEM_PROMPT,
   buildUserPrompt,
