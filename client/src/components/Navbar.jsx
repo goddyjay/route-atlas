@@ -1,8 +1,11 @@
 import { motion } from "framer-motion";
-import { Github } from "lucide-react";
+import { Link, useLocation } from "react-router-dom";
+import { ArrowRight, Github } from "lucide-react";
 import { LogoMark } from "./Logo.jsx";
 
 export function Navbar() {
+  const location = useLocation();
+  const onLanding = location.pathname === "/";
   return (
     <motion.header
       initial={{ opacity: 0, y: -10 }}
@@ -11,22 +14,35 @@ export function Navbar() {
       className="shrink-0 z-30 backdrop-blur-xl bg-ink-900/70 border-b border-white/5"
     >
       <div className="w-full px-4 md:px-6 h-14 flex items-center justify-between">
-        <LogoMark />
+        <Link to="/" className="no-underline">
+          <LogoMark />
+        </Link>
+
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.6, duration: 0.4 }}
           className="flex items-center gap-2"
         >
-          <span className="hidden md:inline-flex chip">
-            <span className="relative flex h-1.5 w-1.5">
-              <span className="absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-60 animate-ping" />
-              <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-emerald-400" />
+          {onLanding ? (
+            <Link
+              to="/app"
+              className="inline-flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-[12px] font-semibold bg-emerald-500/15 hover:bg-emerald-500/25 border border-emerald-400/30 text-emerald-200 transition"
+            >
+              Open the app
+              <ArrowRight size={12} />
+            </Link>
+          ) : (
+            <span className="hidden md:inline-flex chip">
+              <span className="relative flex h-1.5 w-1.5">
+                <span className="absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-60 animate-ping" />
+                <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-emerald-400" />
+              </span>
+              Powered by Opus 4.7
             </span>
-            Powered by Opus 4.7
-          </span>
+          )}
           <a
-            href="https://github.com/"
+            href="https://github.com/goddyjay/route-atlas"
             target="_blank"
             rel="noreferrer"
             className="p-2 rounded-lg border border-white/10 bg-white/[0.02] text-slate-400 hover:text-white hover:bg-white/[0.06] hover:border-white/20 transition"

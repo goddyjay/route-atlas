@@ -1,7 +1,8 @@
 import { useEffect } from "react";
-import { Routes, Route, Navigate } from "react-router-dom";
+import { Routes, Route, Navigate, useLocation } from "react-router-dom";
 import { Navbar } from "./components/Navbar.jsx";
 import AtlasPage from "./routes/AtlasPage.jsx";
+import LandingPage from "./routes/LandingPage.jsx";
 import { warmBackend } from "./lib/api.js";
 
 // App shell: fills the viewport. Navbar is a fixed-height row; everything
@@ -16,20 +17,34 @@ export default function App() {
   }, []);
 
   return (
-    <div className="lg:h-screen flex flex-col relative">
+    <AppShell>
+      <Routes>
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/app" element={<AtlasPage />} />
+        <Route path="*" element={<Navigate to="/" replace />} />
+      </Routes>
+    </AppShell>
+  );
+}
+
+// The app shell treats the marketing landing page and the product page very
+// differently: the landing scrolls naturally and has its own flow, while the
+// /app route fills the viewport with the split-pane dashboard. We toggle
+// the outer container's height model based on the active route so the same
+// shell can host both without fighting each other.
+function AppShell({ children }) {
+  const location = useLocation();
+  const isApp = location.pathname.startsWith("/app");
+  return (
+    <div className={`${isApp ? "lg:h-screen" : "min-h-screen"} flex flex-col relative`}>
       <div
         aria-hidden="true"
         className="pointer-events-none fixed inset-0 -z-10 overflow-hidden"
       >
         <div className="absolute inset-0 grid-bg opacity-[0.15] mask-fade-b" />
       </div>
-
       <Navbar />
-
-      <Routes>
-        <Route path="/" element={<AtlasPage />} />
-        <Route path="*" element={<Navigate to="/" replace />} />
-      </Routes>
+      {children}
     </div>
   );
 }
