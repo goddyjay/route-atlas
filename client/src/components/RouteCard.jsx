@@ -232,9 +232,107 @@ export function RouteCard({
 
 function ExpandedDetail({ route, isDone, onToggleAction, doneCount, onAskFollowup }) {
   const actions = route.monday_actions ?? [];
+  const roadmap = route.roadmap ?? [];
+  // Income path derives entry/12mo/24mo from the 3-phase roadmap. If a
+  // roadmap phase is missing we fall back to real_pay bands.
+  const incomePath = [
+    {
+      label: "Entry",
+      amount: roadmap[0]?.income_by_end_ngn ?? route.real_pay?.entry_ngn,
+      focus: roadmap[0]?.focus ?? "First 90 days",
+      milestones: roadmap[0]?.milestones ?? [],
+    },
+    {
+      label: "12 months",
+      amount: roadmap[1]?.income_by_end_ngn ?? route.real_pay?.mid_ngn,
+      focus: roadmap[1]?.focus ?? "Mid stretch",
+      milestones: roadmap[1]?.milestones ?? [],
+    },
+    {
+      label: "24 months",
+      amount: roadmap[2]?.income_by_end_ngn ?? route.real_pay?.senior_ngn,
+      focus: roadmap[2]?.focus ?? "Year 2",
+      milestones: roadmap[2]?.milestones ?? [],
+    },
+  ];
   return (
-    <div className="pt-4 space-y-4">
-      {/* FUTURE SIMULATION callout — the "if you follow this for 2 years" pane */}
+    <div className="pt-5 space-y-6">
+      {/* === WHY THIS FITS === */}
+      <DossierSection label="Why this fits">
+        <ul className="space-y-2">
+          {route.fit_reasons?.map((fr, i) => (
+            <motion.li
+              key={i}
+              initial={{ opacity: 0, x: -4 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.08 + i * 0.06, duration: 0.3 }}
+              className="flex items-start gap-2.5 text-[13px] text-slate-200 leading-relaxed"
+            >
+              <CheckCircle2 size={13} className="text-emerald-400 mt-0.5 shrink-0" />
+              <span>
+                <span className="font-semibold text-emerald-300">{fr.dimension}:</span>{" "}
+                {fr.note}
+              </span>
+            </motion.li>
+          ))}
+        </ul>
+      </DossierSection>
+
+      {/* === INCOME PATH === entry → 12mo → 24mo progression */}
+      <DossierSection label="Income path">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
+          {incomePath.map((step, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 8 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.1 + i * 0.08, duration: 0.35 }}
+              className="relative rounded-xl border border-white/[0.08] bg-white/[0.02] p-3.5"
+            >
+              <div className="text-[10px] font-bold uppercase tracking-wider text-slate-500 tabular">
+                {step.label}
+              </div>
+              <div className="mt-1 display text-[22px] tracking-extra-tight text-emerald-300 tabular leading-none">
+                {fmtNaira(step.amount)}
+                <span className="text-[10px] font-semibold text-slate-500 ml-1 tracking-normal">/mo</span>
+              </div>
+              <div className="mt-1.5 text-[11.5px] text-slate-400 font-semibold">
+                {step.focus}
+              </div>
+              {step.milestones?.length > 0 && (
+                <ul className="mt-2 space-y-0.5">
+                  {step.milestones.slice(0, 2).map((m, j) => (
+                    <li key={j} className="text-[11px] text-slate-500 leading-snug flex items-start gap-1">
+                      <span className="text-slate-600">·</span>
+                      <span className="flex-1">{m}</span>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </motion.div>
+          ))}
+        </div>
+      </DossierSection>
+
+      {/* === KEY NUMBERS === inline stats row */}
+      <DossierSection label="Numbers">
+        <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
+          <Stat label="Time to first income" value={humanMonths(route.real_cost?.time_months)} />
+          <Stat label="Upfront cost" value={fmtNaira(route.real_cost?.money_ngn)} />
+          <Stat
+            label="Senior ceiling"
+            value={<>{fmtNaira(route.real_pay?.senior_ngn)}<span className="text-emerald-400">+</span></>}
+            accent="emerald"
+          />
+        </div>
+        {route.real_cost?.what_you_give_up && (
+          <p className="mt-2.5 text-[11.5px] text-slate-500 leading-snug italic">
+            What you give up: {route.real_cost.what_you_give_up}
+          </p>
+        )}
+      </DossierSection>
+
+      {/* === 2-YEAR PROJECTION === */}
       {route.two_year_projection && (
         <motion.div
           initial={{ opacity: 0, y: 10 }}
@@ -260,7 +358,7 @@ function ExpandedDetail({ route, isDone, onToggleAction, doneCount, onAskFollowu
             </motion.div>
             <div>
               <div className="eyebrow text-accent-300 flex items-center gap-1.5">
-                <TrendingUp size={10} /> If you follow this for 2 years…
+                <TrendingUp size={10} /> 2-year projection
               </div>
               <p className="text-[13px] text-teal-50/90 mt-1.5 leading-relaxed">
                 {route.two_year_projection}
@@ -270,78 +368,8 @@ function ExpandedDetail({ route, isDone, onToggleAction, doneCount, onAskFollowu
         </motion.div>
       )}
 
-      <Row>
-        <Column title="Real cost">
-          <DL>
-            <DT>Money</DT>
-            <DD>{fmtNaira(route.real_cost?.money_ngn)}</DD>
-            <DT>Time</DT>
-            <DD>{route.real_cost?.time_months} months</DD>
-            <DT>What you give up</DT>
-            <DD className="text-slate-300">{route.real_cost?.what_you_give_up}</DD>
-          </DL>
-        </Column>
-        <Column title="Real pay (monthly)">
-          <DL>
-            <DT>Entry</DT>
-            <DD>{fmtNaira(route.real_pay?.entry_ngn)}</DD>
-            <DT>Mid</DT>
-            <DD>{fmtNaira(route.real_pay?.mid_ngn)}</DD>
-            <DT>Senior</DT>
-            <DD>{fmtNaira(route.real_pay?.senior_ngn)}+</DD>
-          </DL>
-          {route.real_pay?.range_note && (
-            <p className="text-[11px] text-slate-500 mt-2 leading-snug">
-              {route.real_pay.range_note}
-            </p>
-          )}
-        </Column>
-      </Row>
-
-      <Row>
-        <Column title="Who this fits" icon={Users}>
-          <p className="text-[12.5px] text-slate-300 leading-relaxed">
-            {route.who_this_fits}
-          </p>
-        </Column>
-        <Column title="Who this breaks" icon={AlertTriangle} danger>
-          <p className="text-[12.5px] text-rose-100/80 leading-relaxed">
-            {route.who_this_breaks}
-          </p>
-        </Column>
-      </Row>
-
-      {route.break_reasons?.length > 0 && (
-        <Column title="Break reasons" icon={AlertTriangle} danger>
-          <div className="space-y-1.5">
-            {route.break_reasons.map((br, i) => (
-              <div key={i} className="flex items-start gap-2 text-[12px] text-slate-300">
-                <SeverityPill severity={br.severity} />
-                <span>{br.risk}</span>
-              </div>
-            ))}
-          </div>
-        </Column>
-      )}
-
-      {route.cheapest_test && (
-        <Column title="Cheapest test this week" icon={Target}>
-          <p className="text-[12.5px] text-slate-200 leading-relaxed">
-            {route.cheapest_test.what}
-          </p>
-          <div className="mt-2 flex gap-3 text-[11px] text-slate-400">
-            <span className="chip">Cost: {fmtNaira(route.cheapest_test.cost_ngn)}</span>
-            <span className="chip">Time: {route.cheapest_test.time_hours}h</span>
-          </div>
-          <p className="text-[11.5px] text-slate-500 mt-2 leading-snug">
-            <span className="text-slate-400">Signal:</span>{" "}
-            {route.cheapest_test.expected_signal}
-          </p>
-        </Column>
-      )}
-
-      <Column
-        title={
+      <DossierSection
+        label={
           <span className="inline-flex items-center gap-2">
             Monday actions
             {actions.length > 0 && (
@@ -408,10 +436,49 @@ function ExpandedDetail({ route, isDone, onToggleAction, doneCount, onAskFollowu
             );
           })}
         </motion.ol>
-      </Column>
+      </DossierSection>
 
+      {/* === INSIDER EDGE === (was Pro tips) */}
+      {route.pro_tips?.length > 0 && (
+        <DossierSection label="Insider edge" accent="amber">
+          <ul className="space-y-2">
+            {route.pro_tips.map((tip, i) => (
+              <motion.li
+                key={i}
+                initial={{ opacity: 0, x: -4 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.3, delay: 0.1 + i * 0.08 }}
+                className="flex items-start gap-2.5 text-[13px] text-amber-50/90 leading-relaxed"
+              >
+                <Lightbulb size={12} className="text-amber-300 mt-0.5 shrink-0" />
+                <span className="flex-1">{tip}</span>
+              </motion.li>
+            ))}
+          </ul>
+        </DossierSection>
+      )}
+
+      {/* === THIS ROUTE BREAKS IF === (merged break_reasons + who_this_breaks) */}
+      <DossierSection label="This route breaks if" accent="rose">
+        <ul className="space-y-2">
+          {route.break_reasons?.map((br, i) => (
+            <li key={i} className="flex items-start gap-2.5 text-[13px] text-rose-100/90 leading-relaxed">
+              <SeverityPill severity={br.severity} />
+              <span className="flex-1">{br.risk}</span>
+            </li>
+          ))}
+          {route.who_this_breaks && (
+            <li className="flex items-start gap-2.5 text-[12.5px] text-rose-200/70 leading-relaxed italic pt-1 border-t border-rose-400/10 mt-1">
+              <AlertTriangle size={11} className="text-rose-300 mt-0.5 shrink-0" />
+              <span className="flex-1">{route.who_this_breaks}</span>
+            </li>
+          )}
+        </ul>
+      </DossierSection>
+
+      {/* === WHERE TO APPLY === */}
       {route.job_sites?.length > 0 && (
-        <Column title="Where to apply" icon={Globe}>
+        <DossierSection label="Where to apply">
           <div className="flex flex-col gap-1.5">
             {route.job_sites.map((site, i) => (
               <motion.a
@@ -423,15 +490,15 @@ function ExpandedDetail({ route, isDone, onToggleAction, doneCount, onAskFollowu
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.3, delay: 0.08 + i * 0.06 }}
                 whileHover={{ x: 2 }}
-                className="group flex items-start justify-between gap-3 rounded-lg border border-white/[0.06] bg-white/[0.02] hover:bg-white/[0.05] hover:border-emerald-400/30 px-3 py-2.5 transition min-h-[48px]"
+                className="group flex items-start justify-between gap-3 rounded-lg border border-white/[0.08] bg-white/[0.02] hover:bg-white/[0.05] hover:border-emerald-400/40 px-3.5 py-3 transition min-h-[52px]"
               >
                 <div className="flex items-start gap-2 min-w-0">
                   <ExternalLink
-                    size={12}
+                    size={13}
                     className="text-emerald-300 mt-0.5 shrink-0 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
                   />
                   <div className="min-w-0">
-                    <div className="text-[12.5px] font-semibold text-white truncate">
+                    <div className="text-[13px] font-semibold text-white truncate">
                       {site.name}
                     </div>
                     <div className="text-[11.5px] text-slate-400 leading-snug mt-0.5">
@@ -445,35 +512,13 @@ function ExpandedDetail({ route, isDone, onToggleAction, doneCount, onAskFollowu
               </motion.a>
             ))}
           </div>
-        </Column>
+        </DossierSection>
       )}
-
-      <Column title="Roadmap" icon={Clock}>
-        <Timeline roadmap={route.roadmap ?? []} />
-      </Column>
 
       {route.nigerian_notes && (
-        <Column title="Nigerian notes" icon={MapPin}>
-          <p className="text-[12.5px] text-slate-300 leading-relaxed">
-            {route.nigerian_notes}
-          </p>
-        </Column>
-      )}
-
-      {route.communities?.length > 0 && (
-        <Column title="Communities to join" icon={Users}>
-          <div className="space-y-1.5">
-            {route.communities.map((c, i) => (
-              <div key={i} className="flex items-start gap-2 text-[12px]">
-                <span className="chip shrink-0">{c.where}</span>
-                <div>
-                  <div className="text-slate-200 font-semibold">{c.name}</div>
-                  <div className="text-slate-500 text-[11.5px]">{c.how_to_join}</div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </Column>
+        <p className="text-[12px] text-slate-500 leading-snug italic border-l-2 border-slate-700 pl-3">
+          {route.nigerian_notes}
+        </p>
       )}
 
       {onAskFollowup && (
@@ -486,7 +531,7 @@ function ExpandedDetail({ route, isDone, onToggleAction, doneCount, onAskFollowu
           whileHover={{ y: -1 }}
           whileTap={{ scale: 0.99 }}
           className="w-full inline-flex items-center justify-between gap-2 rounded-xl
-                     px-4 py-3 text-[12.5px] font-semibold
+                     px-4 py-3 text-[13px] font-semibold
                      bg-emerald-500/10 hover:bg-emerald-500/20
                      border border-emerald-400/25 hover:border-emerald-400/50
                      text-emerald-200 transition min-h-[48px] no-print"
@@ -498,41 +543,49 @@ function ExpandedDetail({ route, isDone, onToggleAction, doneCount, onAskFollowu
           <ArrowUpRight size={12} className="text-emerald-300" />
         </motion.button>
       )}
-
-      {/* PRO TIPS — lives at the bottom of the expanded detail. */}
-      {route.pro_tips?.length > 0 && (
-        <motion.div
-          initial={{ opacity: 0, y: 6 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4, delay: 0.1 }}
-          className="rounded-xl border border-amber-400/20 bg-amber-500/[0.05] p-4"
-        >
-          <div className="eyebrow text-amber-300 flex items-center gap-1.5 mb-3">
-            <Lightbulb size={10} /> Pro tips for this route
-          </div>
-          <ul className="space-y-2">
-            {route.pro_tips.map((tip, i) => (
-              <motion.li
-                key={i}
-                initial={{ opacity: 0, x: -4 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.3, delay: 0.2 + i * 0.08 }}
-                className="flex items-start gap-2.5 text-[12.5px] text-amber-50/90 leading-relaxed"
-              >
-                <span className="shrink-0 w-5 h-5 rounded-md bg-amber-500/20 text-amber-200 text-[10px] font-bold inline-flex items-center justify-center mt-0.5">
-                  {i + 1}
-                </span>
-                <span className="flex-1">{tip}</span>
-              </motion.li>
-            ))}
-          </ul>
-        </motion.div>
-      )}
     </div>
   );
 }
 
 // ----- Supporting components --------------------------------------------
+
+// Dossier-style section wrapper. Uppercase eyebrow label + divider line +
+// content. Gives each section a strong visual break so the expanded route
+// reads as a structured report rather than a wall of text.
+function DossierSection({ label, accent = "default", children }) {
+  const accentMap = {
+    default: "text-slate-400 border-white/[0.08]",
+    amber: "text-amber-300 border-amber-400/20",
+    rose: "text-rose-300 border-rose-400/20",
+    emerald: "text-emerald-300 border-emerald-400/20",
+  };
+  const color = accentMap[accent] ?? accentMap.default;
+  return (
+    <section className="space-y-3">
+      <div
+        className={`flex items-center gap-2 pb-2 border-b text-[10.5px] font-bold uppercase tracking-[0.16em] ${color}`}
+      >
+        {label}
+      </div>
+      {children}
+    </section>
+  );
+}
+
+// Inline stat card — used in the Numbers row.
+function Stat({ label, value, accent = "default" }) {
+  const valColor = accent === "emerald" ? "text-emerald-300" : "text-white";
+  return (
+    <div className="rounded-xl border border-white/[0.08] bg-white/[0.02] px-3.5 py-2.5">
+      <div className="text-[10px] uppercase tracking-wider text-slate-500 font-semibold">
+        {label}
+      </div>
+      <div className={`mt-1 display text-[18px] font-bold tabular tracking-extra-tight ${valColor}`}>
+        {value}
+      </div>
+    </div>
+  );
+}
 
 // Gold "Best fit" pill — lives inline with the category chip row on the top
 // card so it doesn't collide with the confidence ring on the right.
@@ -710,7 +763,7 @@ function ConfidenceRing({ score }) {
       </svg>
       <div className="absolute flex flex-col items-center leading-none">
         <AnimatedPercent value={pct} />
-        <span className="text-[8px] uppercase tracking-wider text-slate-500 font-semibold mt-0.5">
+        <span className="text-[8.5px] uppercase tracking-[0.14em] text-slate-500 font-bold mt-0.5">
           fit
         </span>
       </div>
@@ -735,9 +788,9 @@ function AnimatedPercent({ value }) {
     return () => cancelAnimationFrame(raf);
   }, [value]);
   return (
-    <span className="text-[15px] font-bold text-white tabular">
+    <span className="text-[17px] font-extrabold text-white tabular leading-none">
       {display}
-      <span className="text-brand-300 text-[9px] font-semibold">%</span>
+      <span className="text-brand-300 text-[10px] font-bold">%</span>
     </span>
   );
 }
