@@ -1,0 +1,20 @@
+{
+  "name": "route-atlas",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "A path atlas for Nigerian grads stuck in survival work. Tell it your situation, get ranked routes out — with Monday actions, real costs, and honest pay.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.90.0",
+    "cors": "^2.8.5",
+    "dotenv": "^17.4.2",
+    "express": "^4.21.0",
+    "express-validator": "^7.3.2",
+    "helmet": "^8.1.0"
+  }
+}

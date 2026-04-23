@@ -1,0 +1,197 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html, body, #root {
+    min-height: 100%;
+  }
+  body {
+    @apply bg-ink-900 text-slate-200 font-sans antialiased;
+    background:
+      radial-gradient(1200px 600px at 10% -10%, rgba(16, 185, 129, 0.12), transparent 60%),
+      radial-gradient(900px 500px at 110% 10%, rgba(20, 184, 166, 0.10), transparent 60%),
+      #0a0b0f;
+  }
+}
+
+@layer components {
+  .card {
+    @apply rounded-2xl border border-white/[0.08] bg-white/[0.02];
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.05),
+      0 30px 60px -24px rgba(0, 0, 0, 0.6);
+  }
+  .display {
+    font-family: "Space Grotesk", Inter, sans-serif;
+    font-weight: 700;
+  }
+  .eyebrow {
+    @apply text-[10px] uppercase tracking-[0.16em] font-semibold text-slate-400;
+  }
+  .field-label {
+    @apply block text-[11px] font-semibold uppercase tracking-wider text-slate-400 mb-1.5;
+  }
+  .field-input {
+    @apply w-full rounded-lg bg-white/[0.03] border border-white/10 text-slate-100
+           px-3.5 py-2.5 text-[13.5px] outline-none
+           focus:border-brand-400/50 focus:bg-white/[0.05] focus:ring-2 focus:ring-brand-500/20
+           transition placeholder:text-slate-600;
+  }
+  .field-select {
+    @apply field-input appearance-none pr-9;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2394a3b8' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+  }
+  .field-error {
+    @apply text-[11px] text-rose-300 mt-1;
+  }
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl
+           bg-brand-600 hover:bg-brand-500 text-white font-semibold text-[13.5px]
+           px-5 py-3 transition
+           disabled:opacity-50 disabled:cursor-not-allowed;
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.2),
+      0 10px 28px -10px rgba(16, 185, 129, 0.55);
+  }
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg
+           bg-white/[0.04] hover:bg-white/[0.08] border border-white/10
+           text-slate-200 font-semibold text-[12.5px]
+           px-3.5 py-2 transition;
+  }
+  .chip {
+    @apply inline-flex items-center gap-1 rounded-full border border-white/[0.1]
+           bg-white/[0.03] px-2.5 py-1 text-[11px] font-semibold text-slate-300;
+  }
+  .tabular {
+    font-variant-numeric: tabular-nums;
+  }
+  .tracking-extra-tight {
+    letter-spacing: -0.035em;
+  }
+}
+
+.grid-bg {
+  background-image:
+    linear-gradient(to right, rgba(255,255,255,0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,0.04) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+.mask-fade-b {
+  mask-image: linear-gradient(to bottom, black 30%, transparent 100%);
+}
+
+/* Slim, dark-theme scrollbars that don't scream for attention. */
+.pretty-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.12) transparent;
+}
+.pretty-scroll::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+.pretty-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+.pretty-scroll::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 6px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+.pretty-scroll::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.22);
+  background-clip: content-box;
+}
+
+/* Flip the scrollbar to the left edge without reversing content.
+   Trick: the scroll container is rtl, its direct child is ltr. */
+.scroll-left {
+  direction: rtl;
+}
+.scroll-left > * {
+  direction: ltr;
+}
+
+/* Subtle shimmer used by loading skeletons. */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* Ambient pulse for backgrounds. */
+@keyframes ambient-pulse {
+  0%, 100% { opacity: 0.55; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.04); }
+}
+.ambient-pulse {
+  animation: ambient-pulse 8s ease-in-out infinite;
+}
+
+/* <option> elements in native selects inherit almost NO styling from their
+   parent — we have to target them directly or they render in OS-default
+   white on the dark theme, which is what makes them invisible. */
+select option,
+select optgroup {
+  background-color: #10121a;
+  color: #e2e8f0;
+}
+select option:checked,
+select option:hover {
+  background-color: #1e2231;
+  color: #ffffff;
+}
+
+/* Input focus glow — layered ring + soft halo. Scoped to field inputs/selects
+   only so we don't glow random interactive elements. */
+.field-input:focus,
+.field-select:focus,
+textarea.field-input:focus {
+  outline: none;
+  border-color: rgba(52, 211, 153, 0.55);
+  box-shadow:
+    0 0 0 4px rgba(16, 185, 129, 0.12),
+    0 0 24px -6px rgba(16, 185, 129, 0.45);
+  transition: box-shadow 180ms ease, border-color 180ms ease;
+}
+
+/* Card hover glow — animated border-light that fades in on hover. Applied to
+   any element with .card-hover that also has the .card class. */
+.card-hover {
+  transition: box-shadow 260ms ease, transform 260ms ease, border-color 260ms ease;
+}
+.card-hover:hover {
+  border-color: rgba(52, 211, 153, 0.35);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.07),
+    0 30px 60px -24px rgba(0, 0, 0, 0.7),
+    0 0 0 1px rgba(52, 211, 153, 0.25),
+    0 0 32px -6px rgba(20, 184, 166, 0.35);
+}
+
+/* One-time bloom flash when the top route card lands — white/indigo halo
+   that scales outward and fades. We trigger it on mount of the best-fit
+   card only, so only one card ever blooms per atlas. */
+@keyframes bloom {
+  0%   { opacity: 0;   transform: scale(0.9); }
+  30%  { opacity: 0.9; transform: scale(1.05); }
+  100% { opacity: 0;   transform: scale(1.25); }
+}
+.bloom {
+  animation: bloom 1200ms ease-out forwards;
+}
+
+/* Gradient shift on the primary button hover — animates background position
+   so the gradient appears to flow. Paired with an underlying background-size
+   of 200% so there's actually room to shift. */
+.gradient-shift {
+  background-size: 220% 100%;
+  background-position: 0% 50%;
+  transition: background-position 600ms ease;
+}
+.gradient-shift:hover {
+  background-position: 100% 50%;
+}
