@@ -12,6 +12,7 @@ import {
   Target,
   ArrowUpRight,
   CheckCircle2,
+  Circle,
   Lightbulb,
   Flame,
   Snowflake,
@@ -82,10 +83,14 @@ function humanMonths(n) {
   return `${(n / 12).toFixed(1)} years`;
 }
 
-export function RouteCard({ route, index, isTop }) {
+export function RouteCard({ route, index, isTop, progress = {}, onToggleAction }) {
   const [expanded, setExpanded] = useState(isTop);
   const cat = CATEGORY_STYLES[route.category] ?? CATEGORY_STYLES["Hybrid"];
   const demand = DEMAND_STYLES[route.demand] ?? DEMAND_STYLES["Medium"];
+
+  const actions = route.monday_actions ?? [];
+  const isDone = (i) => progress[`${route.id}::${i}`] === true;
+  const doneCount = actions.reduce((n, _, i) => n + (isDone(i) ? 1 : 0), 0);
 
   return (
     <motion.article
@@ -196,7 +201,12 @@ export function RouteCard({ route, index, isTop }) {
             transition={{ duration: 0.35, ease: [0.2, 0.7, 0.2, 1] }}
             className="overflow-hidden"
           >
-            <ExpandedDetail route={route} />
+            <ExpandedDetail
+              route={route}
+              isDone={isDone}
+              onToggleAction={onToggleAction}
+              doneCount={doneCount}
+            />
           </motion.div>
         )}
       </AnimatePresence>
@@ -205,7 +215,8 @@ export function RouteCard({ route, index, isTop }) {
   );
 }
 
-function ExpandedDetail({ route }) {
+function ExpandedDetail({ route, isDone, onToggleAction, doneCount }) {
+  const actions = route.monday_actions ?? [];
   return (
     <div className="pt-4 space-y-4">
       {/* FUTURE SIMULATION callout — the "if you follow this for 2 years" pane */}
@@ -314,35 +325,73 @@ function ExpandedDetail({ route }) {
         </Column>
       )}
 
-      <Column title="Monday actions" icon={ArrowUpRight}>
+      <Column
+        title={
+          <span className="inline-flex items-center gap-2">
+            Monday actions
+            {actions.length > 0 && (
+              <span
+                className={`text-[10px] font-bold tabular px-1.5 py-0.5 rounded ${
+                  doneCount > 0
+                    ? "bg-emerald-500/20 text-emerald-300 border border-emerald-400/30"
+                    : "bg-white/[0.04] text-slate-400 border border-white/10"
+                }`}
+              >
+                {doneCount}/{actions.length}
+              </span>
+            )}
+          </span>
+        }
+        icon={ArrowUpRight}
+      >
         <motion.ol
           className="space-y-1.5"
           initial="hidden"
           animate="visible"
           variants={{ visible: { transition: { staggerChildren: 0.07, delayChildren: 0.1 } } }}
         >
-          {route.monday_actions?.map((m, i) => (
-            <motion.li
-              key={i}
-              variants={{
-                hidden: { opacity: 0, x: -6 },
-                visible: { opacity: 1, x: 0, transition: { duration: 0.3, ease: [0.2, 0.7, 0.2, 1] } },
-              }}
-              className="flex items-start gap-2.5 text-[12.5px] text-slate-200 leading-relaxed"
-            >
-              <motion.span
-                whileHover={{ scale: 1.1 }}
-                transition={{ type: "spring", stiffness: 380, damping: 18 }}
-                className="shrink-0 w-5 h-5 rounded-md bg-brand-500/20 text-brand-200 text-[10px] font-bold inline-flex items-center justify-center mt-0.5"
+          {actions.map((m, i) => {
+            const done = isDone?.(i) ?? false;
+            return (
+              <motion.li
+                key={i}
+                variants={{
+                  hidden: { opacity: 0, x: -6 },
+                  visible: { opacity: 1, x: 0, transition: { duration: 0.3, ease: [0.2, 0.7, 0.2, 1] } },
+                }}
+                className="flex items-start gap-2.5 text-[12.5px] text-slate-200 leading-relaxed"
               >
-                {i + 1}
-              </motion.span>
-              <span className="flex-1">
-                {m.step}
-                <span className="text-slate-500 text-[11px]"> · within {m.deadline_days}d</span>
-              </span>
-            </motion.li>
-          ))}
+                <motion.button
+                  type="button"
+                  onClick={() => onToggleAction?.(route.id, i)}
+                  aria-pressed={done}
+                  aria-label={done ? "Mark action undone" : "Mark action done"}
+                  whileTap={{ scale: 0.9 }}
+                  whileHover={{ scale: 1.08 }}
+                  transition={{ type: "spring", stiffness: 420, damping: 18 }}
+                  className={`shrink-0 w-5 h-5 rounded-md inline-flex items-center justify-center mt-0.5 transition min-w-[20px] ${
+                    done
+                      ? "bg-emerald-500/25 text-emerald-300 border border-emerald-400/40"
+                      : "bg-white/[0.04] text-slate-400 border border-white/15 hover:border-emerald-400/40 hover:text-emerald-300"
+                  }`}
+                >
+                  {done ? (
+                    <CheckCircle2 size={12} strokeWidth={2.5} />
+                  ) : (
+                    <span className="text-[10px] font-bold tabular">{i + 1}</span>
+                  )}
+                </motion.button>
+                <span
+                  className={`flex-1 transition ${
+                    done ? "line-through text-slate-500" : ""
+                  }`}
+                >
+                  {m.step}
+                  <span className="text-slate-500 text-[11px]"> · within {m.deadline_days}d</span>
+                </span>
+              </motion.li>
+            );
+          })}
         </motion.ol>
       </Column>
 

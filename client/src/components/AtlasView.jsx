@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   AlertCircle,
@@ -8,10 +8,17 @@ import {
   XCircle,
   LayoutGrid,
   Columns3,
+  CheckCircle2,
 } from "lucide-react";
 import { RouteCard } from "./RouteCard.jsx";
 import { CompareView } from "./CompareView.jsx";
 import { Logo } from "./Logo.jsx";
+import {
+  atlasIdFromIntake,
+  loadAtlasProgress,
+  setActionDone,
+  countAtlasProgress,
+} from "../lib/progress.js";
 
 export function AtlasView({
   loading,
@@ -42,6 +49,35 @@ function Atlas({ atlas }) {
   const topFit = routes[0]?.fit_score;
   const [view, setView] = useState("cards"); // "cards" | "compare"
 
+  // Atlas-level progress tracking. We derive a stable atlasId from the
+  // intake so progress persists across reloads for the same situation,
+  // and resets naturally when the user edits their intake.
+  const atlasId = useMemo(() => atlasIdFromIntake(atlas.user), [atlas.user]);
+  const [progress, setProgress] = useState(() =>
+    loadAtlasProgress(atlasId, routes)
+  );
+
+  // Rehydrate whenever the atlas changes (user regenerates, or another
+  // preset is clicked).
+  useEffect(() => {
+    setProgress(loadAtlasProgress(atlasId, routes));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [atlasId]);
+
+  const toggleAction = (routeId, actionIdx) => {
+    const key = `${routeId}::${actionIdx}`;
+    setProgress((prev) => {
+      const next = { ...prev, [key]: !prev[key] };
+      setActionDone(atlasId, routeId, actionIdx, next[key]);
+      return next;
+    });
+  };
+
+  const { done: totalDone, total: totalActions } = countAtlasProgress(
+    progress,
+    routes
+  );
+
   return (
     <motion.section
       initial={{ opacity: 0 }}
@@ -54,6 +90,8 @@ function Atlas({ atlas }) {
         snapshot={atlas.user_snapshot}
         insight={atlas.headline_insight}
         topFit={topFit}
+        totalDone={totalDone}
+        totalActions={totalActions}
       />
 
       <motion.header
@@ -84,7 +122,14 @@ function Atlas({ atlas }) {
             className="grid grid-cols-1 xl:grid-cols-2 gap-4"
           >
             {routes.map((route, i) => (
-              <RouteCard key={route.id ?? i} route={route} index={i} isTop={i === 0} />
+              <RouteCard
+                key={route.id ?? i}
+                route={route}
+                index={i}
+                isTop={i === 0}
+                progress={progress}
+                onToggleAction={toggleAction}
+              />
             ))}
           </motion.div>
         ) : (
@@ -140,7 +185,8 @@ function ViewSwitcher({ view, onChange }) {
   );
 }
 
-function SnapshotCard({ snapshot, insight, topFit }) {
+function SnapshotCard({ snapshot, insight, topFit, totalDone = 0, totalActions = 0 }) {
+  const pct = totalActions > 0 ? Math.round((totalDone / totalActions) * 100) : 0;
   return (
     <motion.div
       initial={{ opacity: 0, y: 12 }}
@@ -206,6 +252,42 @@ function SnapshotCard({ snapshot, insight, topFit }) {
           </motion.div>
         )}
       </div>
+
+      {/* Progress across all routes. Shows only when the user has at least
+          one action checked, otherwise the bar feels like clutter. */}
+      {totalActions > 0 && totalDone > 0 && (
+        <motion.div
+          initial={{ opacity: 0, y: 6 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4, delay: 0.4 }}
+          className="relative mt-4 pt-4 border-t border-white/[0.06]"
+        >
+          <div className="flex items-center justify-between gap-3 mb-2">
+            <div className="flex items-center gap-1.5 text-[11px] font-semibold text-emerald-300">
+              <CheckCircle2 size={11} />
+              <span className="uppercase tracking-wider">Your progress</span>
+            </div>
+            <div className="text-[11px] text-slate-400 tabular">
+              <span className="text-emerald-300 font-semibold">{totalDone}</span>
+              <span className="text-slate-500"> / {totalActions} Monday actions</span>
+              <span className="text-slate-600 ml-2">· {pct}%</span>
+            </div>
+          </div>
+          <div className="h-1.5 w-full rounded-full bg-white/[0.06] overflow-hidden">
+            <motion.div
+              className="h-full rounded-full"
+              initial={{ width: 0 }}
+              animate={{ width: `${pct}%` }}
+              transition={{ duration: 0.6, ease: [0.2, 0.7, 0.2, 1] }}
+              style={{
+                background:
+                  "linear-gradient(90deg, #10b981 0%, #2dd4bf 50%, #10b981 100%)",
+                boxShadow: "0 0 14px -2px rgba(16,185,129,0.6)",
+              }}
+            />
+          </div>
+        </motion.div>
+      )}
     </motion.div>
   );
 }
