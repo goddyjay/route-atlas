@@ -1,0 +1,22 @@
+# Render blueprint — one-click deploy for the backend.
+# After connecting the GitHub repo on Render, it detects this file, spins up
+# a free web service, and prompts for ANTHROPIC_API_KEY.
+services:
+  - type: web
+    name: route-atlas-api
+    runtime: node
+    plan: free
+    region: oregon
+    branch: main
+    # Build from the repo root — backend package.json sits at the root.
+    rootDir: .
+    buildCommand: npm install
+    startCommand: node server.js
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: "10000"
+      - key: ANTHROPIC_API_KEY
+        sync: false   # prompts the user to set this secret in the Render dashboard
