@@ -137,7 +137,7 @@ export default function AtlasPage() {
                    border-b lg:border-b-0 lg:border-r border-white/5
                    lg:overflow-y-auto lg:scroll-left pretty-scroll"
       >
-        <div className="px-4 md:px-6 py-5 md:py-6 space-y-5">
+        <div className="px-3 sm:px-4 md:px-6 py-4 sm:py-5 md:py-6 space-y-4 sm:space-y-5">
           <PresetBar onRun={runPreset} />
           <AtlasForm onSubmit={handleSubmit} loading={loading} seed={seed} />
         </div>
@@ -150,7 +150,7 @@ export default function AtlasPage() {
         aria-label="Route atlas"
         className="w-full lg:flex-1 lg:overflow-y-auto pretty-scroll"
       >
-        <div className="min-h-full flex flex-col px-4 md:px-6 py-5 md:py-6">
+        <div className="min-h-full flex flex-col px-3 sm:px-4 md:px-6 py-4 sm:py-5 md:py-6">
           <div
             className={
               rightHasContent

@@ -239,21 +239,24 @@ export function Logo({ size = 44, className = "" }) {
 // Full lockup pairing — logo mark + wordmark + tagline in a compact cluster.
 // Used in the navbar. The wordmark stays as text (not baked into the image)
 // so it's crisp at any size and selectable.
+//
+// On narrow phones (<420px) the tagline hides to keep the navbar from
+// wrapping onto a second line alongside the CTA button.
 export function LogoMark({ size = 40, className = "" }) {
   return (
     <motion.div
       initial={{ opacity: 0, x: -6 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.45, ease: [0.2, 0.7, 0.2, 1] }}
-      className={`flex items-center gap-2.5 ${className}`}
+      className={`flex items-center gap-2 sm:gap-2.5 ${className}`}
     >
       <Logo
         size={size}
-        className="shrink-0 drop-shadow-[0_6px_14px_rgba(16,185,129,0.45)]"
+        className="shrink-0 drop-shadow-[0_6px_14px_rgba(16,185,129,0.45)] w-8 h-8 sm:w-10 sm:h-10"
       />
       <div className="leading-tight">
         <motion.div
-          className="display text-[15px] text-white tracking-extra-tight"
+          className="display text-[14px] sm:text-[15px] text-white tracking-extra-tight"
           initial={{ opacity: 0, y: 4 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4, delay: 0.35 }}
@@ -261,7 +264,7 @@ export function LogoMark({ size = 40, className = "" }) {
           Route Atlas
         </motion.div>
         <motion.div
-          className="text-[10px] text-slate-500 -mt-0.5"
+          className="hidden xs:block text-[10px] text-slate-500 -mt-0.5"
           initial={{ opacity: 0, y: 4 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4, delay: 0.5 }}

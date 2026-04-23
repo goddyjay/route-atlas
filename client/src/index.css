@@ -195,3 +195,36 @@ textarea.field-input:focus {
 .gradient-shift:hover {
   background-position: 100% 50%;
 }
+
+/* Respect users (often on low-end Android) who prefer reduced motion.
+   Kills heavy infinite animations but keeps short entrance fades so the
+   UI still feels responsive. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .ambient-pulse,
+  .bloom {
+    animation: none !important;
+  }
+}
+
+/* Prevent iOS Safari from zooming in when tapping inputs — happens when
+   the input font-size is below 16px. We use smaller text in labels, so
+   make sure the actual input text is 16px on touch devices. */
+@media (hover: none) and (pointer: coarse) {
+  .field-input,
+  .field-select,
+  input[type="text"],
+  input[type="number"],
+  input[type="email"],
+  textarea,
+  select {
+    font-size: 16px !important;
+  }
+}

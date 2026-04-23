@@ -51,14 +51,14 @@ function Hero() {
         className="pointer-events-none absolute -bottom-32 left-1/4 w-[600px] h-[400px] rounded-full bg-accent-500/10 blur-[120px]"
       />
 
-      <div className="relative max-w-[1200px] mx-auto px-6 py-16 md:py-24 text-center">
+      <div className="relative max-w-[1200px] mx-auto px-4 sm:px-6 py-12 sm:py-16 md:py-24 text-center">
         <motion.div
           initial={{ opacity: 0, y: -8 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, ease: [0.2, 0.7, 0.2, 1] }}
-          className="flex justify-center mb-6"
+          className="flex justify-center mb-5 sm:mb-6"
         >
-          <Logo size={80} className="drop-shadow-[0_12px_28px_rgba(16,185,129,0.45)]" />
+          <Logo size={64} className="drop-shadow-[0_12px_28px_rgba(16,185,129,0.45)] sm:w-20 sm:h-20" />
         </motion.div>
 
         <motion.div
@@ -78,10 +78,10 @@ function Hero() {
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.55, delay: 0.2 }}
-          className="display text-[40px] md:text-[60px] leading-[1.02] tracking-extra-tight text-white max-w-[900px] mx-auto"
+          className="display text-[30px] xs:text-[34px] sm:text-[44px] md:text-[60px] leading-[1.05] sm:leading-[1.02] tracking-extra-tight text-white max-w-[900px] mx-auto px-2"
         >
           Nigerian graduates don't need career advice.
-          <br />
+          <br className="hidden xs:inline" />{" "}
           <span className="bg-gradient-to-r from-emerald-300 via-teal-300 to-emerald-400 bg-clip-text text-transparent">
             They need a map.
           </span>
@@ -91,7 +91,7 @@ function Hero() {
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.3 }}
-          className="text-slate-300 text-[15.5px] md:text-[17px] leading-relaxed max-w-[720px] mx-auto mt-5"
+          className="text-slate-300 text-[14px] sm:text-[15.5px] md:text-[17px] leading-relaxed max-w-[720px] mx-auto mt-4 sm:mt-5 px-2"
         >
           Route Atlas maps 4 real paths forward from your exact situation — grounded in NYSC
           mechanics, JAPA economics, corridor pharma, Igba Boi, bootcamp reality, and the 2026
@@ -102,11 +102,11 @@ function Hero() {
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.4 }}
-          className="mt-8 flex flex-wrap items-center justify-center gap-3"
+          className="mt-6 sm:mt-8 flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 max-w-[420px] sm:max-w-none mx-auto"
         >
           <Link
             to="/app"
-            className="group inline-flex items-center gap-2 rounded-xl px-5 py-3 text-white font-semibold text-[14px] gradient-shift border border-white/15"
+            className="group inline-flex items-center justify-center gap-2 rounded-xl px-5 py-3 text-white font-semibold text-[14px] gradient-shift border border-white/15 min-h-[48px]"
             style={{
               background:
                 "linear-gradient(120deg, #059669 0%, #10b981 30%, #2dd4bf 50%, #14b8a6 70%, #059669 100%)",
@@ -124,7 +124,7 @@ function Hero() {
             href="https://github.com/goddyjay/route-atlas"
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center gap-2 rounded-xl px-4 py-3 text-[13.5px] font-semibold bg-white/[0.04] hover:bg-white/[0.08] border border-white/10 hover:border-white/20 text-slate-200 transition"
+            className="inline-flex items-center justify-center gap-2 rounded-xl px-4 py-3 text-[13.5px] font-semibold bg-white/[0.04] hover:bg-white/[0.08] border border-white/10 hover:border-white/20 text-slate-200 transition min-h-[48px]"
           >
             <Github size={14} />
             View on GitHub
@@ -148,8 +148,8 @@ function Hero() {
 
 function ProblemStory() {
   return (
-    <section className="relative py-16 md:py-24 border-t border-white/[0.04]">
-      <div className="max-w-[860px] mx-auto px-6">
+    <section className="relative py-12 sm:py-16 md:py-24 border-t border-white/[0.04]">
+      <div className="max-w-[860px] mx-auto px-4 sm:px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -247,8 +247,8 @@ const TILE_COLORS = {
 
 function WhatItKnows() {
   return (
-    <section className="relative py-16 md:py-24 border-t border-white/[0.04]">
-      <div className="max-w-[1200px] mx-auto px-6">
+    <section className="relative py-12 sm:py-16 md:py-24 border-t border-white/[0.04]">
+      <div className="max-w-[1200px] mx-auto px-4 sm:px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -311,8 +311,8 @@ function WhatItKnows() {
 
 function SampleRoute() {
   return (
-    <section className="relative py-16 md:py-24 border-t border-white/[0.04]">
-      <div className="max-w-[1100px] mx-auto px-6">
+    <section className="relative py-12 sm:py-16 md:py-24 border-t border-white/[0.04]">
+      <div className="max-w-[1100px] mx-auto px-4 sm:px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -439,14 +439,14 @@ function SampleRoute() {
 
 function FinalCta() {
   return (
-    <section className="relative py-16 md:py-24 border-t border-white/[0.04]">
+    <section className="relative py-12 sm:py-16 md:py-24 border-t border-white/[0.04]">
       <div className="max-w-[860px] mx-auto px-6 text-center">
         <motion.h2
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="display text-[28px] md:text-[36px] leading-tight tracking-extra-tight text-white"
+          className="display text-[24px] sm:text-[28px] md:text-[36px] leading-tight tracking-extra-tight text-white"
         >
           Where do you stand?
         </motion.h2>

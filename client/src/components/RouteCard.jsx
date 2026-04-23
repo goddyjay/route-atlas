@@ -80,7 +80,7 @@ export function RouteCard({ route, index, isTop }) {
       animate={{ opacity: 1, y: 0, scale: 1 }}
       transition={{ duration: 0.5, delay: index * 0.08, ease: [0.2, 0.7, 0.2, 1] }}
       whileHover={{ y: -3 }}
-      className="card card-hover p-5 relative overflow-visible"
+      className="card card-hover p-4 sm:p-5 relative overflow-visible"
     >
       {/* Top card "bloom" — one-time radial halo that announces the best fit
          to the eye. Lives inside the card, behind all content. */}
@@ -97,9 +97,9 @@ export function RouteCard({ route, index, isTop }) {
 
       {/* Inner wrapper keeps content above the bloom layer. */}
       <div className="relative z-10">
-      <header className="flex items-start gap-4">
+      <header className="flex items-start gap-3 sm:gap-4">
         <div className="flex-1 min-w-0">
-          <div className="flex items-center gap-2 flex-wrap">
+          <div className="flex items-center gap-1.5 sm:gap-2 flex-wrap">
             {isTop && <BestFitBadge />}
             <span
               className={`inline-flex items-center rounded-full px-2 py-0.5 text-[10px] font-semibold border ${cat.bg} ${cat.text} ${cat.border}`}
@@ -108,10 +108,10 @@ export function RouteCard({ route, index, isTop }) {
             </span>
             <DemandChip demand={demand} />
           </div>
-          <h3 className="display text-[18px] md:text-[20px] leading-[1.15] tracking-extra-tight text-white mt-2.5">
+          <h3 className="display text-[17px] sm:text-[18px] md:text-[20px] leading-[1.15] tracking-extra-tight text-white mt-2 sm:mt-2.5">
             {route.title}
           </h3>
-          <p className="text-[12.5px] text-slate-400 mt-1.5 leading-snug">
+          <p className="text-[12px] sm:text-[12.5px] text-slate-400 mt-1.5 leading-snug">
             {route.one_liner}
           </p>
         </div>
@@ -168,7 +168,7 @@ export function RouteCard({ route, index, isTop }) {
       <button
         type="button"
         onClick={() => setExpanded((v) => !v)}
-        className="mt-4 w-full inline-flex items-center justify-between gap-2 rounded-lg px-3.5 py-2.5 text-[12.5px] font-semibold bg-white/[0.04] hover:bg-white/[0.08] border border-white/[0.08] text-white transition"
+        className="mt-4 w-full inline-flex items-center justify-between gap-2 rounded-lg px-3.5 py-3 sm:py-2.5 text-[12.5px] font-semibold bg-white/[0.04] hover:bg-white/[0.08] border border-white/[0.08] text-white transition min-h-[44px]"
       >
         <span>{expanded ? "Collapse the route" : "See the full route"}</span>
         {expanded ? <ChevronUp size={14} /> : <ChevronDown size={14} />}

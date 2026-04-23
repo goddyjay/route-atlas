@@ -190,7 +190,7 @@ export function AtlasForm({ onSubmit, loading, seed }) {
           </Field>
           <Field label="Years since NYSC">
             <input
-              type="number"
+              type="number" inputMode="numeric"
               className="field-input"
               placeholder="0"
               disabled={nyscStatus !== "completed"}
@@ -220,7 +220,7 @@ export function AtlasForm({ onSubmit, loading, seed }) {
         <Grid cols={2}>
           <Field label="Savings (₦)" error={errors.savings_ngn?.message}>
             <input
-              type="number"
+              type="number" inputMode="numeric"
               className="field-input"
               placeholder="0"
               {...register("savings_ngn", { valueAsNumber: true })}
@@ -228,7 +228,7 @@ export function AtlasForm({ onSubmit, loading, seed }) {
           </Field>
           <Field label="Current monthly income (₦)" error={errors.current_monthly_income_ngn?.message}>
             <input
-              type="number"
+              type="number" inputMode="numeric"
               className="field-input"
               placeholder="0"
               {...register("current_monthly_income_ngn", { valueAsNumber: true })}
@@ -247,7 +247,7 @@ export function AtlasForm({ onSubmit, loading, seed }) {
         <Grid cols={3} className="mt-3">
           <Field label="Dependents" error={errors.dependents?.message}>
             <input
-              type="number"
+              type="number" inputMode="numeric"
               className="field-input"
               placeholder="0"
               {...register("dependents", { valueAsNumber: true })}
@@ -255,7 +255,7 @@ export function AtlasForm({ onSubmit, loading, seed }) {
           </Field>
           <Field label="Monthly family obligation (₦)" error={errors.monthly_family_obligation_ngn?.message}>
             <input
-              type="number"
+              type="number" inputMode="numeric"
               className="field-input"
               placeholder="0"
               {...register("monthly_family_obligation_ngn", { valueAsNumber: true })}
@@ -282,7 +282,7 @@ export function AtlasForm({ onSubmit, loading, seed }) {
           </Field>
           <Field label="Children under 18" error={errors.children_count?.message}>
             <input
-              type="number"
+              type="number" inputMode="numeric"
               className="field-input"
               placeholder="0"
               {...register("children_count", { valueAsNumber: true })}
@@ -307,7 +307,7 @@ export function AtlasForm({ onSubmit, loading, seed }) {
               {spouseEarns && (
                 <Field label="Partner's monthly income (₦)">
                   <input
-                    type="number"
+                    type="number" inputMode="numeric"
                     className="field-input"
                     placeholder="0"
                     {...register("spouse_monthly_income_ngn", { valueAsNumber: true })}
