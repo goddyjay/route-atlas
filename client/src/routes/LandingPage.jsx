@@ -14,6 +14,15 @@ import {
   Crown,
   CheckCircle2,
   Flame,
+  ClipboardList,
+  Brain,
+  Route,
+  Target,
+  Wallet,
+  Clock,
+  TrendingUp,
+  Lightbulb,
+  AlertTriangle,
 } from "lucide-react";
 import { Logo } from "../components/Logo.jsx";
 
@@ -28,12 +37,110 @@ export default function LandingPage() {
   return (
     <div className="relative">
       <Hero />
+      <HowItWorks />
       <ProblemStory />
       <WhatItKnows />
       <SampleRoute />
       <FinalCta />
       <Footer />
     </div>
+  );
+}
+
+// Plain-language "how it works" triptych. Goes directly under the hero so
+// the very first thing a confused visitor reads after the headline is the
+// mechanism: you fill a form, the AI reasons through Nigerian context, you
+// get 4 labeled routes. No jargon until the moat section below.
+function HowItWorks() {
+  const steps = [
+    {
+      Icon: ClipboardList,
+      label: "You tell us your situation",
+      body: "A short form: degree, state, savings, NYSC status, family, JAPA appetite. 23 fields, 2 minutes to fill.",
+      accent: "emerald",
+    },
+    {
+      Icon: Brain,
+      label: "Claude Opus 4.7 reasons it through",
+      body: "Using 7,000 tokens of encoded Nigerian context — NYSC mechanics, corridor pharma, JAPA visa math, real salary bands, Igba Boi, bootcamp reality.",
+      accent: "teal",
+    },
+    {
+      Icon: Route,
+      label: "You get 4 ranked routes forward",
+      body: "Each one with a fit score, real ₦ pay, first-week actions, a 2-year projection, pro tips, and why it might break. Ranked best-fit first.",
+      accent: "amber",
+    },
+  ];
+  const accentMap = {
+    emerald: "border-emerald-400/25 bg-emerald-500/[0.06] text-emerald-300",
+    teal: "border-teal-400/25 bg-teal-500/[0.06] text-teal-300",
+    amber: "border-amber-400/25 bg-amber-500/[0.06] text-amber-300",
+  };
+  return (
+    <section className="relative py-10 sm:py-14 md:py-16 border-t border-white/[0.04]">
+      <div className="max-w-[1100px] mx-auto px-4 sm:px-6">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.5 }}
+          className="text-center mb-8 sm:mb-10"
+        >
+          <div className="eyebrow text-emerald-300/80">How it works</div>
+          <h2 className="display text-[22px] sm:text-[26px] md:text-[32px] leading-tight tracking-extra-tight text-white mt-2">
+            A form in. A map out.
+          </h2>
+        </motion.div>
+
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-50px" }}
+          variants={{ visible: { transition: { staggerChildren: 0.12 } } }}
+          className="grid grid-cols-1 md:grid-cols-3 gap-4 relative"
+        >
+          {steps.map((step, i) => {
+            const { Icon } = step;
+            return (
+              <motion.div
+                key={step.label}
+                variants={{
+                  hidden: { opacity: 0, y: 12 },
+                  visible: {
+                    opacity: 1,
+                    y: 0,
+                    transition: { duration: 0.45, ease: [0.2, 0.7, 0.2, 1] },
+                  },
+                }}
+                className="card p-5 relative"
+              >
+                <div className="flex items-start gap-3">
+                  <div
+                    className={`inline-flex items-center justify-center w-10 h-10 rounded-xl border shrink-0 ${accentMap[step.accent]}`}
+                  >
+                    <Icon size={18} />
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <div className="flex items-center gap-2">
+                      <span className="text-[10px] font-bold tracking-wider text-slate-500 tabular">
+                        STEP {i + 1}
+                      </span>
+                    </div>
+                    <h3 className="text-white font-semibold text-[14.5px] mt-1 leading-tight">
+                      {step.label}
+                    </h3>
+                  </div>
+                </div>
+                <p className="text-slate-400 text-[12.5px] mt-3 leading-relaxed">
+                  {step.body}
+                </p>
+              </motion.div>
+            );
+          })}
+        </motion.div>
+      </div>
+    </section>
   );
 }
 
@@ -93,9 +200,11 @@ function Hero() {
           transition={{ duration: 0.5, delay: 0.3 }}
           className="text-slate-300 text-[14px] sm:text-[15.5px] md:text-[17px] leading-relaxed max-w-[720px] mx-auto mt-4 sm:mt-5 px-2"
         >
-          Route Atlas maps 4 real paths forward from your exact situation — grounded in NYSC
-          mechanics, JAPA economics, corridor pharma, Igba Boi, bootcamp reality, and the 2026
-          Nigerian job market that actually exists.
+          A free web app for Nigerian graduates. Tell it your situation — degree, state,
+          savings, family, NYSC status. In about a minute, it draws{" "}
+          <span className="text-white font-semibold">4 ranked career paths</span> forward, each
+          with real Naira pay bands, first-week actions, and a 2-year projection of where you'd
+          land.
         </motion.p>
 
         <motion.div
@@ -321,14 +430,55 @@ function SampleRoute() {
           className="text-center max-w-[720px] mx-auto"
         >
           <div className="eyebrow text-emerald-300/80">A real output</div>
-          <h2 className="display text-[28px] md:text-[36px] leading-tight tracking-extra-tight text-white mt-3">
+          <h2 className="display text-[24px] sm:text-[28px] md:text-[36px] leading-tight tracking-extra-tight text-white mt-3">
             This is what Opus 4.7 writes when it knows Nigeria.
           </h2>
           <p className="text-slate-400 text-[14.5px] mt-3 leading-relaxed">
             The top route returned for a Microbiology grad in Ibadan with ₦200k savings, a
-            diabetic mother, and a ₦40k teaching hustle. Not hypothetical — copy-pasted from the
-            live atlas.
+            diabetic mother, and a ₦40k teaching hustle. Copy-pasted from the live atlas.
           </p>
+        </motion.div>
+
+        {/* "What's in every route" — annotates the output shape so a first-
+            time visitor knows what they're going to get before they click. */}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.5 }}
+          className="mt-8 mx-auto max-w-[860px]"
+        >
+          <div className="eyebrow text-slate-400 text-center mb-3">
+            What's in every route you get
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
+            {[
+              { Icon: Target, label: "Fit score", body: "0–100 confidence that cites your intake by name" },
+              { Icon: Wallet, label: "Real Naira pay", body: "Entry / mid / senior bands for Nigeria 2026" },
+              { Icon: Clock, label: "Start earning in", body: "Honest months-to-first-income" },
+              { Icon: TrendingUp, label: "2-year projection", body: "A concrete scene: role, city, ₦ saved" },
+              { Icon: Route, label: "Monday actions", body: "First-week steps with real company names" },
+              { Icon: AlertTriangle, label: "How it breaks", body: "Honest failure modes for this user" },
+            ].map((f) => {
+              const { Icon } = f;
+              return (
+                <div
+                  key={f.label}
+                  className="flex items-start gap-2 rounded-lg border border-white/[0.06] bg-white/[0.02] px-3 py-2.5"
+                >
+                  <Icon size={12} className="text-emerald-300 mt-0.5 shrink-0" />
+                  <div>
+                    <div className="text-[11.5px] font-semibold text-white leading-tight">
+                      {f.label}
+                    </div>
+                    <div className="text-[10.5px] text-slate-500 mt-0.5 leading-snug">
+                      {f.body}
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
         </motion.div>
 
         <motion.div
