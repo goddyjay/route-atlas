@@ -8,12 +8,15 @@
 </p>
 
 <p align="center">
+  <strong><a href="https://route-atlas-tcp6.vercel.app/">🟢 Live demo</a></strong> ·
   <a href="#quick-start">Quick start</a> ·
   <a href="#what-it-does">What it does</a> ·
   <a href="#why-it-works">Why it works</a> ·
   <a href="#tech-stack">Tech</a> ·
   <a href="#license">License</a>
 </p>
+
+> **Try it live:** [route-atlas-tcp6.vercel.app](https://route-atlas-tcp6.vercel.app/) — click *Try Demo* and watch Opus 4.7 stream a live atlas for a Microbiology grad in Ibadan. The backend is on Render's free tier, so the very first request of the day may take ~30s to wake the server.
 
 ---
 
