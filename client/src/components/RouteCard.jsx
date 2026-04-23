@@ -83,8 +83,20 @@ function humanMonths(n) {
   return `${(n / 12).toFixed(1)} years`;
 }
 
-export function RouteCard({ route, index, isTop, progress = {}, onToggleAction }) {
-  const [expanded, setExpanded] = useState(isTop);
+export function RouteCard({
+  route,
+  index,
+  isTop,
+  progress = {},
+  onToggleAction,
+  forceExpanded = false,
+}) {
+  const [localExpanded, setLocalExpanded] = useState(isTop);
+  // Parent can force-expand (e.g. when the user triggers Export PDF and we
+  // want every card's detail visible in the print output). Local state is
+  // preserved otherwise so users can toggle cards independently.
+  const expanded = forceExpanded || localExpanded;
+  const setExpanded = setLocalExpanded;
   const cat = CATEGORY_STYLES[route.category] ?? CATEGORY_STYLES["Hybrid"];
   const demand = DEMAND_STYLES[route.demand] ?? DEMAND_STYLES["Medium"];
 

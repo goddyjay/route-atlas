@@ -228,3 +228,78 @@ textarea.field-input:focus {
     font-size: 16px !important;
   }
 }
+
+/* Print stylesheet — kicks in when the user triggers Save as PDF. We hide
+   everything outside the atlas results, strip dark backgrounds, force the
+   atlas cards to render as solid paper-friendly boxes, and keep each card
+   from splitting across page breaks. Elements inside .atlas-printable stay;
+   anything marked .no-print is removed. */
+@media print {
+  body,
+  html {
+    background: #ffffff !important;
+    color: #111827 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .no-print,
+  header[role="banner"],
+  nav,
+  footer,
+  section[aria-label="Intake"] {
+    display: none !important;
+  }
+  /* Force both panes to collapse so only the atlas pane shows, full width. */
+  main {
+    display: block !important;
+    overflow: visible !important;
+  }
+  section[aria-label="Route atlas"] {
+    width: 100% !important;
+    overflow: visible !important;
+  }
+  .atlas-printable {
+    color: #111827 !important;
+  }
+  .atlas-printable .card,
+  .atlas-printable article,
+  .atlas-printable [class*="rounded-xl"] {
+    background: #ffffff !important;
+    border: 1px solid #d1d5db !important;
+    color: #111827 !important;
+    box-shadow: none !important;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+  .atlas-printable h1,
+  .atlas-printable h2,
+  .atlas-printable h3 {
+    color: #0f172a !important;
+  }
+  .atlas-printable p,
+  .atlas-printable span,
+  .atlas-printable li,
+  .atlas-printable div {
+    color: inherit;
+  }
+  /* Kill ambient glows and decorative backgrounds — they print as giant grey blobs. */
+  .atlas-printable [aria-hidden="true"] {
+    display: none !important;
+  }
+  /* Force the cards grid to stack so each route takes a full page width. */
+  .atlas-printable .grid {
+    display: block !important;
+  }
+  .atlas-printable .grid > * + * {
+    margin-top: 0.75rem;
+  }
+  /* Suppress motion effects. */
+  .atlas-printable * {
+    animation: none !important;
+    transition: none !important;
+  }
+  @page {
+    margin: 18mm 14mm;
+    size: A4;
+  }
+}

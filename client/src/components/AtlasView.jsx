@@ -9,6 +9,7 @@ import {
   LayoutGrid,
   Columns3,
   CheckCircle2,
+  Printer,
 } from "lucide-react";
 import { RouteCard } from "./RouteCard.jsx";
 import { CompareView } from "./CompareView.jsx";
@@ -78,13 +79,30 @@ function Atlas({ atlas }) {
     routes
   );
 
+  // When triggered, expand every route card temporarily, wait one paint,
+  // open the browser print dialog, then restore normal expansion state
+  // when the print dialog closes.
+  const [forceExpandAll, setForceExpandAll] = useState(false);
+  const handleExportPdf = async () => {
+    setForceExpandAll(true);
+    await new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r)));
+    const cleanup = () => {
+      setForceExpandAll(false);
+      window.removeEventListener("afterprint", cleanup);
+    };
+    window.addEventListener("afterprint", cleanup);
+    window.print();
+    // Fallback in case afterprint doesn't fire (some mobile browsers).
+    setTimeout(cleanup, 2000);
+  };
+
   return (
     <motion.section
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.25 }}
-      className="space-y-5"
+      className="space-y-5 atlas-printable"
     >
       <SnapshotCard
         snapshot={atlas.user_snapshot}
@@ -108,7 +126,19 @@ function Atlas({ atlas }) {
             {routes.length} routes · ranked best-fit first · expand any route to open the full map
           </p>
         </div>
-        <ViewSwitcher view={view} onChange={setView} />
+        <div className="flex items-center gap-2 no-print">
+          <button
+            type="button"
+            onClick={handleExportPdf}
+            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-[12px] font-semibold bg-white/[0.04] hover:bg-white/[0.09] border border-white/10 hover:border-emerald-400/30 text-slate-200 transition min-h-[36px]"
+            aria-label="Save atlas as PDF"
+          >
+            <Printer size={12} />
+            <span className="hidden sm:inline">Save as PDF</span>
+            <span className="sm:hidden">PDF</span>
+          </button>
+          <ViewSwitcher view={view} onChange={setView} />
+        </div>
       </motion.header>
 
       <AnimatePresence mode="wait">
@@ -129,6 +159,7 @@ function Atlas({ atlas }) {
                 isTop={i === 0}
                 progress={progress}
                 onToggleAction={toggleAction}
+                forceExpanded={forceExpandAll}
               />
             ))}
           </motion.div>
