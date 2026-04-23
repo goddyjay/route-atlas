@@ -1,0 +1,409 @@
+{
+  "type": "route_atlas",
+  "user": {
+    "degree": "Microbiology",
+    "class_of_degree": "Second Class Upper",
+    "university_tier": "federal",
+    "nysc_status": "completed",
+    "years_since_nysc": 1,
+    "state": "Oyo",
+    "city": "Ibadan",
+    "savings_ngn": 200000,
+    "current_monthly_income_ngn": 40000,
+    "current_work": "Home lesson teacher (maths + chemistry for JSS/SSS)",
+    "dependents": 1,
+    "monthly_family_obligation_ngn": 25000,
+    "family_pressure_level": "high",
+    "marital_status": "single",
+    "children_count": 0,
+    "health_constraints": "Mother has diabetes, need to be reachable within 2 hours of Ibadan",
+    "japa_appetite": "curious",
+    "risk_tolerance": "medium",
+    "time_horizon_months": 24,
+    "existing_skills": [
+      "Teaching",
+      "Research",
+      "Excel"
+    ],
+    "hard_nos": [
+      "Yahoo / cybercrime",
+      "MLM / network marketing"
+    ]
+  },
+  "user_snapshot": "Microbiology grad, one year post-NYSC, stuck on ₦40k/month home tutoring in Ibadan with ₦200k savings, ₦25k monthly family load, and a diabetic mother keeping you tethered within 2 hours of home.",
+  "headline_insight": "The 2-hour radius around Ibadan is not a cage — it puts you inside the Sagamu/Ota/Agbara pharma corridor, which is where your Microbiology degree actually pays. Most of your peers are applying to Lagos fintech roles they'll never get; you have a degree-matched market within reach that they don't.",
+  "routes": [
+    {
+      "id": "pharma-qa-analyst-corridor",
+      "title": "Pharma QA Analyst → Lab Tech JAPA Track",
+      "category": "Local Formal",
+      "one_liner": "Land a QA role at a pharma plant in the Sagamu/Ota corridor, then stack IELTS + MLT credential for Canada/UK within 24 months.",
+      "fit_score": 91,
+      "fit_reasons": [
+        {
+          "dimension": "Degree",
+          "note": "Microbiology Second Class Upper from a federal uni is exactly what Emzor, Fidson, May & Baker, GSK shortlist for QA."
+        },
+        {
+          "dimension": "Location",
+          "note": "Sagamu and Ota are both within 2 hours of Ibadan — fits your mother's diabetes constraint."
+        }
+      ],
+      "break_reasons": [
+        {
+          "risk": "Pharma QA shift work can mean 12-hour rotations; if mother's diabetes deteriorates, sudden absences risk probation.",
+          "severity": "Medium"
+        }
+      ],
+      "who_this_fits": "A disciplined graduate who will grind a ₦150-180k QA role for 18 months to unlock the international MLT pathway.",
+      "who_this_breaks": "Someone hunting quick wins or unwilling to commute/relocate to the pharma corridor towns.",
+      "real_cost": {
+        "money_ngn": 80000,
+        "time_months": 4,
+        "what_you_give_up": "Tutoring income for ~4 weeks during job search + relocation; evenings for study if you start IELTS/MLT prep in parallel."
+      },
+      "real_pay": {
+        "entry_ngn": 150000,
+        "mid_ngn": 280000,
+        "senior_ngn": 500000,
+        "range_note": "Entry ₦130-180k at local firms, ₦200k+ at GSK/Fidson. Corridor housing ₦150-400k/yr, not Lagos prices."
+      },
+      "demand": "High",
+      "two_year_projection": "In 2 years, if you land QA at Fidson or Emzor by mid-2026, you're earning ₦250-320k/mo as QA Analyst II, have ₦800k saved, IELTS booked, and a Canada MLT credentialing file open with CSMLS.",
+      "pro_tips": [
+        "Apply directly via factory HR gates in Sagamu/Ota, not just Jobberman.",
+        "PSN membership signals seriousness to pharma HR even without Pharmacy degree."
+      ],
+      "monday_actions": [
+        {
+          "step": "Rewrite CV with QA keywords (GMP, GLP, SOP, HPLC exposure) and upload to MyJobMag, Jobberman, and LinkedIn with 'Open to Relocate: Ogun' tag.",
+          "deadline_days": 3
+        },
+        {
+          "step": "Message 5 QA Analysts at Emzor, Fidson, May & Baker, GSK, and Swiss Pharma on LinkedIn asking one question about entry pathway.",
+          "deadline_days": 7
+        },
+        {
+          "step": "Email HR@ of Evans Medical, Neimeth, and Drugfield (all corridor) with CV + short cover note.",
+          "deadline_days": 10
+        }
+      ],
+      "roadmap": [
+        {
+          "period": "0-90 days",
+          "focus": "Land first QA role",
+          "milestones": [
+            "30+ targeted applications sent",
+            "At least 3 interviews booked",
+            "Offer in hand or shortlist"
+          ],
+          "income_by_end_ngn": 160000
+        },
+        {
+          "period": "3-12 months",
+          "focus": "Stabilize + start IELTS",
+          "milestones": [
+            "Confirmed in role past probation",
+            "IELTS booked and taken (target 7.0+)",
+            "₦400k saved"
+          ],
+          "income_by_end_ngn": 200000
+        },
+        {
+          "period": "Year 2",
+          "focus": "MLT credential + exit prep",
+          "milestones": [
+            "CSMLS application submitted",
+            "WES evaluation done",
+            "₦1.2m saved for landing funds"
+          ],
+          "income_by_end_ngn": 300000
+        }
+      ],
+      "nigerian_notes": "Corridor firms prefer walk-in CVs on Mondays/Tuesdays. Keep NYSC discharge cert + transcript scanned and ready — HR asks same day."
+    },
+    {
+      "id": "international-school-teacher-ibadan",
+      "title": "International School Science Teacher (Ibadan)",
+      "category": "Local Formal",
+      "one_liner": "Convert your tutoring grind into a ₦200-350k/mo salaried role at Chrisland, Corona, or Children's International in Ibadan.",
+      "fit_score": 78,
+      "fit_reasons": [
+        {
+          "dimension": "Skills",
+          "note": "You already teach maths and chemistry — international schools hire exactly this for JSS/SSS science."
+        },
+        {
+          "dimension": "Health",
+          "note": "Ibadan-based school keeps you 0 km from your diabetic mother, zero relocation risk."
+        }
+      ],
+      "break_reasons": [
+        {
+          "risk": "Without a PGDE or TRCN certificate, top-tier schools cap offers at ₦150-200k; ceiling hits fast.",
+          "severity": "Medium"
+        }
+      ],
+      "who_this_fits": "Someone who genuinely enjoys classroom teaching and wants stable income within 90 days with minimal risk.",
+      "who_this_breaks": "Anyone planning JAPA in under 24 months — teaching salaries make ₦15m proof-of-funds nearly impossible to save.",
+      "real_cost": {
+        "money_ngn": 50000,
+        "time_months": 2,
+        "what_you_give_up": "Private tutoring flexibility; school hours 7:30am-4pm plus weekend coaching. TRCN exam fee ~₦25k."
+      },
+      "real_pay": {
+        "entry_ngn": 120000,
+        "mid_ngn": 250000,
+        "senior_ngn": 450000,
+        "range_note": "Ibadan tier below Lagos. Chrisland/Corona Ibadan ₦180-280k entry. British-curriculum schools pay more."
+      },
+      "demand": "High",
+      "two_year_projection": "In 2 years, if you join a tier-1 Ibadan school January 2026, you're earning ₦280-320k/mo as a senior science teacher, TRCN certified, possibly running a paid weekend coaching class adding ₦80k/mo.",
+      "pro_tips": [
+        "Apply in April-May — schools hire before September term.",
+        "British-curriculum schools pay 30-40% above Nigerian-curriculum ones."
+      ],
+      "monday_actions": [
+        {
+          "step": "Email CVs to admin@ of Chrisland Ibadan, Corona Agodi, Children's International, The Vale College, and Whitesands.",
+          "deadline_days": 5
+        },
+        {
+          "step": "Register for TRCN PQE exam on trcn.gov.ng — boosts offers by ₦50k minimum.",
+          "deadline_days": 14
+        },
+        {
+          "step": "Record a 3-minute sample chemistry lesson on phone, upload unlisted YouTube, link in applications.",
+          "deadline_days": 10
+        }
+      ],
+      "roadmap": [
+        {
+          "period": "0-90 days",
+          "focus": "Land school offer",
+          "milestones": [
+            "TRCN registered",
+            "3+ school interviews",
+            "Offer for Jan or Sept term"
+          ],
+          "income_by_end_ngn": 180000
+        },
+        {
+          "period": "3-12 months",
+          "focus": "Build classroom track record",
+          "milestones": [
+            "Complete first full term",
+            "Take on exam coaching for extra ₦40-80k",
+            "Cambridge IGCSE training"
+          ],
+          "income_by_end_ngn": 240000
+        },
+        {
+          "period": "Year 2",
+          "focus": "Senior role or JAPA teacher route",
+          "milestones": [
+            "Head of science department OR Dubai/UK teacher visa research",
+            "₦600k saved"
+          ],
+          "income_by_end_ngn": 320000
+        }
+      ],
+      "nigerian_notes": "Ibadan international school market is smaller than Lagos but less saturated. The Vale College and Lead British Intl pay near-Lagos rates."
+    },
+    {
+      "id": "data-analyst-pivot-remote",
+      "title": "Data Analyst Pivot (Excel → SQL → Remote)",
+      "category": "Remote Digital",
+      "one_liner": "Convert your Excel + research background into a data analyst role, local first (₦200-400k), then remote USD within 18-24 months.",
+      "fit_score": 72,
+      "fit_reasons": [
+        {
+          "dimension": "Skills",
+          "note": "Excel + research from your Microbiology lab work is a genuine head-start over bootcamp beginners."
+        },
+        {
+          "dimension": "Health",
+          "note": "Fully remote-capable; you stay next to your mother with zero location lock-in."
+        }
+      ],
+      "break_reasons": [
+        {
+          "risk": "Junior analyst market in Nigeria is saturated in 2026; without portfolio + network you could spend 12 months earning nothing new.",
+          "severity": "High"
+        }
+      ],
+      "who_this_fits": "Self-disciplined learner who can study 15 hours a week for 9 months while keeping the tutoring income.",
+      "who_this_breaks": "Anyone expecting bootcamp completion to produce a job — the credential is worthless without 3+ portfolio projects.",
+      "real_cost": {
+        "money_ngn": 150000,
+        "time_months": 9,
+        "what_you_give_up": "Evenings and weekends for 9 months. ~₦100-150k for a focused course (DataCamp, Luxe Analytics) or free via Khan/Mode Analytics."
+      },
+      "real_pay": {
+        "entry_ngn": 200000,
+        "mid_ngn": 500000,
+        "senior_ngn": 1500000,
+        "range_note": "Local entry ₦180-300k. Remote USD roles $1.5-3k/mo (~₦2.2-4.5m) after 18+ months of proven work."
+      },
+      "demand": "Medium",
+      "two_year_projection": "In 2 years, if you grind SQL + Python + Power BI with 5 portfolio projects, you're earning ₦350-550k/mo at a Lagos fintech remotely OR $1.5k/mo on Upwork, still based in Ibadan next to your mum.",
+      "pro_tips": [
+        "Build portfolio projects using NBS or CBN data — local recruiters notice instantly.",
+        "SheCode Africa and DataFest Africa give faster referrals than any bootcamp."
+      ],
+      "monday_actions": [
+        {
+          "step": "Start free SQL course on Mode Analytics (mode.com/sql-tutorial) — commit to 1 hour/day.",
+          "deadline_days": 2
+        },
+        {
+          "step": "Join SheCode Africa Slack, DataFest Africa Telegram, and Nigeria Data Scientists WhatsApp — post intro.",
+          "deadline_days": 5
+        },
+        {
+          "step": "Follow 10 Nigerian data analysts on LinkedIn (search 'Data Analyst Lagos') and study their posted projects.",
+          "deadline_days": 7
+        }
+      ],
+      "roadmap": [
+        {
+          "period": "0-90 days",
+          "focus": "SQL + Excel mastery",
+          "milestones": [
+            "Finish Mode SQL",
+            "Complete 2 analysis projects on Kaggle/NBS data",
+            "Active in 2 data communities"
+          ],
+          "income_by_end_ngn": 40000
+        },
+        {
+          "period": "3-12 months",
+          "focus": "Portfolio + first analyst role",
+          "milestones": [
+            "Power BI + Python basics",
+            "5 portfolio projects on GitHub",
+            "Land junior local role ₦200-300k"
+          ],
+          "income_by_end_ngn": 250000
+        },
+        {
+          "period": "Year 2",
+          "focus": "Remote USD transition",
+          "milestones": [
+            "1 year local experience logged",
+            "Upwork profile with 3 reviews OR remote full-time Nigerian fintech"
+          ],
+          "income_by_end_ngn": 500000
+        }
+      ],
+      "nigerian_notes": "Tutoring income ₦40k covers survival during the 9-month learning sprint. Don't quit it — it's your runway."
+    },
+    {
+      "id": "exam-coaching-micro-business",
+      "title": "Exam Coaching Centre (WAEC/JAMB Chemistry + Maths)",
+      "category": "Entrepreneurship",
+      "one_liner": "Scale your 1-on-1 tutoring into a 15-30 student weekend coaching class that 2-3x your income without leaving Ibadan.",
+      "fit_score": 68,
+      "fit_reasons": [
+        {
+          "dimension": "Skills",
+          "note": "You already teach maths and chemistry at JSS/SSS level — the exact WAEC/JAMB coaching market."
+        },
+        {
+          "dimension": "Savings",
+          "note": "₦200k covers space rental, printing, and flyers for a first cohort without touching family obligations."
+        }
+      ],
+      "break_reasons": [
+        {
+          "risk": "Enrolment is seasonal (peaks Jan-March and June-Oct); empty months mean ₦0 while costs continue.",
+          "severity": "Medium"
+        }
+      ],
+      "who_this_fits": "A natural teacher with family network in Ibadan who can hustle parent referrals through church, mosque, and alumni circles.",
+      "who_this_breaks": "Anyone expecting steady salaried income — cashflow swings hard term-to-term.",
+      "real_cost": {
+        "money_ngn": 180000,
+        "time_months": 3,
+        "what_you_give_up": "₦150-200k upfront for rented hall (Bodija/Ring Road), printing past questions, flyers, DSTV subscription for streaming."
+      },
+      "real_pay": {
+        "entry_ngn": 80000,
+        "mid_ngn": 250000,
+        "senior_ngn": 600000,
+        "range_note": "15 students × ₦15k/term = ₦225k/term. Scaled to 50 students with 2 subjects: ₦750k+/term. Seasonal, not monthly smooth."
+      },
+      "demand": "Medium",
+      "two_year_projection": "In 2 years, if Bodija-based coaching takes off, you're running 40-60 students per WAEC/JAMB cycle, averaging ₦300-400k/mo blended, and hiring one assistant tutor for biology.",
+      "pro_tips": [
+        "Partner with 2 secondary schools as 'approved holiday coach' — instant enrolment pipeline.",
+        "Charge per-term, not per-month — protects cashflow during exam breaks."
+      ],
+      "monday_actions": [
+        {
+          "step": "Visit 3 affordable hall spaces in Bodija, Ring Road, Challenge — negotiate ₦30-60k/month weekend-only rates.",
+          "deadline_days": 7
+        },
+        {
+          "step": "Design one-page flyer + WhatsApp broadcast; send to every parent of current tutees + church/mosque youth groups.",
+          "deadline_days": 5
+        },
+        {
+          "step": "Create WAEC/JAMB past-question workbook, print 30 copies at UI or Mokola printers (~₦8k).",
+          "deadline_days": 14
+        }
+      ],
+      "roadmap": [
+        {
+          "period": "0-90 days",
+          "focus": "Launch first cohort",
+          "milestones": [
+            "Space secured",
+            "10-15 students enrolled first term",
+            "First ₦150k collected"
+          ],
+          "income_by_end_ngn": 90000
+        },
+        {
+          "period": "3-12 months",
+          "focus": "Build reputation + referrals",
+          "milestones": [
+            "25-35 students by second term",
+            "At least 5 WAEC A1 testimonials",
+            "Partner with 1 school"
+          ],
+          "income_by_end_ngn": 200000
+        },
+        {
+          "period": "Year 2",
+          "focus": "Scale + systemize",
+          "milestones": [
+            "50+ students",
+            "Hire 1 assistant tutor",
+            "Registered CAC business name"
+          ],
+          "income_by_end_ngn": 350000
+        }
+      ],
+      "nigerian_notes": "Ibadan parents pay ₦10-25k/term for group coaching. UI staff school parents and Bodija area pay premium (₦30k+). Avoid upfront big rent — start in a church hall or rented classroom."
+    }
+  ],
+  "routes_filtered_out": [
+    {
+      "route": "MSc abroad (UK/Canada taught Masters)",
+      "reason": "₦200k savings vs ₦18-30m required; impossible in your 24-month horizon without family backing you haven't mentioned."
+    },
+    {
+      "route": "Medical sales rep",
+      "reason": "Role requires constant inter-state travel; incompatible with 2-hour Ibadan radius for your mother's diabetes care."
+    },
+    {
+      "route": "Lagos fintech graduate trainee",
+      "reason": "Relocation away from mother + Lagos rent floor ₦600k/yr eats all savings; plus one year post-NYSC is outside most trainee windows."
+    },
+    {
+      "route": "Igba Boi apprenticeship",
+      "reason": "Entry at 24+ with a degree is atypical and requires family introduction; 5-7 years of ₦0 income clashes with ₦25k monthly family obligation."
+    }
+  ]
+}

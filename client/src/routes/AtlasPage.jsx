@@ -11,6 +11,26 @@ import { DEMO_PRESETS } from "../lib/presets.js";
 // model is still writing.
 const EXPECTED_STREAM_CHARS = 14000;
 
+// Animates the progress bar (0 → 1) + the streamed-chars counter over a
+// fixed duration, driving a fake-streamed loading state when we serve a
+// cached preset atlas. Ease-out cubic so the bar sprints then slows, which
+// mirrors the rhythm of a real Opus generation.
+function fakeStreamProgress({ duration, onProgress, onChars }) {
+  return new Promise((resolve) => {
+    const start = performance.now();
+    const tick = (t) => {
+      const elapsed = t - start;
+      const p = Math.min(1, elapsed / duration);
+      const eased = 1 - Math.pow(1 - p, 3);
+      onProgress(Math.min(0.98, eased));
+      onChars(Math.round(eased * EXPECTED_STREAM_CHARS));
+      if (p < 1) requestAnimationFrame(tick);
+      else resolve();
+    };
+    requestAnimationFrame(tick);
+  });
+}
+
 // Page-level layout. The page itself is ONE flex row that fills whatever
 // height the shell gave it (flex-1 on desktop, natural on mobile). Each pane
 // owns its own scroll, so the form and the atlas scroll independently — no
@@ -63,7 +83,45 @@ export default function AtlasPage() {
     }
   }
 
-  function runPreset(preset) {
+  async function runPreset(preset) {
+    // Cache-first: if the preset ships with a pre-computed atlas, fetch it
+    // and play a short fake-streamed progress animation so the UX matches
+    // the real streaming flow visually without the 90s generation wait.
+    // Falls back to a live submission if the cache file is missing.
+    if (preset.cachedAtlasUrl) {
+      // Populate the form for display but DON'T auto-submit.
+      setSeed({ version: Date.now(), values: preset.intake, autoSubmit: false });
+      setAtlas(null);
+      setError(null);
+      setLoading(true);
+      setProgress(0);
+      setStreamChars(0);
+
+      try {
+        const [data] = await Promise.all([
+          fetch(preset.cachedAtlasUrl).then((r) => {
+            if (!r.ok) throw new Error(`cache miss (${r.status})`);
+            return r.json();
+          }),
+          fakeStreamProgress({
+            duration: 3800,
+            onProgress: setProgress,
+            onChars: setStreamChars,
+          }),
+        ]);
+        setAtlas(data);
+        setProgress(1);
+      } catch (err) {
+        // Cache missed / server refused — fall back to a live run.
+        console.warn("[preset] cached atlas failed, falling back to live:", err);
+        setSeed({ version: Date.now(), values: preset.intake });
+      } finally {
+        setLoading(false);
+      }
+      return;
+    }
+
+    // No cache — fall through to the standard seed → form → submit flow.
     setSeed({ version: Date.now(), values: preset.intake });
   }
 

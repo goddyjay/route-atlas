@@ -1,5 +1,20 @@
 const API_BASE = import.meta.env.VITE_API_URL || "";
 
+/**
+ * Fire-and-forget ping to the backend /health endpoint. Used on app mount
+ * to wake up Render's free-tier dyno before the user clicks Try Demo —
+ * saves the ~30s cold-start penalty on first interaction.
+ */
+export function warmBackend() {
+  return fetch(`${API_BASE}/health`, {
+    method: "GET",
+    // Keep this quiet — failure is fine, we don't want the error bubbling.
+    cache: "no-store",
+  }).catch(() => {
+    /* ignore */
+  });
+}
+
 async function postJson(path, payload) {
   const res = await fetch(`${API_BASE}${path}`, {
     method: "POST",

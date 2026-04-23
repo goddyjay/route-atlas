@@ -124,12 +124,16 @@ export function AtlasForm({ onSubmit, loading, seed }) {
     spouseEmployment !== "prefer_not_to_say";
 
   // Demo seeding: when the parent hands down a new intake (from a preset click),
-  // fill the form and submit on the user's behalf so judges see the full flow.
+  // populate the form. If seed.autoSubmit !== false, also fire a submission —
+  // this is how uncached presets run live through the API. Cached presets set
+  // autoSubmit=false because the parent has already served the cached atlas
+  // directly and doesn't want a duplicate live call.
   const lastSeedRef = useRef(null);
   useEffect(() => {
     if (!seed || seed.version === lastSeedRef.current) return;
     lastSeedRef.current = seed.version;
     reset({ ...defaultValues, ...seed.values });
+    if (seed.autoSubmit === false) return;
     const t = setTimeout(() => handleSubmit(onSubmit)(), 400);
     return () => clearTimeout(t);
     // eslint-disable-next-line react-hooks/exhaustive-deps

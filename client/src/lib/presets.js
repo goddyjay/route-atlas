@@ -1,12 +1,19 @@
-// Demo presets — Nigerian post-NYSC personas. Each preset is a full intake
-// payload that runs through the same API route as a normal form submission.
-// Designed to showcase the atlas on 3 very different life situations.
+// Demo presets — Nigerian post-NYSC personas. Each preset ships with:
+//  - a full `intake` payload (identical to a real form submission)
+//  - a `cachedAtlasUrl` pointing to a pre-computed atlas JSON in /public/presets/
+//
+// When a user clicks a preset the frontend serves the cached atlas instantly
+// (with a fake-streamed progress animation for feel) instead of waiting ~90s
+// on a live Opus call. Regenerate the cached files by running:
+//   npm run generate-presets
+// See scripts/generate-presets.js for details.
 export const DEMO_PRESETS = [
   {
     id: "microbio-ibadan",
     emoji: "🧫",
     title: "Microbiology grad, Ibadan",
     tagline: "1 year post-NYSC, teaching lessons, mother has diabetes",
+    cachedAtlasUrl: "/presets/microbio-ibadan.json",
     intake: {
       degree: "Microbiology",
       class_of_degree: "Second Class Upper",
@@ -21,6 +28,8 @@ export const DEMO_PRESETS = [
       dependents: 1,
       monthly_family_obligation_ngn: 25000,
       family_pressure_level: "high",
+      marital_status: "single",
+      children_count: 0,
       health_constraints: "Mother has diabetes, need to be reachable within 2 hours of Ibadan",
       japa_appetite: "curious",
       risk_tolerance: "medium",
@@ -34,6 +43,7 @@ export const DEMO_PRESETS = [
     emoji: "📚",
     title: "Philosophy grad, Kano",
     tagline: "NYSC just ended, ₦0 savings, no clear path",
+    cachedAtlasUrl: "/presets/philosophy-kano.json",
     intake: {
       degree: "Philosophy",
       class_of_degree: "Second Class Lower",
@@ -48,6 +58,8 @@ export const DEMO_PRESETS = [
       dependents: 0,
       monthly_family_obligation_ngn: 0,
       family_pressure_level: "medium",
+      marital_status: "single",
+      children_count: 0,
       japa_appetite: "curious",
       risk_tolerance: "low",
       time_horizon_months: 12,
@@ -60,6 +72,7 @@ export const DEMO_PRESETS = [
     emoji: "🎙️",
     title: "Mass Comm grad, Lagos",
     tagline: "2 years post-NYSC, social media manager, wants remote USD",
+    cachedAtlasUrl: "/presets/masscomm-lagos.json",
     intake: {
       degree: "Mass Communication",
       class_of_degree: "Second Class Upper",
@@ -93,6 +106,7 @@ export const DEMO_PRESETS = [
     emoji: "💼",
     title: "Accounting grad, married, Abuja",
     tagline: "2 yrs post-NYSC · wife in civil service · 1 toddler · JAPA-committed",
+    cachedAtlasUrl: "/presets/accounting-abuja-married.json",
     intake: {
       degree: "Accounting",
       class_of_degree: "Second Class Upper",
