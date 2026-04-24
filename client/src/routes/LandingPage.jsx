@@ -10,8 +10,6 @@ import { Logo } from "../components/Logo.jsx";
 // the layout never breaks visually. Swap URLs for your own licensed
 // photos before a final demo.
 const HERO_IMAGE = "/hero-professional.jpg";
-const WORK_IMAGE =
-  "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1000&q=80";
 const PLANNING_IMAGE = "/routes-workplace.jpg";
 
 // Image container with onError fallback. Renders the photo when it loads,
@@ -264,77 +262,57 @@ function WhyDifferent() {
 
   return (
     <section className="py-14 sm:py-20 border-t border-ink-200">
-      <div className="max-w-[1200px] mx-auto px-5 sm:px-6">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-14 items-center">
-          {/* Left — image */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.98, y: 10 }}
-            whileInView={{ opacity: 1, scale: 1, y: 0 }}
-            viewport={{ once: true, margin: "-80px" }}
-            transition={{ duration: 0.55, ease: [0.2, 0.7, 0.2, 1] }}
-            className="md:col-span-5 order-2 md:order-1"
-          >
-            <ContextualImage
-              src={WORK_IMAGE}
-              alt="Colleagues discussing career paths in a modern workplace"
-              aspect="aspect-[5/6]"
-            />
-          </motion.div>
-
-          {/* Right — text */}
-          <div className="md:col-span-7 order-1 md:order-2">
-            <motion.div
-              initial={{ opacity: 0, y: 12 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-80px" }}
-              transition={{ duration: 0.5 }}
-              className="mb-8 sm:mb-10 max-w-[560px]"
-            >
-              <div className="eyebrow text-ink-500 flex items-center gap-1.5">
-                <MapPin size={11} />
-                Why it's different
-              </div>
-              <h2 className="display text-[24px] sm:text-[30px] md:text-[34px] tracking-extra-tight text-ink-900 mt-2 leading-tight">
-                Built for Nigerian post-NYSC reality, not a global average.
-              </h2>
-            </motion.div>
-
-            <motion.ul
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-80px" }}
-              variants={{ visible: { transition: { staggerChildren: 0.08 } } }}
-              className="space-y-5 sm:space-y-6 max-w-[560px]"
-            >
-              {points.map((p, i) => (
-                <motion.li
-                  key={p.title}
-                  variants={{
-                    hidden: { opacity: 0, x: -6 },
-                    visible: {
-                      opacity: 1,
-                      x: 0,
-                      transition: { duration: 0.4, ease: [0.2, 0.7, 0.2, 1] },
-                    },
-                  }}
-                  className="flex gap-4"
-                >
-                  <div className="shrink-0 w-6 h-6 rounded-full border border-brand-200 bg-brand-50 text-brand-700 text-[11px] font-bold tabular flex items-center justify-center mt-0.5">
-                    {i + 1}
-                  </div>
-                  <div>
-                    <div className="text-[15px] font-semibold text-ink-900">
-                      {p.title}
-                    </div>
-                    <p className="text-ink-600 text-[13.5px] mt-1 leading-relaxed">
-                      {p.body}
-                    </p>
-                  </div>
-                </motion.li>
-              ))}
-            </motion.ul>
+      <div className="max-w-[760px] mx-auto px-5 sm:px-6">
+        <motion.div
+          initial={{ opacity: 0, y: 12 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.5 }}
+          className="mb-8 sm:mb-10"
+        >
+          <div className="eyebrow text-ink-500 flex items-center gap-1.5">
+            <MapPin size={11} />
+            Why it's different
           </div>
-        </div>
+          <h2 className="display text-[26px] sm:text-[32px] md:text-[36px] tracking-extra-tight text-ink-900 mt-2 leading-tight">
+            Built for Nigerian post-NYSC reality, not a global average.
+          </h2>
+        </motion.div>
+
+        <motion.ul
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-80px" }}
+          variants={{ visible: { transition: { staggerChildren: 0.08 } } }}
+          className="space-y-5 sm:space-y-6"
+        >
+          {points.map((p, i) => (
+            <motion.li
+              key={p.title}
+              variants={{
+                hidden: { opacity: 0, x: -6 },
+                visible: {
+                  opacity: 1,
+                  x: 0,
+                  transition: { duration: 0.4, ease: [0.2, 0.7, 0.2, 1] },
+                },
+              }}
+              className="flex gap-4"
+            >
+              <div className="shrink-0 w-7 h-7 rounded-full border border-brand-200 bg-brand-50 text-brand-700 text-[12px] font-bold tabular flex items-center justify-center mt-0.5">
+                {i + 1}
+              </div>
+              <div>
+                <div className="text-[15.5px] font-semibold text-ink-900">
+                  {p.title}
+                </div>
+                <p className="text-ink-600 text-[14px] mt-1 leading-relaxed">
+                  {p.body}
+                </p>
+              </div>
+            </motion.li>
+          ))}
+        </motion.ul>
       </div>
     </section>
   );
