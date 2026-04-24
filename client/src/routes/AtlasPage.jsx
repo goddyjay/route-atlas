@@ -134,7 +134,7 @@ export default function AtlasPage() {
       <section
         aria-label="Intake"
         className="w-full lg:w-[42%] xl:w-[40%] 2xl:w-[36%]
-                   border-b lg:border-b-0 lg:border-r border-white/5
+                   border-b lg:border-b-0 lg:border-r border-ink-200
                    lg:overflow-y-auto lg:scroll-left pretty-scroll"
       >
         <div className="px-3 sm:px-4 md:px-6 py-4 sm:py-5 md:py-6 space-y-4 sm:space-y-5">
@@ -197,14 +197,14 @@ function PresetBar({ onRun }) {
         whileHover={{ y: -1 }}
         whileTap={{ scale: 0.99 }}
         className="w-full inline-flex items-center justify-between gap-3
-                   rounded-xl px-4 py-3 text-white font-semibold text-[13.5px]
-                   gradient-shift border border-white/15 relative overflow-hidden
+                   rounded-xl px-4 py-3 text-ink-900 font-semibold text-[13.5px]
+                   gradient-shift border border-ink-200 relative overflow-hidden
                    min-h-[48px]"
         style={{
           background:
-            "linear-gradient(120deg, #059669 0%, #10b981 30%, #2dd4bf 50%, #14b8a6 70%, #059669 100%)",
+            "linear-gradient(120deg, #434F8C 0%, #5361A8 30%, #98A0C7 50%, #747EB3 70%, #434F8C 100%)",
           boxShadow:
-            "inset 0 1px 0 rgba(255,255,255,0.25), 0 12px 30px -10px rgba(20,184,166,0.55)",
+            "inset 0 1px 0 rgba(255,255,255,0.25), 0 12px 30px -10px rgba(116, 126, 179,0.55)",
         }}
       >
         <span className="relative flex items-center gap-2">
@@ -213,7 +213,7 @@ function PresetBar({ onRun }) {
             transition={{ duration: 2.4, repeat: Infinity, repeatDelay: 3 }}
             className="inline-flex"
           >
-            <Zap size={16} className="text-amber-200 drop-shadow-[0_0_8px_rgba(253,224,71,0.7)]" />
+            <Zap size={16} className="text-amber-700 drop-shadow-[0_0_6px_rgba(245,158,11,0.5)]" />
           </motion.span>
           <span>{open ? "Pick a demo" : "Try a demo"}</span>
         </span>
@@ -222,7 +222,7 @@ function PresetBar({ onRun }) {
           transition={{ duration: 0.25, ease: [0.2, 0.7, 0.2, 1] }}
           className="inline-flex"
         >
-          <ChevronDown size={14} className="text-white/85" />
+          <ChevronDown size={14} className="text-ink-900/85" />
         </motion.span>
         {!open && (
           <motion.span
@@ -276,17 +276,17 @@ function PresetBar({ onRun }) {
                   whileTap={{ scale: 0.985 }}
                   transition={{ type: "spring", stiffness: 380, damping: 26 }}
                   className="group inline-flex items-start gap-2 rounded-xl
-                             bg-white/[0.04] hover:bg-white/[0.09]
-                             border border-white/[0.08] hover:border-brand-400/40
-                             text-slate-200 text-[12px] font-semibold
+                             bg-ink-100 hover:bg-ink-100
+                             border border-ink-200 hover:border-brand-300
+                             text-ink-800 text-[12px] font-semibold
                              px-3 py-2.5 text-left w-full min-h-[56px]"
                 >
                   <span className="text-base leading-none mt-0.5 transition-transform group-hover:scale-110">
                     {p.emoji}
                   </span>
                   <span className="flex flex-col leading-tight min-w-0">
-                    <span className="text-white truncate">{p.title}</span>
-                    <span className="text-slate-500 text-[10.5px] font-normal line-clamp-2">
+                    <span className="text-ink-900 truncate">{p.title}</span>
+                    <span className="text-ink-500 text-[10.5px] font-normal line-clamp-2">
                       {p.tagline}
                     </span>
                   </span>

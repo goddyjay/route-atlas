@@ -89,7 +89,7 @@ export default function CvCheckPage() {
                 maxLength={200}
                 className="field-input"
               />
-              <p className="text-[11px] text-slate-500 mt-1.5">
+              <p className="text-[11px] text-ink-500 mt-1.5">
                 Leave blank for general Nigerian recruitment analysis.
               </p>
             </div>
@@ -100,7 +100,7 @@ export default function CvCheckPage() {
                 <button
                   type="button"
                   onClick={() => setCvText(EXAMPLE_CV)}
-                  className="text-[10.5px] font-semibold text-emerald-300 hover:text-emerald-200 transition"
+                  className="text-[10.5px] font-semibold text-emerald-600 hover:text-emerald-700 transition"
                 >
                   Try a sample CV
                 </button>
@@ -114,16 +114,16 @@ export default function CvCheckPage() {
                 className="field-input resize-none font-mono text-[12.5px] leading-relaxed"
                 style={{ minHeight: "340px" }}
               />
-              <div className="flex items-center justify-between text-[11px] text-slate-500 mt-1.5">
+              <div className="flex items-center justify-between text-[11px] text-ink-500 mt-1.5">
                 <span>{cvText.length.toLocaleString()} / 20,000 chars</span>
                 {cvText.length > 0 && cvText.length < 50 && (
-                  <span className="text-amber-300">Need at least 50 chars</span>
+                  <span className="text-amber-600">Need at least 50 chars</span>
                 )}
               </div>
             </div>
 
             {error && (
-              <div className="rounded-lg border border-rose-400/25 bg-rose-500/[0.06] p-3 text-[12px] text-rose-200">
+              <div className="rounded-lg border border-rose-200 bg-rose-50 p-3 text-[12px] text-rose-700">
                 {error}
               </div>
             )}
@@ -133,14 +133,14 @@ export default function CvCheckPage() {
               disabled={loading || cvText.trim().length < 50}
               whileTap={{ scale: 0.99 }}
               className="w-full inline-flex items-center justify-center gap-2 rounded-xl
-                         px-5 py-3 text-white font-semibold text-[13.5px]
-                         gradient-shift border border-white/15 min-h-[48px]
+                         px-5 py-3 text-ink-900 font-semibold text-[13.5px]
+                         gradient-shift border border-ink-200 min-h-[48px]
                          disabled:opacity-50 disabled:cursor-not-allowed"
               style={{
                 background:
-                  "linear-gradient(120deg, #059669 0%, #10b981 30%, #2dd4bf 50%, #14b8a6 70%, #059669 100%)",
+                  "linear-gradient(120deg, #434F8C 0%, #5361A8 30%, #98A0C7 50%, #747EB3 70%, #434F8C 100%)",
                 boxShadow:
-                  "inset 0 1px 0 rgba(255,255,255,0.25), 0 12px 30px -10px rgba(20,184,166,0.55)",
+                  "inset 0 1px 0 rgba(255,255,255,0.25), 0 12px 30px -10px rgba(116, 126, 179,0.55)",
               }}
             >
               {loading ? (
@@ -155,7 +155,7 @@ export default function CvCheckPage() {
                 </>
               )}
             </motion.button>
-            <p className="text-center text-[11px] text-slate-500">
+            <p className="text-center text-[11px] text-ink-500">
               ~20 seconds · Opus 4.7 with Nigerian recruitment context
             </p>
           </form>
@@ -187,13 +187,13 @@ function Header() {
       className="text-center max-w-[720px] mx-auto"
     >
       <div className="inline-flex items-center gap-2 chip mb-4">
-        <Sparkles size={11} className="text-emerald-300" />
+        <Sparkles size={11} className="text-emerald-600" />
         New · Pairs with your Route Atlas
       </div>
-      <h1 className="display text-[28px] sm:text-[34px] md:text-[40px] leading-[1.08] tracking-extra-tight text-white">
+      <h1 className="display text-[28px] sm:text-[34px] md:text-[40px] leading-[1.08] tracking-extra-tight text-ink-900">
         Will your CV clear the ATS?
       </h1>
-      <p className="text-slate-400 text-[14px] sm:text-[15px] mt-3 leading-relaxed">
+      <p className="text-ink-500 text-[14px] sm:text-[15px] mt-3 leading-relaxed">
         Paste your CV. Claude Opus 4.7 grades it against Nigerian recruitment norms and
         global ATS filters, then rewrites the weak sections.
       </p>
@@ -219,17 +219,17 @@ function EmptyState() {
           transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
           className="mx-auto w-14 h-14 rounded-2xl flex items-center justify-center mb-4"
           style={{
-            background: "linear-gradient(140deg, #10b981, #14b8a6)",
+            background: "linear-gradient(140deg, #5361A8, #747EB3)",
             boxShadow:
-              "inset 0 1px 0 rgba(255,255,255,0.35), 0 14px 30px -8px rgba(16,185,129,0.5)",
+              "inset 0 1px 0 rgba(255,255,255,0.35), 0 14px 30px -8px rgba(83, 97, 168,0.5)",
           }}
         >
-          <FileText size={24} className="text-white" />
+          <FileText size={24} className="text-ink-900" />
         </motion.div>
-        <h3 className="display text-xl tracking-extra-tight text-white">
+        <h3 className="display text-xl tracking-extra-tight text-ink-900">
           Awaiting your CV
         </h3>
-        <p className="text-sm text-slate-400 mt-2 max-w-sm mx-auto leading-relaxed">
+        <p className="text-sm text-ink-500 mt-2 max-w-sm mx-auto leading-relaxed">
           Paste your CV. Output: ATS score, priority fixes, keyword gaps, formatting risks,
           and rewritten sections. ~20 seconds.
         </p>
@@ -246,21 +246,21 @@ function LoadingState() {
       exit={{ opacity: 0 }}
       className="card p-6 sm:p-8"
     >
-      <div className="flex items-center gap-2 text-emerald-200">
+      <div className="flex items-center gap-2 text-emerald-700">
         <span className="relative flex h-2 w-2">
           <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
           <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-400" />
         </span>
-        <Loader2 size={14} className="animate-spin text-emerald-300" />
+        <Loader2 size={14} className="animate-spin text-emerald-600" />
         <span className="text-sm font-medium">Running ATS analysis…</span>
       </div>
-      <p className="text-[11px] text-slate-500 mt-2 ml-5">
+      <p className="text-[11px] text-ink-500 mt-2 ml-5">
         15–25 seconds · score, keyword match, formatting risks, rewrites
       </p>
 
       <div className="mt-6 space-y-4">
         {[0, 1, 2].map((i) => (
-          <div key={i} className="rounded-xl bg-white/[0.03] border border-white/[0.06] p-4 relative overflow-hidden">
+          <div key={i} className="rounded-xl bg-ink-50 border border-ink-200 p-4 relative overflow-hidden">
             <div
               aria-hidden="true"
               className="absolute inset-0 pointer-events-none"
@@ -287,35 +287,35 @@ function LoadingState() {
 
 const VERDICT_STYLES = {
   "ATS-ready": {
-    bg: "bg-emerald-500/15",
-    text: "text-emerald-300",
-    border: "border-emerald-400/30",
-    ring: "#10b981",
+    bg: "bg-emerald-50",
+    text: "text-emerald-600",
+    border: "border-emerald-200",
+    ring: "#5361A8",
   },
   Solid: {
-    bg: "bg-teal-500/15",
-    text: "text-teal-300",
-    border: "border-teal-400/30",
-    ring: "#14b8a6",
+    bg: "bg-teal-50",
+    text: "text-teal-600",
+    border: "border-teal-200",
+    ring: "#747EB3",
   },
   Borderline: {
-    bg: "bg-amber-500/15",
-    text: "text-amber-300",
-    border: "border-amber-400/30",
+    bg: "bg-amber-50",
+    text: "text-amber-600",
+    border: "border-amber-200",
     ring: "#fbbf24",
   },
   "Needs major rework": {
-    bg: "bg-rose-500/15",
-    text: "text-rose-300",
-    border: "border-rose-400/30",
+    bg: "bg-rose-50",
+    text: "text-rose-600",
+    border: "border-rose-200",
     ring: "#fb7185",
   },
 };
 
 const PRIORITY_STYLES = {
-  Critical: "bg-rose-500/20 text-rose-200 border-rose-400/40",
-  High: "bg-amber-500/20 text-amber-200 border-amber-400/40",
-  Medium: "bg-white/[0.04] text-slate-300 border-white/15",
+  Critical: "bg-rose-100 text-rose-700 border-rose-300",
+  High: "bg-amber-100 text-amber-700 border-amber-300",
+  Medium: "bg-ink-100 text-ink-700 border-ink-200",
 };
 
 function CvDossier({ data }) {
@@ -332,18 +332,18 @@ function CvDossier({ data }) {
       <div className="card p-5 sm:p-6 relative overflow-hidden">
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute -top-20 right-0 w-72 h-40 bg-emerald-500/15 blur-3xl rounded-full ambient-pulse"
+          className="pointer-events-none absolute -top-20 right-0 w-72 h-40 bg-emerald-50 blur-3xl rounded-full ambient-pulse"
         />
         <div className="relative grid grid-cols-1 sm:grid-cols-[auto_1fr] gap-5 items-center">
           <ScoreRing score={data.ats_score} color={verdict.ring} />
           <div className="min-w-0">
-            <div className="eyebrow text-slate-500">ATS verdict</div>
+            <div className="eyebrow text-ink-500">ATS verdict</div>
             <div
               className={`inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-[11px] font-bold border mt-1.5 ${verdict.bg} ${verdict.text} ${verdict.border}`}
             >
               {data.score_verdict}
             </div>
-            <p className="text-[14px] text-slate-100 mt-3 leading-relaxed">
+            <p className="text-[14px] text-ink-900 mt-3 leading-relaxed">
               {data.summary}
             </p>
           </div>
@@ -360,7 +360,7 @@ function CvDossier({ data }) {
                 initial={{ opacity: 0, x: -4 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.08 + i * 0.06, duration: 0.3 }}
-                className="rounded-xl border border-white/[0.08] bg-white/[0.02] p-3.5"
+                className="rounded-xl border border-ink-200 bg-ink-50 p-3.5"
               >
                 <div className="flex items-center gap-2 mb-1.5 flex-wrap">
                   <span
@@ -368,15 +368,15 @@ function CvDossier({ data }) {
                   >
                     {f.priority}
                   </span>
-                  <span className="text-[10px] font-bold tabular text-slate-500">
+                  <span className="text-[10px] font-bold tabular text-ink-500">
                     FIX {i + 1}
                   </span>
                 </div>
-                <div className="text-[13px] text-white font-semibold leading-snug">
+                <div className="text-[13px] text-ink-900 font-semibold leading-snug">
                   {f.issue}
                 </div>
-                <div className="text-[12.5px] text-emerald-200/90 mt-2 leading-relaxed border-l-2 border-emerald-400/40 pl-3">
-                  <span className="text-emerald-300 font-semibold">Do this:</span> {f.fix}
+                <div className="text-[12.5px] text-emerald-700/90 mt-2 leading-relaxed border-l-2 border-emerald-300 pl-3">
+                  <span className="text-emerald-600 font-semibold">Do this:</span> {f.fix}
                 </div>
               </motion.li>
             ))}
@@ -391,22 +391,22 @@ function CvDossier({ data }) {
             {data.rewritten_sections.map((r, i) => (
               <div
                 key={i}
-                className="rounded-xl border border-white/[0.08] bg-white/[0.02] p-3.5"
+                className="rounded-xl border border-ink-200 bg-ink-50 p-3.5"
               >
-                <div className="text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-2.5">
+                <div className="text-[11px] font-bold uppercase tracking-wider text-ink-500 mb-2.5">
                   {r.section}
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-2.5">
-                  <div className="rounded-lg bg-rose-500/[0.06] border border-rose-400/20 p-3">
-                    <div className="text-[10px] font-bold uppercase tracking-wider text-rose-300 mb-1.5">
+                  <div className="rounded-lg bg-rose-50 border border-rose-200 p-3">
+                    <div className="text-[10px] font-bold uppercase tracking-wider text-rose-600 mb-1.5">
                       Before
                     </div>
-                    <p className="text-[12.5px] text-rose-100/80 leading-relaxed">
+                    <p className="text-[12.5px] text-rose-700/80 leading-relaxed">
                       {r.before}
                     </p>
                   </div>
-                  <div className="rounded-lg bg-emerald-500/[0.06] border border-emerald-400/20 p-3">
-                    <div className="text-[10px] font-bold uppercase tracking-wider text-emerald-300 mb-1.5">
+                  <div className="rounded-lg bg-emerald-50 border border-emerald-200 p-3">
+                    <div className="text-[10px] font-bold uppercase tracking-wider text-emerald-600 mb-1.5">
                       After
                     </div>
                     <p className="text-[12.5px] text-emerald-50/90 leading-relaxed">
@@ -427,13 +427,13 @@ function CvDossier({ data }) {
             {data.keyword_gaps.map((k, i) => (
               <div
                 key={i}
-                className="rounded-lg border border-emerald-400/20 bg-emerald-500/[0.05] px-3 py-2.5"
+                className="rounded-lg border border-emerald-200 bg-emerald-50 px-3 py-2.5"
               >
-                <div className="inline-flex items-center gap-1.5 text-[12.5px] font-semibold text-emerald-200">
-                  <Target size={11} className="text-emerald-400" />
+                <div className="inline-flex items-center gap-1.5 text-[12.5px] font-semibold text-emerald-700">
+                  <Target size={11} className="text-emerald-600" />
                   {k.keyword}
                 </div>
-                <div className="text-[11.5px] text-slate-400 leading-snug mt-1">
+                <div className="text-[11.5px] text-ink-500 leading-snug mt-1">
                   {k.where_to_add}
                 </div>
               </div>
@@ -449,12 +449,12 @@ function CvDossier({ data }) {
             {data.formatting_issues.map((f, i) => (
               <li
                 key={i}
-                className="flex items-start gap-2.5 text-[12.5px] text-rose-100/90 leading-relaxed"
+                className="flex items-start gap-2.5 text-[12.5px] text-rose-700/90 leading-relaxed"
               >
-                <AlertTriangle size={12} className="text-rose-300 mt-0.5 shrink-0" />
+                <AlertTriangle size={12} className="text-rose-600 mt-0.5 shrink-0" />
                 <span>
-                  <span className="font-semibold text-rose-200">{f.issue}</span>
-                  <span className="text-rose-100/70"> — {f.impact}</span>
+                  <span className="font-semibold text-rose-700">{f.issue}</span>
+                  <span className="text-rose-700/70"> — {f.impact}</span>
                 </span>
               </li>
             ))}
@@ -464,8 +464,8 @@ function CvDossier({ data }) {
 
       {/* NIGERIAN NOTES */}
       {data.nigerian_notes && (
-        <div className="rounded-xl border border-amber-400/20 bg-amber-500/[0.05] p-4">
-          <div className="eyebrow text-amber-300 flex items-center gap-1.5 mb-2">
+        <div className="rounded-xl border border-amber-200 bg-amber-50 p-4">
+          <div className="eyebrow text-amber-600 flex items-center gap-1.5 mb-2">
             <Sparkles size={10} /> Nigerian recruitment note
           </div>
           <p className="text-[12.5px] text-amber-50/90 leading-relaxed">
@@ -479,8 +479,8 @@ function CvDossier({ data }) {
 
 function DossierBlock({ label, icon: Icon, accent = "default", children }) {
   const accentMap = {
-    default: "text-slate-400 border-white/[0.08]",
-    rose: "text-rose-300 border-rose-400/20",
+    default: "text-ink-500 border-ink-200",
+    rose: "text-rose-600 border-rose-200",
   };
   const color = accentMap[accent] ?? accentMap.default;
   return (
@@ -542,10 +542,10 @@ function ScoreRing({ score, color }) {
         />
       </svg>
       <div className="absolute flex flex-col items-center leading-none">
-        <span className="display text-[30px] font-extrabold text-white tabular">
+        <span className="display text-[30px] font-extrabold text-ink-900 tabular">
           {display}
         </span>
-        <span className="text-[9px] uppercase tracking-[0.16em] text-slate-500 font-bold mt-0.5">
+        <span className="text-[9px] uppercase tracking-[0.16em] text-ink-500 font-bold mt-0.5">
           ATS score
         </span>
       </div>

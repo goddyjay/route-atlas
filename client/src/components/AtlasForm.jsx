@@ -406,7 +406,7 @@ export function AtlasForm({ onSubmit, loading, seed }) {
         className="btn-primary gradient-shift w-full mt-6 relative overflow-hidden"
         style={{
           background:
-            "linear-gradient(120deg, #059669 0%, #10b981 30%, #14b8a6 60%, #10b981 100%)",
+            "linear-gradient(120deg, #434F8C 0%, #5361A8 30%, #747EB3 60%, #5361A8 100%)",
         }}
       >
         {loading ? (
@@ -439,7 +439,7 @@ export function AtlasForm({ onSubmit, loading, seed }) {
           />
         )}
       </motion.button>
-      <motion.p variants={sectionVariants} className="mt-2 text-center text-[11px] text-slate-500">
+      <motion.p variants={sectionVariants} className="mt-2 text-center text-[11px] text-ink-500">
         4 ranked routes · Nigerian context · ~90s live stream
       </motion.p>
     </motion.form>
@@ -461,30 +461,30 @@ function FormHero() {
   return (
     <motion.div
       variants={sectionVariants}
-      className="relative overflow-hidden rounded-xl p-5 mb-5 border border-white/[0.08]"
+      className="relative overflow-hidden rounded-xl p-5 mb-5 border border-ink-200"
       style={{
         background:
-          "radial-gradient(120% 100% at 100% 0%, rgba(20, 184, 166, 0.22) 0%, transparent 55%), radial-gradient(100% 80% at 0% 100%, rgba(16, 185, 129, 0.22) 0%, transparent 60%), linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0))",
+          "radial-gradient(120% 100% at 100% 0%, rgba(116, 126, 179, 0.22) 0%, transparent 55%), radial-gradient(100% 80% at 0% 100%, rgba(83, 97, 168, 0.22) 0%, transparent 60%), linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0))",
       }}
     >
       <motion.div
         aria-hidden="true"
-        className="pointer-events-none absolute -top-20 -right-20 w-56 h-56 rounded-full bg-accent-500/20 blur-3xl"
+        className="pointer-events-none absolute -top-20 -right-20 w-56 h-56 rounded-full bg-accent-100 blur-3xl"
         animate={{ opacity: [0.5, 1, 0.5], scale: [1, 1.08, 1] }}
         transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
       />
       <div className="relative">
-        <div className="eyebrow text-brand-300/90 flex items-center gap-1.5">
+        <div className="eyebrow text-brand-600/90 flex items-center gap-1.5">
           <span className="relative flex h-1.5 w-1.5">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-400 opacity-75" />
             <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-brand-400" />
           </span>
           Tell us your situation
         </div>
-        <h2 className="display text-[22px] md:text-[24px] leading-[1.1] tracking-extra-tight text-white mt-2">
+        <h2 className="display text-[22px] md:text-[24px] leading-[1.1] tracking-extra-tight text-ink-900 mt-2">
           Where you stand,<br />in your own numbers.
         </h2>
-        <p className="text-[12.5px] text-slate-400 mt-2 leading-relaxed max-w-[42ch]">
+        <p className="text-[12.5px] text-ink-500 mt-2 leading-relaxed max-w-[42ch]">
           Honest inputs, honest routes. Guessing here weakens every downstream recommendation.
         </p>
       </div>
@@ -496,12 +496,12 @@ function FormHero() {
 // its own color — keeps the form scannable and stops every section from
 // reading as the same brand-emerald.
 const SECTION_COLORS = {
-  emerald: { text: "text-emerald-300", bg: "bg-emerald-500/12", border: "border-emerald-400/25" },
-  sky: { text: "text-sky-300", bg: "bg-sky-500/12", border: "border-sky-400/25" },
-  amber: { text: "text-amber-300", bg: "bg-amber-500/12", border: "border-amber-400/25" },
-  rose: { text: "text-rose-300", bg: "bg-rose-500/12", border: "border-rose-400/25" },
-  violet: { text: "text-violet-300", bg: "bg-violet-500/12", border: "border-violet-400/25" },
-  teal: { text: "text-teal-300", bg: "bg-teal-500/12", border: "border-teal-400/25" },
+  emerald: { text: "text-emerald-600", bg: "bg-emerald-500/12", border: "border-emerald-200" },
+  sky: { text: "text-sky-600", bg: "bg-sky-500/12", border: "border-sky-400/25" },
+  amber: { text: "text-amber-600", bg: "bg-amber-500/12", border: "border-amber-400/25" },
+  rose: { text: "text-rose-600", bg: "bg-rose-500/12", border: "border-rose-200" },
+  violet: { text: "text-violet-600", bg: "bg-violet-500/12", border: "border-violet-200" },
+  teal: { text: "text-teal-600", bg: "bg-teal-500/12", border: "border-teal-200" },
 };
 
 function Section({ icon, color = "emerald", title, subtitle, children }) {
@@ -509,7 +509,7 @@ function Section({ icon, color = "emerald", title, subtitle, children }) {
   return (
     <motion.section
       variants={sectionVariants}
-      className="mt-5 pt-5 border-t border-white/[0.06] first-of-type:border-t-0 first-of-type:pt-0"
+      className="mt-5 pt-5 border-t border-ink-200 first-of-type:border-t-0 first-of-type:pt-0"
     >
       <header className="flex items-start gap-3 mb-3">
         <motion.div
@@ -520,11 +520,11 @@ function Section({ icon, color = "emerald", title, subtitle, children }) {
           {icon}
         </motion.div>
         <div>
-          <h3 className="text-[13px] font-semibold text-white leading-tight">
+          <h3 className="text-[13px] font-semibold text-ink-900 leading-tight">
             {title}
           </h3>
           {subtitle && (
-            <p className="text-[11.5px] text-slate-500 mt-0.5">{subtitle}</p>
+            <p className="text-[11.5px] text-ink-500 mt-0.5">{subtitle}</p>
           )}
         </div>
       </header>
@@ -588,8 +588,8 @@ function ChipPicker({ options, value, onChange, placeholder, variant, allowCusto
 
   const onColor =
     variant === "danger"
-      ? "bg-rose-500/20 text-rose-200 border-rose-400/40"
-      : "bg-brand-500/20 text-brand-200 border-brand-400/40";
+      ? "bg-rose-100 text-rose-700 border-rose-300"
+      : "bg-brand-100 text-brand-700 border-brand-300";
 
   return (
     <div>
@@ -602,7 +602,7 @@ function ChipPicker({ options, value, onChange, placeholder, variant, allowCusto
               type="button"
               onClick={() => toggle(opt)}
               className={`text-[11px] font-semibold rounded-full border px-2.5 py-1 transition ${
-                on ? onColor : "bg-white/[0.03] text-slate-300 border-white/10 hover:border-white/25"
+                on ? onColor : "bg-ink-50 text-ink-700 border-ink-200 hover:border-ink-300"
               }`}
             >
               {opt}
@@ -610,7 +610,7 @@ function ChipPicker({ options, value, onChange, placeholder, variant, allowCusto
           );
         })}
         {allChips.length === 0 && placeholder && (
-          <span className="text-[11px] text-slate-600 self-center ml-1">
+          <span className="text-[11px] text-ink-400 self-center ml-1">
             {placeholder}
           </span>
         )}

@@ -73,12 +73,12 @@ function HowItWorks() {
     },
   ];
   const accentMap = {
-    emerald: "border-emerald-400/25 bg-emerald-500/[0.06] text-emerald-300",
-    teal: "border-teal-400/25 bg-teal-500/[0.06] text-teal-300",
-    amber: "border-amber-400/25 bg-amber-500/[0.06] text-amber-300",
+    emerald: "border-emerald-200 bg-emerald-50 text-emerald-600",
+    teal: "border-teal-200 bg-teal-50 text-teal-600",
+    amber: "border-amber-400/25 bg-amber-50 text-amber-600",
   };
   return (
-    <section className="relative py-10 sm:py-14 md:py-16 border-t border-white/[0.04]">
+    <section className="relative py-10 sm:py-14 md:py-16 border-t border-ink-200">
       <div className="max-w-[1100px] mx-auto px-4 sm:px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -87,8 +87,8 @@ function HowItWorks() {
           transition={{ duration: 0.5 }}
           className="text-center mb-8 sm:mb-10"
         >
-          <div className="eyebrow text-emerald-300/80">How it works</div>
-          <h2 className="display text-[22px] sm:text-[26px] md:text-[32px] leading-tight tracking-extra-tight text-white mt-2">
+          <div className="eyebrow text-emerald-600/80">How it works</div>
+          <h2 className="display text-[22px] sm:text-[26px] md:text-[32px] leading-tight tracking-extra-tight text-ink-900 mt-2">
             A form in. A map out.
           </h2>
         </motion.div>
@@ -123,16 +123,16 @@ function HowItWorks() {
                   </div>
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center gap-2">
-                      <span className="text-[10px] font-bold tracking-wider text-slate-500 tabular">
+                      <span className="text-[10px] font-bold tracking-wider text-ink-500 tabular">
                         STEP {i + 1}
                       </span>
                     </div>
-                    <h3 className="text-white font-semibold text-[14.5px] mt-1 leading-tight">
+                    <h3 className="text-ink-900 font-semibold text-[14.5px] mt-1 leading-tight">
                       {step.label}
                     </h3>
                   </div>
                 </div>
-                <p className="text-slate-400 text-[12.5px] mt-3 leading-relaxed">
+                <p className="text-ink-500 text-[12.5px] mt-3 leading-relaxed">
                   {step.body}
                 </p>
               </motion.div>
@@ -151,7 +151,7 @@ function Hero() {
     <section className="relative overflow-hidden">
       <motion.div
         aria-hidden="true"
-        className="pointer-events-none absolute -top-40 left-1/2 -translate-x-1/2 w-[900px] h-[600px] rounded-full bg-brand-500/20 blur-[140px] ambient-pulse"
+        className="pointer-events-none absolute -top-40 left-1/2 -translate-x-1/2 w-[900px] h-[600px] rounded-full bg-brand-100 blur-[140px] ambient-pulse"
       />
       <motion.div
         aria-hidden="true"
@@ -165,7 +165,7 @@ function Hero() {
           transition={{ duration: 0.5, ease: [0.2, 0.7, 0.2, 1] }}
           className="flex justify-center mb-5 sm:mb-6"
         >
-          <Logo size={64} className="drop-shadow-[0_12px_28px_rgba(16,185,129,0.45)] sm:w-20 sm:h-20" />
+          <Logo size={64} className="drop-shadow-[0_10px_24px_rgba(67,79,140,0.22)] sm:w-20 sm:h-20" />
         </motion.div>
 
         <motion.div
@@ -185,7 +185,7 @@ function Hero() {
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.55, delay: 0.2 }}
-          className="display text-[30px] xs:text-[34px] sm:text-[44px] md:text-[60px] leading-[1.05] sm:leading-[1.02] tracking-extra-tight text-white max-w-[900px] mx-auto px-2"
+          className="display text-[30px] xs:text-[34px] sm:text-[44px] md:text-[60px] leading-[1.05] sm:leading-[1.02] tracking-extra-tight text-ink-900 max-w-[900px] mx-auto px-2"
         >
           Nigerian graduates don't need career advice.
           <br className="hidden xs:inline" />{" "}
@@ -198,11 +198,11 @@ function Hero() {
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.3 }}
-          className="text-slate-300 text-[14px] sm:text-[15.5px] md:text-[17px] leading-relaxed max-w-[720px] mx-auto mt-4 sm:mt-5 px-2"
+          className="text-ink-700 text-[14px] sm:text-[15.5px] md:text-[17px] leading-relaxed max-w-[720px] mx-auto mt-4 sm:mt-5 px-2"
         >
           For Nigerian graduates. Submit your situation — degree, state, savings, family, NYSC
           status. Within a minute, get{" "}
-          <span className="text-white font-semibold">4 ranked paths</span> with real ₦ pay
+          <span className="text-ink-900 font-semibold">4 ranked paths</span> with real ₦ pay
           bands, first-week actions, and a 2-year projection.
         </motion.p>
 
@@ -214,12 +214,12 @@ function Hero() {
         >
           <Link
             to="/app"
-            className="group inline-flex items-center justify-center gap-2 rounded-xl px-5 py-3 text-white font-semibold text-[14px] gradient-shift border border-white/15 min-h-[48px]"
+            className="group inline-flex items-center justify-center gap-2 rounded-xl px-5 py-3 text-ink-900 font-semibold text-[14px] gradient-shift border border-ink-200 min-h-[48px]"
             style={{
               background:
-                "linear-gradient(120deg, #059669 0%, #10b981 30%, #2dd4bf 50%, #14b8a6 70%, #059669 100%)",
+                "linear-gradient(120deg, #434F8C 0%, #5361A8 30%, #98A0C7 50%, #747EB3 70%, #434F8C 100%)",
               boxShadow:
-                "inset 0 1px 0 rgba(255,255,255,0.25), 0 12px 30px -10px rgba(20,184,166,0.55)",
+                "inset 0 1px 0 rgba(255,255,255,0.25), 0 12px 30px -10px rgba(116, 126, 179,0.55)",
             }}
           >
             Try the atlas
@@ -232,7 +232,7 @@ function Hero() {
             href="https://github.com/goddyjay/route-atlas"
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center justify-center gap-2 rounded-xl px-4 py-3 text-[13.5px] font-semibold bg-white/[0.04] hover:bg-white/[0.08] border border-white/10 hover:border-white/20 text-slate-200 transition min-h-[48px]"
+            className="inline-flex items-center justify-center gap-2 rounded-xl px-4 py-3 text-[13.5px] font-semibold bg-ink-100 hover:bg-ink-100 border border-ink-200 hover:border-ink-300 text-ink-800 transition min-h-[48px]"
           >
             <Github size={14} />
             View on GitHub
@@ -243,7 +243,7 @@ function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.55 }}
-          className="mt-5 text-[11.5px] text-slate-500"
+          className="mt-5 text-[11.5px] text-ink-500"
         >
           Free · No sign-up · Demo runs in 4 seconds · Powered by Opus 4.7
         </motion.p>
@@ -256,7 +256,7 @@ function Hero() {
 
 function ProblemStory() {
   return (
-    <section className="relative py-12 sm:py-16 md:py-24 border-t border-white/[0.04]">
+    <section className="relative py-12 sm:py-16 md:py-24 border-t border-ink-200">
       <div className="max-w-[860px] mx-auto px-4 sm:px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -264,11 +264,11 @@ function ProblemStory() {
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.55 }}
         >
-          <div className="eyebrow text-emerald-300/80">The problem</div>
-          <h2 className="display text-[28px] md:text-[36px] leading-tight tracking-extra-tight text-white mt-3">
+          <div className="eyebrow text-emerald-600/80">The problem</div>
+          <h2 className="display text-[28px] md:text-[36px] leading-tight tracking-extra-tight text-ink-900 mt-3">
             You finish NYSC and the job market doesn't want your degree.
           </h2>
-          <div className="mt-6 space-y-4 text-slate-300 text-[15px] leading-relaxed">
+          <div className="mt-6 space-y-4 text-ink-700 text-[15px] leading-relaxed">
             <p>
               A Microbiology graduate passes out in November with a 2:1, ₦200k saved, no clear
               next move. Six months later she teaches JSS chemistry lessons for ₦40k a month,
@@ -279,7 +279,7 @@ function ProblemStory() {
               AI doesn't know the Sagamu–Ota pharma corridor, can't place an ACCA-eligible audit
               associate on the UK Skilled Worker fast-track, has never heard of Igba Boi.
             </p>
-            <p className="text-white">
+            <p className="text-ink-900">
               A 10-year decision gets made on vibes and proximity.
             </p>
           </div>
@@ -343,17 +343,17 @@ const KNOWLEDGE_TILES = [
 ];
 
 const TILE_COLORS = {
-  emerald: "border-emerald-400/25 bg-emerald-500/[0.06] text-emerald-300",
-  sky: "border-sky-400/25 bg-sky-500/[0.06] text-sky-300",
-  violet: "border-violet-400/25 bg-violet-500/[0.06] text-violet-300",
-  amber: "border-amber-400/25 bg-amber-500/[0.06] text-amber-300",
-  teal: "border-teal-400/25 bg-teal-500/[0.06] text-teal-300",
-  rose: "border-rose-400/25 bg-rose-500/[0.06] text-rose-300",
+  emerald: "border-emerald-200 bg-emerald-50 text-emerald-600",
+  sky: "border-sky-400/25 bg-sky-50 text-sky-600",
+  violet: "border-violet-200 bg-violet-50 text-violet-600",
+  amber: "border-amber-400/25 bg-amber-50 text-amber-600",
+  teal: "border-teal-200 bg-teal-50 text-teal-600",
+  rose: "border-rose-200 bg-rose-50 text-rose-600",
 };
 
 function WhatItKnows() {
   return (
-    <section className="relative py-12 sm:py-16 md:py-24 border-t border-white/[0.04]">
+    <section className="relative py-12 sm:py-16 md:py-24 border-t border-ink-200">
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -361,11 +361,11 @@ function WhatItKnows() {
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.55 }}
         >
-          <div className="eyebrow text-emerald-300/80">The moat</div>
-          <h2 className="display text-[28px] md:text-[36px] leading-tight tracking-extra-tight text-white mt-3 max-w-[680px]">
+          <div className="eyebrow text-emerald-600/80">The moat</div>
+          <h2 className="display text-[28px] md:text-[36px] leading-tight tracking-extra-tight text-ink-900 mt-3 max-w-[680px]">
             What this atlas knows that generic AI doesn't.
           </h2>
-          <p className="text-slate-400 text-[14.5px] mt-3 max-w-[680px] leading-relaxed">
+          <p className="text-ink-500 text-[14.5px] mt-3 max-w-[680px] leading-relaxed">
             ~7,000 tokens of encoded Nigerian context. Real companies, real WhatsApp groups, real
             ₦ figures from 2026. Specific routes with specific costs — no hallucinated
             "opportunities."
@@ -402,8 +402,8 @@ function WhatItKnows() {
                 >
                   <Icon size={16} />
                 </div>
-                <h3 className="text-white font-semibold text-[14.5px] mt-3.5">{tile.title}</h3>
-                <p className="text-slate-400 text-[12.5px] mt-1.5 leading-relaxed">{tile.body}</p>
+                <h3 className="text-ink-900 font-semibold text-[14.5px] mt-3.5">{tile.title}</h3>
+                <p className="text-ink-500 text-[12.5px] mt-1.5 leading-relaxed">{tile.body}</p>
               </motion.div>
             );
           })}
@@ -417,7 +417,7 @@ function WhatItKnows() {
 
 function SampleRoute() {
   return (
-    <section className="relative py-12 sm:py-16 md:py-24 border-t border-white/[0.04]">
+    <section className="relative py-12 sm:py-16 md:py-24 border-t border-ink-200">
       <div className="max-w-[1100px] mx-auto px-4 sm:px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -426,11 +426,11 @@ function SampleRoute() {
           transition={{ duration: 0.55 }}
           className="text-center max-w-[720px] mx-auto"
         >
-          <div className="eyebrow text-emerald-300/80">A real output</div>
-          <h2 className="display text-[24px] sm:text-[28px] md:text-[36px] leading-tight tracking-extra-tight text-white mt-3">
+          <div className="eyebrow text-emerald-600/80">A real output</div>
+          <h2 className="display text-[24px] sm:text-[28px] md:text-[36px] leading-tight tracking-extra-tight text-ink-900 mt-3">
             This is what Opus 4.7 writes when it knows Nigeria.
           </h2>
-          <p className="text-slate-400 text-[14.5px] mt-3 leading-relaxed">
+          <p className="text-ink-500 text-[14.5px] mt-3 leading-relaxed">
             Top route for a Microbiology grad in Ibadan: ₦200k savings, diabetic mother,
             ₦40k teaching income. Copy-pasted from the live atlas.
           </p>
@@ -445,7 +445,7 @@ function SampleRoute() {
           transition={{ duration: 0.5 }}
           className="mt-8 mx-auto max-w-[860px]"
         >
-          <div className="eyebrow text-slate-400 text-center mb-3">
+          <div className="eyebrow text-ink-500 text-center mb-3">
             What's in every route you get
           </div>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
@@ -461,14 +461,14 @@ function SampleRoute() {
               return (
                 <div
                   key={f.label}
-                  className="flex items-start gap-2 rounded-lg border border-white/[0.06] bg-white/[0.02] px-3 py-2.5"
+                  className="flex items-start gap-2 rounded-lg border border-ink-200 bg-ink-50 px-3 py-2.5"
                 >
-                  <Icon size={12} className="text-emerald-300 mt-0.5 shrink-0" />
+                  <Icon size={12} className="text-emerald-600 mt-0.5 shrink-0" />
                   <div>
-                    <div className="text-[11.5px] font-semibold text-white leading-tight">
+                    <div className="text-[11.5px] font-semibold text-ink-900 leading-tight">
                       {f.label}
                     </div>
-                    <div className="text-[10.5px] text-slate-500 mt-0.5 leading-snug">
+                    <div className="text-[10.5px] text-ink-500 mt-0.5 leading-snug">
                       {f.body}
                     </div>
                   </div>
@@ -490,7 +490,7 @@ function SampleRoute() {
             className="pointer-events-none absolute inset-0 -z-0 rounded-2xl"
             style={{
               background:
-                "radial-gradient(60% 60% at 50% 0%, rgba(45,212,191,0.12) 0%, transparent 70%)",
+                "radial-gradient(60% 60% at 50% 0%, rgba(152, 160, 199,0.12) 0%, transparent 70%)",
             }}
           />
           <div className="relative z-10">
@@ -507,43 +507,43 @@ function SampleRoute() {
                 <Crown size={10} />
                 Best fit
               </span>
-              <span className="inline-flex items-center rounded-full px-2 py-0.5 text-[10px] font-semibold border bg-sky-500/15 text-sky-200 border-sky-400/30">
+              <span className="inline-flex items-center rounded-full px-2 py-0.5 text-[10px] font-semibold border bg-sky-50 text-sky-700 border-sky-200">
                 Local Formal
               </span>
-              <span className="inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[10px] font-semibold border bg-emerald-500/15 text-emerald-300 border-emerald-400/30">
+              <span className="inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[10px] font-semibold border bg-emerald-50 text-emerald-600 border-emerald-200">
                 <Flame size={10} />
                 High demand
               </span>
-              <span className="ml-auto text-[10.5px] font-bold rounded-full border px-2 py-0.5 tabular text-emerald-300 bg-emerald-500/15 border-emerald-400/30">
+              <span className="ml-auto text-[10.5px] font-bold rounded-full border px-2 py-0.5 tabular text-emerald-600 bg-emerald-50 border-emerald-200">
                 91% fit
               </span>
             </div>
 
-            <h3 className="display text-[22px] md:text-[24px] leading-tight tracking-extra-tight text-white mt-3">
+            <h3 className="display text-[22px] md:text-[24px] leading-tight tracking-extra-tight text-ink-900 mt-3">
               Pharma QA Analyst → International Lab Tech (Canada MLT)
             </h3>
-            <p className="text-slate-400 text-[13px] mt-2 leading-snug">
+            <p className="text-ink-500 text-[13px] mt-2 leading-snug">
               Land a QA role at Emzor, Fidson or May & Baker in the Sagamu-Ota corridor within
               4 months, stack 2 years, then route to Canada as a Medical Lab Technologist via the
               CSMLS bridge.
             </p>
 
-            <div className="mt-5 rounded-xl border border-emerald-400/20 bg-emerald-500/[0.05] p-3.5">
-              <div className="eyebrow text-emerald-300 flex items-center gap-1.5 mb-2">
+            <div className="mt-5 rounded-xl border border-emerald-200 bg-emerald-50 p-3.5">
+              <div className="eyebrow text-emerald-600 flex items-center gap-1.5 mb-2">
                 Why this fits you
               </div>
-              <div className="space-y-1.5 text-[12.5px] text-slate-200">
+              <div className="space-y-1.5 text-[12.5px] text-ink-800">
                 <div className="flex items-start gap-2">
-                  <CheckCircle2 size={12} className="text-emerald-400 mt-0.5 shrink-0" />
+                  <CheckCircle2 size={12} className="text-emerald-600 mt-0.5 shrink-0" />
                   <span>
-                    <span className="text-emerald-300/80 font-semibold">Degree:</span>{" "}
+                    <span className="text-emerald-600/80 font-semibold">Degree:</span>{" "}
                     Microbiology maps straight into pharma QA — no retraining, no bootcamp.
                   </span>
                 </div>
                 <div className="flex items-start gap-2">
-                  <CheckCircle2 size={12} className="text-emerald-400 mt-0.5 shrink-0" />
+                  <CheckCircle2 size={12} className="text-emerald-600 mt-0.5 shrink-0" />
                   <span>
-                    <span className="text-emerald-300/80 font-semibold">Location:</span> Ibadan to
+                    <span className="text-emerald-600/80 font-semibold">Location:</span> Ibadan to
                     Sagamu is under 2 hours — you stay reachable for your mother's emergencies.
                   </span>
                 </div>
@@ -551,27 +551,27 @@ function SampleRoute() {
             </div>
 
             <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-3">
-              <div className="rounded-lg border border-white/[0.06] bg-white/[0.02] px-3 py-2.5">
-                <div className="text-[10px] uppercase tracking-wider text-slate-500 font-semibold">
+              <div className="rounded-lg border border-ink-200 bg-ink-50 px-3 py-2.5">
+                <div className="text-[10px] uppercase tracking-wider text-ink-500 font-semibold">
                   Monthly pay
                 </div>
-                <div className="text-[14px] font-semibold tabular text-emerald-300 mt-0.5">
+                <div className="text-[14px] font-semibold tabular text-emerald-600 mt-0.5">
                   ₦150k → ₦500k+
                 </div>
               </div>
-              <div className="rounded-lg border border-white/[0.06] bg-white/[0.02] px-3 py-2.5">
-                <div className="text-[10px] uppercase tracking-wider text-slate-500 font-semibold">
+              <div className="rounded-lg border border-ink-200 bg-ink-50 px-3 py-2.5">
+                <div className="text-[10px] uppercase tracking-wider text-ink-500 font-semibold">
                   Start earning in
                 </div>
-                <div className="text-[14px] font-semibold tabular text-white mt-0.5">
+                <div className="text-[14px] font-semibold tabular text-ink-900 mt-0.5">
                   ~4 months
                 </div>
               </div>
             </div>
 
-            <div className="mt-5 text-[12px] text-slate-400 leading-relaxed">
-              <span className="text-slate-300 font-semibold">Pro tip from the atlas:</span>{" "}
-              <span className="text-slate-300">
+            <div className="mt-5 text-[12px] text-ink-500 leading-relaxed">
+              <span className="text-ink-700 font-semibold">Pro tip from the atlas:</span>{" "}
+              <span className="text-ink-700">
                 Apply Tuesday 8am on MyJobMag — HR screens CVs before weekly production meetings.
               </span>
             </div>
@@ -586,14 +586,14 @@ function SampleRoute() {
 
 function FinalCta() {
   return (
-    <section className="relative py-12 sm:py-16 md:py-24 border-t border-white/[0.04]">
+    <section className="relative py-12 sm:py-16 md:py-24 border-t border-ink-200">
       <div className="max-w-[860px] mx-auto px-6 text-center">
         <motion.h2
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="display text-[24px] sm:text-[28px] md:text-[36px] leading-tight tracking-extra-tight text-white"
+          className="display text-[24px] sm:text-[28px] md:text-[36px] leading-tight tracking-extra-tight text-ink-900"
         >
           Where do you stand?
         </motion.h2>
@@ -602,7 +602,7 @@ function FinalCta() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="text-slate-400 text-[14.5px] mt-3 max-w-[540px] mx-auto leading-relaxed"
+          className="text-ink-500 text-[14.5px] mt-3 max-w-[540px] mx-auto leading-relaxed"
         >
           Demo preset: 4 seconds. Your own intake: ~90 seconds. No sign-up, no email, no
           follow-ups.
@@ -616,12 +616,12 @@ function FinalCta() {
         >
           <Link
             to="/app"
-            className="group inline-flex items-center gap-2 rounded-xl px-6 py-3.5 text-white font-semibold text-[14.5px] gradient-shift border border-white/15"
+            className="group inline-flex items-center gap-2 rounded-xl px-6 py-3.5 text-ink-900 font-semibold text-[14.5px] gradient-shift border border-ink-200"
             style={{
               background:
-                "linear-gradient(120deg, #059669 0%, #10b981 30%, #2dd4bf 50%, #14b8a6 70%, #059669 100%)",
+                "linear-gradient(120deg, #434F8C 0%, #5361A8 30%, #98A0C7 50%, #747EB3 70%, #434F8C 100%)",
               boxShadow:
-                "inset 0 1px 0 rgba(255,255,255,0.25), 0 14px 36px -10px rgba(20,184,166,0.55)",
+                "inset 0 1px 0 rgba(255,255,255,0.25), 0 14px 36px -10px rgba(116, 126, 179,0.55)",
             }}
           >
             Draw my route atlas
@@ -640,25 +640,25 @@ function FinalCta() {
 
 function Footer() {
   return (
-    <footer className="border-t border-white/[0.04] py-10">
+    <footer className="border-t border-ink-200 py-10">
       <div className="max-w-[1200px] mx-auto px-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-5">
         <div className="flex items-center gap-3">
           <Logo size={32} className="shrink-0" />
-          <div className="text-[12px] text-slate-500 leading-snug">
-            <div className="text-slate-300 font-semibold">Route Atlas</div>
+          <div className="text-[12px] text-ink-500 leading-snug">
+            <div className="text-ink-700 font-semibold">Route Atlas</div>
             <div>Built for the Claude Opus Hackathon · MIT licensed</div>
           </div>
         </div>
-        <div className="flex items-center gap-4 text-[12px] text-slate-500">
+        <div className="flex items-center gap-4 text-[12px] text-ink-500">
           <a
             href="https://github.com/goddyjay/route-atlas"
             target="_blank"
             rel="noreferrer"
-            className="hover:text-white transition flex items-center gap-1.5"
+            className="hover:text-ink-900 transition flex items-center gap-1.5"
           >
             <Github size={13} /> goddyjay/route-atlas
           </a>
-          <Link to="/app" className="hover:text-white transition flex items-center gap-1.5">
+          <Link to="/app" className="hover:text-ink-900 transition flex items-center gap-1.5">
             <Users size={13} /> Open the app
           </Link>
         </div>

@@ -47,12 +47,12 @@ export default function SharedAtlasPage() {
       >
         <Link
           to="/app"
-          className="inline-flex items-center gap-1.5 text-[12px] font-semibold text-slate-300 hover:text-white transition"
+          className="inline-flex items-center gap-1.5 text-[12px] font-semibold text-ink-700 hover:text-ink-900 transition"
         >
           <ArrowLeft size={12} />
           Draw your own atlas
         </Link>
-        <span className="text-[10.5px] text-slate-500 uppercase tracking-wider">
+        <span className="text-[10.5px] text-ink-500 uppercase tracking-wider">
           Shared atlas · /atlas/{id}
         </span>
       </motion.div>
@@ -71,8 +71,8 @@ export default function SharedAtlasPage() {
 function LoadingShared() {
   return (
     <div className="card p-6 text-center">
-      <Loader2 size={18} className="animate-spin mx-auto text-brand-300" />
-      <p className="text-[12px] text-slate-400 mt-3">
+      <Loader2 size={18} className="animate-spin mx-auto text-brand-600" />
+      <p className="text-[12px] text-ink-500 mt-3">
         Loading shared atlas…
       </p>
     </div>
@@ -89,11 +89,11 @@ function ErrorShared({ message }) {
       }}
     >
       <div className="flex items-start gap-3">
-        <AlertCircle className="text-rose-300 shrink-0 mt-0.5" size={20} />
+        <AlertCircle className="text-rose-600 shrink-0 mt-0.5" size={20} />
         <div className="flex-1">
-          <h3 className="font-semibold text-rose-100">Atlas unavailable</h3>
-          <p className="text-sm text-rose-200/80 mt-1">{message}</p>
-          <p className="text-xs text-rose-200/60 mt-2">
+          <h3 className="font-semibold text-rose-700">Atlas unavailable</h3>
+          <p className="text-sm text-rose-700/80 mt-1">{message}</p>
+          <p className="text-xs text-rose-700/60 mt-2">
             Shared atlases expire after 30 days. Draw a fresh one below.
           </p>
           <Link to="/app" className="btn-secondary mt-3 inline-flex">

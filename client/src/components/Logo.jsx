@@ -24,20 +24,20 @@ export function Logo({ size = 44, className = "" }) {
     >
       <defs>
         <linearGradient id="ra-to-target" x1="0" y1="1" x2="1" y2="0">
-          <stop offset="0%" stopColor="#10b981" />
+          <stop offset="0%" stopColor="#5361A8" />
           <stop offset="100%" stopColor="#f59e0b" />
         </linearGradient>
         <linearGradient id="ra-to-teal" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0%" stopColor="#10b981" />
-          <stop offset="100%" stopColor="#14b8a6" />
+          <stop offset="0%" stopColor="#5361A8" />
+          <stop offset="100%" stopColor="#747EB3" />
         </linearGradient>
         <linearGradient id="ra-to-amber-down" x1="1" y1="0" x2="0" y2="1">
-          <stop offset="0%" stopColor="#10b981" />
+          <stop offset="0%" stopColor="#5361A8" />
           <stop offset="100%" stopColor="#f59e0b" />
         </linearGradient>
         <radialGradient id="ra-pin-glow" cx="0.5" cy="0.35" r="0.7">
-          <stop offset="0%" stopColor="rgba(110,231,183,0.55)" />
-          <stop offset="100%" stopColor="rgba(16,185,129,0)" />
+          <stop offset="0%" stopColor="rgba(192, 197, 221,0.55)" />
+          <stop offset="100%" stopColor="rgba(83, 97, 168,0)" />
         </radialGradient>
       </defs>
 
@@ -51,7 +51,7 @@ export function Logo({ size = 44, className = "" }) {
           cx="32"
           cy="30"
           r="14"
-          stroke="rgba(16,185,129,0.15)"
+          stroke="rgba(83, 97, 168,0.15)"
           strokeWidth="0.8"
           fill="none"
           strokeDasharray="1.4 1.8"
@@ -60,7 +60,7 @@ export function Logo({ size = 44, className = "" }) {
           cx="32"
           cy="30"
           r="10"
-          stroke="rgba(16,185,129,0.22)"
+          stroke="rgba(83, 97, 168,0.22)"
           strokeWidth="0.8"
           fill="none"
         />
@@ -68,7 +68,7 @@ export function Logo({ size = 44, className = "" }) {
           cx="32"
           cy="30"
           r="6.5"
-          stroke="rgba(20,184,166,0.3)"
+          stroke="rgba(116, 126, 179,0.3)"
           strokeWidth="0.8"
           fill="none"
         />
@@ -80,7 +80,7 @@ export function Logo({ size = 44, className = "" }) {
       {/* Upper-left route — pure emerald, ends in arrow. */}
       <motion.path
         d="M 28.5 25 L 22 18 L 14 10"
-        stroke="#10b981"
+        stroke="#5361A8"
         strokeWidth="1.8"
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -91,7 +91,7 @@ export function Logo({ size = 44, className = "" }) {
       />
       <motion.polygon
         points="14,10 18,11.5 16,14.5"
-        fill="#10b981"
+        fill="#5361A8"
         initial={{ scale: 0 }}
         animate={{ scale: 1 }}
         transition={{ duration: 0.25, delay: 0.9, ease: "backOut" }}
@@ -101,7 +101,7 @@ export function Logo({ size = 44, className = "" }) {
         cx="22"
         cy="18"
         r="1.4"
-        fill="#10b981"
+        fill="#5361A8"
         initial={{ scale: 0 }}
         animate={{ scale: 1 }}
         transition={{ duration: 0.25, delay: 0.55, ease: "backOut" }}
@@ -146,7 +146,7 @@ export function Logo({ size = 44, className = "" }) {
         cx="44"
         cy="20"
         r="1.4"
-        fill="#10b981"
+        fill="#5361A8"
         initial={{ scale: 0 }}
         animate={{ scale: 1 }}
         transition={{ duration: 0.25, delay: 0.7, ease: "backOut" }}
@@ -169,7 +169,7 @@ export function Logo({ size = 44, className = "" }) {
         cx="55"
         cy="52"
         r="1.9"
-        fill="#14b8a6"
+        fill="#747EB3"
         initial={{ scale: 0 }}
         animate={{ scale: 1 }}
         transition={{ duration: 0.25, delay: 1.18, ease: "backOut" }}
@@ -179,7 +179,7 @@ export function Logo({ size = 44, className = "" }) {
         cx="46"
         cy="44"
         r="1.4"
-        fill="#14b8a6"
+        fill="#747EB3"
         initial={{ scale: 0 }}
         animate={{ scale: 1 }}
         transition={{ duration: 0.25, delay: 0.82, ease: "backOut" }}
@@ -210,7 +210,7 @@ export function Logo({ size = 44, className = "" }) {
         cx="20"
         cy="44"
         r="1.4"
-        fill="#10b981"
+        fill="#5361A8"
         initial={{ scale: 0 }}
         animate={{ scale: 1 }}
         transition={{ duration: 0.25, delay: 0.95, ease: "backOut" }}
@@ -226,8 +226,8 @@ export function Logo({ size = 44, className = "" }) {
       >
         <path
           d="M 32 19 C 36 19, 39 22, 39 26 C 39 31, 32 39, 32 39 C 32 39, 25 31, 25 26 C 25 22, 28 19, 32 19 Z"
-          fill="#10b981"
-          stroke="#6ee7b7"
+          fill="#5361A8"
+          stroke="#C0C5DD"
           strokeWidth="0.6"
         />
         <circle cx="32" cy="26" r="2.2" fill="#0a0b0f" />
@@ -252,11 +252,11 @@ export function LogoMark({ size = 40, className = "" }) {
     >
       <Logo
         size={size}
-        className="shrink-0 drop-shadow-[0_6px_14px_rgba(16,185,129,0.45)] w-8 h-8 sm:w-10 sm:h-10"
+        className="shrink-0 drop-shadow-[0_6px_14px_rgba(67,79,140,0.22)] w-8 h-8 sm:w-10 sm:h-10"
       />
       <div className="leading-tight">
         <motion.div
-          className="display text-[14px] sm:text-[15px] text-white tracking-extra-tight"
+          className="display text-[14px] sm:text-[15px] text-ink-900 tracking-extra-tight"
           initial={{ opacity: 0, y: 4 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4, delay: 0.35 }}
@@ -264,7 +264,7 @@ export function LogoMark({ size = 40, className = "" }) {
           Route Atlas
         </motion.div>
         <motion.div
-          className="hidden xs:block text-[10px] text-slate-500 -mt-0.5"
+          className="hidden xs:block text-[10px] text-ink-500 -mt-0.5"
           initial={{ opacity: 0, y: 4 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4, delay: 0.5 }}

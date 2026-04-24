@@ -11,19 +11,19 @@ import {
 } from "lucide-react";
 
 const CATEGORY_STYLES = {
-  "Local Formal": "bg-sky-500/15 text-sky-200 border-sky-400/30",
-  "Local Informal": "bg-amber-500/15 text-amber-200 border-amber-400/30",
-  "Remote Digital": "bg-emerald-500/15 text-emerald-200 border-emerald-400/30",
-  "Trade/Apprenticeship": "bg-orange-500/15 text-orange-200 border-orange-400/30",
-  "JAPA": "bg-purple-500/15 text-purple-200 border-purple-400/30",
-  "Entrepreneurship": "bg-pink-500/15 text-pink-200 border-pink-400/30",
-  "Hybrid": "bg-indigo-500/15 text-indigo-200 border-indigo-400/30",
+  "Local Formal": "bg-sky-50 text-sky-700 border-sky-200",
+  "Local Informal": "bg-amber-50 text-amber-700 border-amber-200",
+  "Remote Digital": "bg-emerald-50 text-emerald-700 border-emerald-200",
+  "Trade/Apprenticeship": "bg-orange-50 text-orange-700 border-orange-200",
+  "JAPA": "bg-purple-50 text-purple-700 border-purple-200",
+  "Entrepreneurship": "bg-pink-50 text-pink-700 border-pink-200",
+  "Hybrid": "bg-indigo-50 text-indigo-700 border-indigo-200",
 };
 
 const DEMAND_META = {
-  High: { Icon: Flame, color: "text-emerald-300" },
-  Medium: { Icon: Minus, color: "text-amber-200" },
-  Low: { Icon: Snowflake, color: "text-slate-400" },
+  High: { Icon: Flame, color: "text-emerald-600" },
+  Medium: { Icon: Minus, color: "text-amber-700" },
+  Low: { Icon: Snowflake, color: "text-ink-500" },
 };
 
 function fmtNaira(n) {
@@ -65,19 +65,19 @@ export function CompareView({ routes }) {
       );
     }},
     { label: "Entry pay / mo", icon: Wallet, render: (r) => (
-      <span className="text-emerald-300 font-semibold tabular">{fmtNaira(r.real_pay?.entry_ngn)}</span>
+      <span className="text-emerald-600 font-semibold tabular">{fmtNaira(r.real_pay?.entry_ngn)}</span>
     )},
     { label: "Senior pay / mo", icon: Wallet, render: (r) => (
-      <span className="text-emerald-300 font-semibold tabular">{fmtNaira(r.real_pay?.senior_ngn)}+</span>
+      <span className="text-emerald-600 font-semibold tabular">{fmtNaira(r.real_pay?.senior_ngn)}+</span>
     )},
     { label: "First income in", icon: Clock, render: (r) => (
-      <span className="text-white font-semibold tabular">{humanMonths(r.real_cost?.time_months)}</span>
+      <span className="text-ink-900 font-semibold tabular">{humanMonths(r.real_cost?.time_months)}</span>
     )},
     { label: "Upfront cost", icon: Wallet, render: (r) => (
-      <span className="text-white tabular">{fmtNaira(r.real_cost?.money_ngn)}</span>
+      <span className="text-ink-900 tabular">{fmtNaira(r.real_cost?.money_ngn)}</span>
     )},
     { label: "Why it fits", icon: null, render: (r) => (
-      <span className="text-[11.5px] text-slate-300 leading-snug block">
+      <span className="text-[11.5px] text-ink-700 leading-snug block">
         {r.fit_reasons?.[0]?.note ?? "—"}
       </span>
     )},
@@ -94,8 +94,8 @@ export function CompareView({ routes }) {
       <div className="overflow-x-auto">
         <table className="w-full border-collapse">
           <thead>
-            <tr className="border-b border-white/[0.06]">
-              <th className="text-left p-3 text-[10px] uppercase tracking-wider text-slate-500 font-semibold sticky left-0 bg-ink-800/80 backdrop-blur">
+            <tr className="border-b border-ink-200">
+              <th className="text-left p-3 text-[10px] uppercase tracking-wider text-ink-500 font-semibold sticky left-0 bg-white/85 backdrop-blur">
                 Compare
               </th>
               {routes.map((r, i) => (
@@ -120,7 +120,7 @@ export function CompareView({ routes }) {
                         Best
                       </span>
                     )}
-                    <span className="text-[12px] font-semibold text-white leading-tight">
+                    <span className="text-[12px] font-semibold text-ink-900 leading-tight">
                       {r.title}
                     </span>
                   </div>
@@ -137,11 +137,11 @@ export function CompareView({ routes }) {
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.3, delay: 0.15 + rowIdx * 0.04 }}
-                  className="border-b border-white/[0.04] last:border-b-0 hover:bg-white/[0.015] transition"
+                  className="border-b border-ink-200 last:border-b-0 hover:bg-ink-50 transition"
                 >
-                  <td className="p-3 text-[11px] font-semibold text-slate-400 uppercase tracking-wider sticky left-0 bg-ink-800/60 backdrop-blur">
+                  <td className="p-3 text-[11px] font-semibold text-ink-500 uppercase tracking-wider sticky left-0 bg-white/70 backdrop-blur">
                     <span className="flex items-center gap-1.5">
-                      {Icon && <Icon size={10} className="text-brand-300" />}
+                      {Icon && <Icon size={10} className="text-brand-600" />}
                       {row.label}
                     </span>
                   </td>
@@ -163,14 +163,14 @@ export function CompareView({ routes }) {
 // Inline bar chart for the fit score row — gives the table visual heat.
 function FitBar({ score, isTop }) {
   const pct = Math.max(0, Math.min(100, Math.round(Number(score) || 0)));
-  const color = pct >= 85 ? "#34d399" : pct >= 70 ? "#fbbf24" : "#2dd4bf";
+  const color = pct >= 85 ? "#5361A8" : pct >= 70 ? "#fbbf24" : "#98A0C7";
   return (
     <div className="w-full max-w-[120px]">
       <div className="flex items-center gap-1.5">
-        <span className="tabular font-semibold text-white text-[13px]">{pct}%</span>
-        {isTop && <Crown size={10} className="text-amber-300" />}
+        <span className="tabular font-semibold text-ink-900 text-[13px]">{pct}%</span>
+        {isTop && <Crown size={10} className="text-amber-600" />}
       </div>
-      <div className="mt-1 h-1.5 w-full rounded-full bg-white/[0.06] overflow-hidden">
+      <div className="mt-1 h-1.5 w-full rounded-full bg-ink-100 overflow-hidden">
         <motion.div
           initial={{ width: 0 }}
           animate={{ width: `${pct}%` }}

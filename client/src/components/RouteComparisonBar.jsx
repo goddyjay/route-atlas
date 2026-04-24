@@ -45,8 +45,8 @@ export function RouteComparisonBar({ routes }) {
       className="card p-3 sm:p-4 no-print"
     >
       <div className="flex items-center justify-between gap-2 mb-2.5 px-1">
-        <span className="eyebrow text-slate-400">Quick compare</span>
-        <span className="text-[10.5px] text-slate-500 hidden sm:inline">
+        <span className="eyebrow text-ink-500">Quick compare</span>
+        <span className="text-[10.5px] text-ink-500 hidden sm:inline">
           Click a tile to open its full card
         </span>
       </div>
@@ -78,14 +78,14 @@ export function RouteComparisonBar({ routes }) {
               className={`group relative text-left rounded-xl p-3 border transition min-h-[100px]
                 ${
                   isRec
-                    ? "bg-emerald-500/[0.08] border-emerald-400/40 hover:border-emerald-400/60"
-                    : "bg-white/[0.02] border-white/[0.08] hover:border-white/20 hover:bg-white/[0.05]"
+                    ? "bg-emerald-50 border-emerald-300 hover:border-emerald-300"
+                    : "bg-ink-50 border-ink-200 hover:border-ink-300 hover:bg-ink-100"
                 }`}
               style={
                 isRec
                   ? {
                       boxShadow:
-                        "inset 0 1px 0 rgba(255,255,255,0.05), 0 0 24px -8px rgba(16,185,129,0.45)",
+                        "inset 0 1px 0 rgba(255,255,255,0.05), 0 0 24px -8px rgba(83, 97, 168,0.45)",
                     }
                   : undefined
               }
@@ -108,7 +108,7 @@ export function RouteComparisonBar({ routes }) {
               )}
 
               {/* Top: route name (2-line clamp) */}
-              <div className="text-[12px] font-semibold text-white leading-snug line-clamp-2 min-h-[32px]">
+              <div className="text-[12px] font-semibold text-ink-900 leading-snug line-clamp-2 min-h-[32px]">
                 {route.title}
               </div>
 
@@ -116,31 +116,31 @@ export function RouteComparisonBar({ routes }) {
               <div className="mt-2 flex items-baseline gap-1">
                 <span
                   className={`display text-[22px] sm:text-[24px] font-extrabold tabular tracking-extra-tight leading-none ${
-                    isRec ? "text-emerald-300" : "text-white"
+                    isRec ? "text-emerald-600" : "text-ink-900"
                   }`}
                 >
                   {Math.round(route.fit_score ?? 0)}
                 </span>
-                <span className={`text-[10px] font-bold ${isRec ? "text-emerald-400" : "text-slate-500"}`}>
+                <span className={`text-[10px] font-bold ${isRec ? "text-emerald-600" : "text-ink-500"}`}>
                   % fit
                 </span>
               </div>
 
               {/* Bottom: stats row */}
-              <div className="mt-2 pt-2 border-t border-white/[0.06] grid grid-cols-2 gap-1">
+              <div className="mt-2 pt-2 border-t border-ink-200 grid grid-cols-2 gap-1">
                 <div>
-                  <div className="text-[9px] uppercase tracking-wider text-slate-500 font-semibold flex items-center gap-0.5">
+                  <div className="text-[9px] uppercase tracking-wider text-ink-500 font-semibold flex items-center gap-0.5">
                     <Clock size={8} /> Income in
                   </div>
-                  <div className="text-[11.5px] font-semibold text-slate-200 tabular mt-0.5">
+                  <div className="text-[11.5px] font-semibold text-ink-800 tabular mt-0.5">
                     {humanMonths(route.real_cost?.time_months)}
                   </div>
                 </div>
                 <div>
-                  <div className="text-[9px] uppercase tracking-wider text-slate-500 font-semibold flex items-center gap-0.5">
+                  <div className="text-[9px] uppercase tracking-wider text-ink-500 font-semibold flex items-center gap-0.5">
                     <Wallet size={8} /> Entry
                   </div>
-                  <div className="text-[11.5px] font-semibold text-emerald-300 tabular mt-0.5">
+                  <div className="text-[11.5px] font-semibold text-emerald-600 tabular mt-0.5">
                     {fmtNaira(route.real_pay?.entry_ngn)}
                   </div>
                 </div>
@@ -150,7 +150,7 @@ export function RouteComparisonBar({ routes }) {
               <ArrowDown
                 size={10}
                 className={`absolute bottom-2 right-2 transition ${
-                  isRec ? "text-emerald-400/70" : "text-slate-600"
+                  isRec ? "text-emerald-600/70" : "text-ink-400"
                 } group-hover:translate-y-0.5 group-hover:opacity-100 opacity-60`}
               />
             </motion.button>

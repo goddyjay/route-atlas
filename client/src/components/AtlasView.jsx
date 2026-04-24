@@ -173,10 +173,10 @@ function Atlas({ atlas }) {
         className="flex items-end justify-between flex-wrap gap-3"
       >
         <div>
-          <h2 className="display text-[22px] md:text-[26px] tracking-extra-tight text-white leading-tight">
+          <h2 className="display text-[22px] md:text-[26px] tracking-extra-tight text-ink-900 leading-tight">
             Your best-fit routes
           </h2>
-          <p className="text-[12px] text-slate-500 mt-1">
+          <p className="text-[12px] text-ink-500 mt-1">
             {routes.length} routes · ranked best-fit first · expand any card for the full breakdown
           </p>
         </div>
@@ -188,8 +188,8 @@ function Atlas({ atlas }) {
             whileTap={{ scale: 0.96 }}
             className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-[12px] font-semibold border transition min-h-[36px] ${
               shareState === "copied"
-                ? "bg-emerald-500/20 border-emerald-400/40 text-emerald-200"
-                : "bg-white/[0.04] hover:bg-white/[0.09] border-white/10 hover:border-emerald-400/30 text-slate-200"
+                ? "bg-emerald-100 border-emerald-300 text-emerald-700"
+                : "bg-ink-100 hover:bg-ink-100 border-ink-200 hover:border-emerald-200 text-ink-800"
             }`}
             aria-label="Share this atlas"
           >
@@ -216,7 +216,7 @@ function Atlas({ atlas }) {
           <button
             type="button"
             onClick={handleExportPdf}
-            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-[12px] font-semibold bg-white/[0.04] hover:bg-white/[0.09] border border-white/10 hover:border-emerald-400/30 text-slate-200 transition min-h-[36px]"
+            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-[12px] font-semibold bg-ink-100 hover:bg-ink-100 border border-ink-200 hover:border-emerald-200 text-ink-800 transition min-h-[36px]"
             aria-label="Save atlas as PDF"
           >
             <Printer size={12} />
@@ -229,7 +229,7 @@ function Atlas({ atlas }) {
           <motion.div
             initial={{ opacity: 0, y: -4 }}
             animate={{ opacity: 1, y: 0 }}
-            className="basis-full text-[11px] text-emerald-300 tabular truncate"
+            className="basis-full text-[11px] text-emerald-600 tabular truncate"
           >
             {shareUrl}
           </motion.div>
@@ -288,7 +288,7 @@ function ViewSwitcher({ view, onChange }) {
     { id: "compare", label: "Compare", Icon: Columns3 },
   ];
   return (
-    <div className="inline-flex items-center gap-0.5 p-1 rounded-xl bg-white/[0.03] ring-1 ring-white/10">
+    <div className="inline-flex items-center gap-0.5 p-1 rounded-xl bg-ink-50 ring-1 ring-ink-200">
       {options.map((opt) => {
         const active = view === opt.id;
         const Icon = opt.Icon;
@@ -303,14 +303,14 @@ function ViewSwitcher({ view, onChange }) {
               <motion.span
                 layoutId="view-pill"
                 transition={{ type: "spring", stiffness: 380, damping: 30 }}
-                className="absolute inset-0 rounded-lg bg-gradient-to-r from-brand-600/80 to-accent-500/80 ring-1 ring-white/15"
+                className="absolute inset-0 rounded-lg bg-gradient-to-r from-brand-600/80 to-accent-500/80 ring-1 ring-ink-200"
                 style={{
                   boxShadow:
-                    "inset 0 1px 0 rgba(255,255,255,0.2), 0 6px 20px -6px rgba(20,184,166,0.55)",
+                    "inset 0 1px 0 rgba(255,255,255,0.2), 0 6px 20px -6px rgba(116, 126, 179,0.55)",
                 }}
               />
             )}
-            <span className={`relative z-10 inline-flex items-center gap-1.5 ${active ? "text-white" : "text-slate-400 hover:text-white"}`}>
+            <span className={`relative z-10 inline-flex items-center gap-1.5 ${active ? "text-ink-900" : "text-ink-500 hover:text-ink-900"}`}>
               <Icon size={12} />
               {opt.label}
             </span>
@@ -332,7 +332,7 @@ function SnapshotCard({ snapshot, insight, topFit, totalDone = 0, totalActions =
     >
       <motion.div
         aria-hidden="true"
-        className="pointer-events-none absolute -top-20 right-0 w-72 h-40 bg-brand-500/15 blur-3xl rounded-full ambient-pulse"
+        className="pointer-events-none absolute -top-20 right-0 w-72 h-40 bg-brand-50 blur-3xl rounded-full ambient-pulse"
       />
       <div className="relative grid grid-cols-1 md:grid-cols-[auto_1fr_auto] gap-4 items-start">
         <motion.div
@@ -341,19 +341,19 @@ function SnapshotCard({ snapshot, insight, topFit, totalDone = 0, totalActions =
           transition={{ type: "spring", stiffness: 240, damping: 18, delay: 0.1 }}
           className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0"
           style={{
-            background: "linear-gradient(140deg, #10b981, #14b8a6)",
-            boxShadow: "inset 0 1px 0 rgba(255,255,255,0.3), 0 8px 18px -6px rgba(16,185,129,0.5)",
+            background: "linear-gradient(140deg, #5361A8, #747EB3)",
+            boxShadow: "inset 0 1px 0 rgba(255,255,255,0.3), 0 8px 18px -6px rgba(83, 97, 168,0.5)",
           }}
         >
-          <Compass size={16} className="text-white" />
+          <Compass size={16} className="text-ink-900" />
         </motion.div>
         <div>
-          <div className="eyebrow text-brand-300/80">Based on your profile</div>
+          <div className="eyebrow text-brand-600/80">Based on your profile</div>
           <motion.p
             initial={{ opacity: 0, y: 6 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, delay: 0.2 }}
-            className="text-[14px] md:text-[15px] text-slate-100 mt-1.5 leading-relaxed"
+            className="text-[14px] md:text-[15px] text-ink-900 mt-1.5 leading-relaxed"
           >
             {snapshot}
           </motion.p>
@@ -362,9 +362,9 @@ function SnapshotCard({ snapshot, insight, topFit, totalDone = 0, totalActions =
               initial={{ opacity: 0, y: 8 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: 0.35 }}
-              className="mt-4 rounded-xl border border-amber-400/20 bg-amber-500/[0.05] p-3.5"
+              className="mt-4 rounded-xl border border-amber-200 bg-amber-50 p-3.5"
             >
-              <div className="eyebrow text-amber-300 flex items-center gap-1.5">
+              <div className="eyebrow text-amber-600 flex items-center gap-1.5">
                 <Lightbulb size={10} /> Headline insight
               </div>
               <p className="text-[13px] text-amber-50/90 mt-1.5 leading-relaxed">
@@ -380,10 +380,10 @@ function SnapshotCard({ snapshot, insight, topFit, totalDone = 0, totalActions =
             transition={{ duration: 0.4, delay: 0.3 }}
             className="hidden md:flex flex-col items-end text-right"
           >
-            <div className="eyebrow text-slate-500">Top match</div>
-            <div className="display text-[26px] tracking-extra-tight text-white tabular mt-0.5">
+            <div className="eyebrow text-ink-500">Top match</div>
+            <div className="display text-[26px] tracking-extra-tight text-ink-900 tabular mt-0.5">
               {Math.round(topFit)}
-              <span className="text-brand-300 text-[14px]">%</span>
+              <span className="text-brand-600 text-[14px]">%</span>
             </div>
           </motion.div>
         )}
@@ -396,20 +396,20 @@ function SnapshotCard({ snapshot, insight, topFit, totalDone = 0, totalActions =
           initial={{ opacity: 0, y: 6 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4, delay: 0.4 }}
-          className="relative mt-4 pt-4 border-t border-white/[0.06]"
+          className="relative mt-4 pt-4 border-t border-ink-200"
         >
           <div className="flex items-center justify-between gap-3 mb-2">
-            <div className="flex items-center gap-1.5 text-[11px] font-semibold text-emerald-300">
+            <div className="flex items-center gap-1.5 text-[11px] font-semibold text-emerald-600">
               <CheckCircle2 size={11} />
               <span className="uppercase tracking-wider">Your progress</span>
             </div>
-            <div className="text-[11px] text-slate-400 tabular">
-              <span className="text-emerald-300 font-semibold">{totalDone}</span>
-              <span className="text-slate-500"> / {totalActions} Monday actions</span>
-              <span className="text-slate-600 ml-2">· {pct}%</span>
+            <div className="text-[11px] text-ink-500 tabular">
+              <span className="text-emerald-600 font-semibold">{totalDone}</span>
+              <span className="text-ink-500"> / {totalActions} Monday actions</span>
+              <span className="text-ink-400 ml-2">· {pct}%</span>
             </div>
           </div>
-          <div className="h-1.5 w-full rounded-full bg-white/[0.06] overflow-hidden">
+          <div className="h-1.5 w-full rounded-full bg-ink-100 overflow-hidden">
             <motion.div
               className="h-full rounded-full"
               initial={{ width: 0 }}
@@ -417,8 +417,8 @@ function SnapshotCard({ snapshot, insight, topFit, totalDone = 0, totalActions =
               transition={{ duration: 0.6, ease: [0.2, 0.7, 0.2, 1] }}
               style={{
                 background:
-                  "linear-gradient(90deg, #10b981 0%, #2dd4bf 50%, #10b981 100%)",
-                boxShadow: "0 0 14px -2px rgba(16,185,129,0.6)",
+                  "linear-gradient(90deg, #5361A8 0%, #98A0C7 50%, #5361A8 100%)",
+                boxShadow: "0 0 14px -2px rgba(83, 97, 168,0.6)",
               }}
             />
           </div>
@@ -442,17 +442,17 @@ function FilteredOut({ items }) {
       initial={{ opacity: 0, y: 8 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4, delay: 0.15 }}
-      className="rounded-2xl border border-dashed border-white/[0.1] bg-white/[0.01] p-4 sm:p-5"
+      className="rounded-2xl border border-dashed border-ink-200 bg-ink-50 p-4 sm:p-5"
       aria-label="Routes not recommended"
     >
-      <header className="flex items-center justify-between gap-3 flex-wrap pb-3 mb-3 border-b border-white/[0.05]">
+      <header className="flex items-center justify-between gap-3 flex-wrap pb-3 mb-3 border-b border-ink-200">
         <div className="flex items-center gap-1.5">
-          <Ban size={11} className="text-slate-500" />
-          <span className="text-[10.5px] font-bold uppercase tracking-[0.18em] text-slate-500">
+          <Ban size={11} className="text-ink-500" />
+          <span className="text-[10.5px] font-bold uppercase tracking-[0.18em] text-ink-500">
             Routes not recommended
           </span>
         </div>
-        <span className="text-[10.5px] text-slate-600 tabular">
+        <span className="text-[10.5px] text-ink-400 tabular">
           {items.length} considered · ruled out for your situation
         </span>
       </header>
@@ -466,14 +466,14 @@ function FilteredOut({ items }) {
             transition={{ duration: 0.3, delay: 0.1 + i * 0.05 }}
             className="flex items-start gap-3 group"
           >
-            <span className="shrink-0 mt-0.5 inline-flex items-center justify-center w-5 h-5 rounded-md border border-white/[0.08] bg-white/[0.02] text-slate-600">
+            <span className="shrink-0 mt-0.5 inline-flex items-center justify-center w-5 h-5 rounded-md border border-ink-200 bg-ink-50 text-ink-400">
               <XIcon size={10} strokeWidth={2.5} />
             </span>
             <div className="flex-1 min-w-0">
-              <div className="text-[12.5px] font-semibold text-slate-400 leading-snug decoration-slate-700 line-through underline-offset-2">
+              <div className="text-[12.5px] font-semibold text-ink-500 leading-snug decoration-slate-700 line-through underline-offset-2">
                 {it.route}
               </div>
-              <div className="text-[12px] text-slate-500 leading-relaxed mt-0.5">
+              <div className="text-[12px] text-ink-500 leading-relaxed mt-0.5">
                 {it.reason}
               </div>
             </div>
@@ -517,7 +517,7 @@ function EmptyState() {
             transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
             style={{
               background:
-                "radial-gradient(circle, rgba(16,185,129,0.65) 0%, rgba(20,184,166,0.25) 45%, transparent 75%)",
+                "radial-gradient(circle, rgba(83, 97, 168,0.65) 0%, rgba(116, 126, 179,0.25) 45%, transparent 75%)",
               filter: "blur(14px)",
             }}
           />
@@ -528,17 +528,17 @@ function EmptyState() {
             transition={{ duration: 28, repeat: Infinity, ease: "linear" }}
             style={{
               background:
-                "conic-gradient(from 0deg, transparent 0deg, rgba(16,185,129,0.18) 60deg, transparent 120deg, transparent 240deg, rgba(20,184,166,0.18) 300deg, transparent 360deg)",
+                "conic-gradient(from 0deg, transparent 0deg, rgba(83, 97, 168,0.18) 60deg, transparent 120deg, transparent 240deg, rgba(116, 126, 179,0.18) 300deg, transparent 360deg)",
               borderRadius: "9999px",
             }}
           />
           <Logo size={84} className="relative" />
         </motion.div>
-        <h3 className="display text-xl tracking-extra-tight text-white">
+        <h3 className="display text-xl tracking-extra-tight text-ink-900">
           No atlas generated yet
         </h3>
-        <p className="text-sm text-slate-400 mt-2 max-w-sm mx-auto leading-relaxed">
-          Fill the intake or click <span className="text-emerald-300 font-semibold">Try a demo</span>. Output: 4 ranked routes with pay, timelines, and first-week actions.
+        <p className="text-sm text-ink-500 mt-2 max-w-sm mx-auto leading-relaxed">
+          Fill the intake or click <span className="text-emerald-600 font-semibold">Try a demo</span>. Output: 4 ranked routes with pay, timelines, and first-week actions.
         </p>
       </div>
     </motion.div>
@@ -559,10 +559,10 @@ function ErrorState({ message, onRetry }) {
       }}
     >
       <div className="flex items-start gap-3">
-        <AlertCircle className="text-rose-300 shrink-0 mt-0.5" size={20} />
+        <AlertCircle className="text-rose-600 shrink-0 mt-0.5" size={20} />
         <div className="flex-1">
-          <h3 className="font-semibold text-rose-100">Something went wrong</h3>
-          <p className="text-sm text-rose-200/80 mt-1">{message}</p>
+          <h3 className="font-semibold text-rose-700">Something went wrong</h3>
+          <p className="text-sm text-rose-700/80 mt-1">{message}</p>
           {onRetry && (
             <button type="button" onClick={onRetry} className="btn-secondary mt-3">
               <RotateCw size={14} />
@@ -588,21 +588,21 @@ function LoadingState({ progress = 0, streamChars = 0 }) {
       <div className="card p-5 relative overflow-hidden">
         <motion.div
           aria-hidden="true"
-          className="pointer-events-none absolute -top-16 -right-10 w-64 h-32 rounded-full bg-brand-500/20 blur-3xl ambient-pulse"
+          className="pointer-events-none absolute -top-16 -right-10 w-64 h-32 rounded-full bg-brand-100 blur-3xl ambient-pulse"
         />
-        <div className="relative flex items-center gap-2 text-brand-200">
+        <div className="relative flex items-center gap-2 text-brand-700">
           <span className="relative flex h-2 w-2">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-400 opacity-75" />
             <span className="relative inline-flex rounded-full h-2 w-2 bg-brand-400" />
           </span>
-          <Compass size={14} className="text-brand-300" />
+          <Compass size={14} className="text-brand-600" />
           <LoadingMessage streaming={streamChars > 0} />
         </div>
 
         {/* Live progress bar. Motion width follows the progress prop; a
             shimmering overlay keeps motion visible even when progress pauses
             between chunks. */}
-        <div className="relative mt-3 h-1.5 w-full rounded-full bg-white/[0.06] overflow-hidden">
+        <div className="relative mt-3 h-1.5 w-full rounded-full bg-ink-100 overflow-hidden">
           <motion.div
             className="absolute inset-y-0 left-0 rounded-full"
             initial={{ width: 0 }}
@@ -610,9 +610,9 @@ function LoadingState({ progress = 0, streamChars = 0 }) {
             transition={{ duration: 0.4, ease: "easeOut" }}
             style={{
               background:
-                "linear-gradient(90deg, #10b981 0%, #2dd4bf 50%, #10b981 100%)",
+                "linear-gradient(90deg, #5361A8 0%, #98A0C7 50%, #5361A8 100%)",
               backgroundSize: "200% 100%",
-              boxShadow: "0 0 18px -2px rgba(20,184,166,0.6)",
+              boxShadow: "0 0 18px -2px rgba(116, 126, 179,0.6)",
             }}
           />
           <motion.div
@@ -630,13 +630,13 @@ function LoadingState({ progress = 0, streamChars = 0 }) {
           />
         </div>
 
-        <div className="relative mt-2 flex items-center justify-between text-[10.5px] text-slate-500">
+        <div className="relative mt-2 flex items-center justify-between text-[10.5px] text-ink-500">
           <span>
             {streamChars > 0
               ? `Streaming · ${streamChars.toLocaleString()} chars received`
               : "Reasoning through your intake"}
           </span>
-          <span className="tabular text-slate-400 font-semibold">{pct}%</span>
+          <span className="tabular text-ink-500 font-semibold">{pct}%</span>
         </div>
       </div>
 

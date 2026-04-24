@@ -24,34 +24,34 @@ import {
 } from "lucide-react";
 
 const CATEGORY_STYLES = {
-  "Local Formal": { bg: "bg-sky-500/15", text: "text-sky-200", border: "border-sky-400/30" },
-  "Local Informal": { bg: "bg-amber-500/15", text: "text-amber-200", border: "border-amber-400/30" },
-  "Remote Digital": { bg: "bg-emerald-500/15", text: "text-emerald-200", border: "border-emerald-400/30" },
-  "Trade/Apprenticeship": { bg: "bg-orange-500/15", text: "text-orange-200", border: "border-orange-400/30" },
-  "JAPA": { bg: "bg-purple-500/15", text: "text-purple-200", border: "border-purple-400/30" },
-  "Entrepreneurship": { bg: "bg-pink-500/15", text: "text-pink-200", border: "border-pink-400/30" },
-  "Hybrid": { bg: "bg-indigo-500/15", text: "text-indigo-200", border: "border-indigo-400/30" },
+  "Local Formal": { bg: "bg-sky-50", text: "text-sky-700", border: "border-sky-200" },
+  "Local Informal": { bg: "bg-amber-50", text: "text-amber-700", border: "border-amber-200" },
+  "Remote Digital": { bg: "bg-emerald-50", text: "text-emerald-700", border: "border-emerald-200" },
+  "Trade/Apprenticeship": { bg: "bg-orange-50", text: "text-orange-700", border: "border-orange-200" },
+  "JAPA": { bg: "bg-purple-50", text: "text-purple-700", border: "border-purple-200" },
+  "Entrepreneurship": { bg: "bg-pink-50", text: "text-pink-700", border: "border-pink-200" },
+  "Hybrid": { bg: "bg-indigo-50", text: "text-indigo-700", border: "border-indigo-200" },
 };
 
 const DEMAND_STYLES = {
   High: {
-    bg: "bg-emerald-500/15",
-    text: "text-emerald-300",
-    border: "border-emerald-400/30",
+    bg: "bg-emerald-50",
+    text: "text-emerald-600",
+    border: "border-emerald-200",
     Icon: Flame,
     label: "High demand",
   },
   Medium: {
-    bg: "bg-amber-500/15",
-    text: "text-amber-200",
-    border: "border-amber-400/30",
+    bg: "bg-amber-50",
+    text: "text-amber-700",
+    border: "border-amber-200",
     Icon: Minus,
     label: "Medium demand",
   },
   Low: {
     bg: "bg-slate-500/15",
-    text: "text-slate-300",
-    border: "border-white/10",
+    text: "text-ink-700",
+    border: "border-ink-200",
     Icon: Snowflake,
     label: "Low demand",
   },
@@ -124,7 +124,7 @@ export function RouteCard({
           className="pointer-events-none absolute inset-0 -z-0 rounded-2xl bloom"
           style={{
             background:
-              "radial-gradient(60% 60% at 50% 50%, rgba(45,212,191,0.35) 0%, rgba(16,185,129,0.18) 50%, transparent 75%)",
+              "radial-gradient(60% 60% at 50% 50%, rgba(152, 160, 199,0.35) 0%, rgba(83, 97, 168,0.18) 50%, transparent 75%)",
           }}
         />
       )}
@@ -142,10 +142,10 @@ export function RouteCard({
             </span>
             <DemandChip demand={demand} />
           </div>
-          <h3 className="display text-[17px] sm:text-[18px] md:text-[20px] leading-[1.15] tracking-extra-tight text-white mt-2 sm:mt-2.5">
+          <h3 className="display text-[17px] sm:text-[18px] md:text-[20px] leading-[1.15] tracking-extra-tight text-ink-900 mt-2 sm:mt-2.5">
             {route.title}
           </h3>
-          <p className="text-[12px] sm:text-[12.5px] text-slate-400 mt-1.5 leading-snug">
+          <p className="text-[12px] sm:text-[12.5px] text-ink-500 mt-1.5 leading-snug">
             {route.one_liner}
           </p>
         </div>
@@ -153,8 +153,8 @@ export function RouteCard({
       </header>
 
       {/* "Why this fits you" callout — personalized reasons */}
-      <div className="mt-4 rounded-xl border border-brand-400/20 bg-brand-500/[0.05] p-3.5">
-        <div className="eyebrow text-brand-300 flex items-center gap-1.5 mb-2">
+      <div className="mt-4 rounded-xl border border-brand-200 bg-brand-50 p-3.5">
+        <div className="eyebrow text-brand-600 flex items-center gap-1.5 mb-2">
           <Target size={10} /> Why this fits you
         </div>
         <div className="space-y-1.5">
@@ -164,11 +164,11 @@ export function RouteCard({
               initial={{ opacity: 0, x: -4 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.15 + i * 0.08, duration: 0.3 }}
-              className="flex items-start gap-2 text-[12.5px] text-slate-200"
+              className="flex items-start gap-2 text-[12.5px] text-ink-800"
             >
-              <CheckCircle2 size={12} className="text-emerald-400 mt-0.5 shrink-0" />
+              <CheckCircle2 size={12} className="text-emerald-600 mt-0.5 shrink-0" />
               <span>
-                <span className="text-brand-300/80 font-semibold">{fr.dimension}:</span>{" "}
+                <span className="text-brand-600/80 font-semibold">{fr.dimension}:</span>{" "}
                 <span>{fr.note}</span>
               </span>
             </motion.div>
@@ -190,9 +190,9 @@ export function RouteCard({
           value={
             <>
               {fmtNaira(route.real_pay?.entry_ngn)}
-              <span className="text-slate-500"> → </span>
+              <span className="text-ink-500"> → </span>
               {fmtNaira(route.real_pay?.senior_ngn)}
-              <span className="text-slate-500">+</span>
+              <span className="text-ink-500">+</span>
             </>
           }
           accent="emerald"
@@ -202,7 +202,7 @@ export function RouteCard({
       <button
         type="button"
         onClick={() => setExpanded((v) => !v)}
-        className="mt-4 w-full inline-flex items-center justify-between gap-2 rounded-lg px-3.5 py-3 sm:py-2.5 text-[12.5px] font-semibold bg-white/[0.04] hover:bg-white/[0.08] border border-white/[0.08] text-white transition min-h-[44px]"
+        className="mt-4 w-full inline-flex items-center justify-between gap-2 rounded-lg px-3.5 py-3 sm:py-2.5 text-[12.5px] font-semibold bg-ink-100 hover:bg-ink-100 border border-ink-200 text-ink-900 transition min-h-[44px]"
       >
         <span>{expanded ? "Collapse the route" : "See the full route"}</span>
         {expanded ? <ChevronUp size={14} /> : <ChevronDown size={14} />}
@@ -268,11 +268,11 @@ function ExpandedDetail({ route, isDone, onToggleAction, doneCount, onAskFollowu
               initial={{ opacity: 0, x: -4 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.08 + i * 0.06, duration: 0.3 }}
-              className="flex items-start gap-2.5 text-[13px] text-slate-200 leading-relaxed"
+              className="flex items-start gap-2.5 text-[13px] text-ink-800 leading-relaxed"
             >
-              <CheckCircle2 size={13} className="text-emerald-400 mt-0.5 shrink-0" />
+              <CheckCircle2 size={13} className="text-emerald-600 mt-0.5 shrink-0" />
               <span>
-                <span className="font-semibold text-emerald-300">{fr.dimension}:</span>{" "}
+                <span className="font-semibold text-emerald-600">{fr.dimension}:</span>{" "}
                 {fr.note}
               </span>
             </motion.li>
@@ -289,23 +289,23 @@ function ExpandedDetail({ route, isDone, onToggleAction, doneCount, onAskFollowu
               initial={{ opacity: 0, y: 8 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 + i * 0.08, duration: 0.35 }}
-              className="relative rounded-xl border border-white/[0.08] bg-white/[0.02] p-3.5"
+              className="relative rounded-xl border border-ink-200 bg-ink-50 p-3.5"
             >
-              <div className="text-[10px] font-bold uppercase tracking-wider text-slate-500 tabular">
+              <div className="text-[10px] font-bold uppercase tracking-wider text-ink-500 tabular">
                 {step.label}
               </div>
-              <div className="mt-1 display text-[22px] tracking-extra-tight text-emerald-300 tabular leading-none">
+              <div className="mt-1 display text-[22px] tracking-extra-tight text-emerald-600 tabular leading-none">
                 {fmtNaira(step.amount)}
-                <span className="text-[10px] font-semibold text-slate-500 ml-1 tracking-normal">/mo</span>
+                <span className="text-[10px] font-semibold text-ink-500 ml-1 tracking-normal">/mo</span>
               </div>
-              <div className="mt-1.5 text-[11.5px] text-slate-400 font-semibold">
+              <div className="mt-1.5 text-[11.5px] text-ink-500 font-semibold">
                 {step.focus}
               </div>
               {step.milestones?.length > 0 && (
                 <ul className="mt-2 space-y-0.5">
                   {step.milestones.slice(0, 2).map((m, j) => (
-                    <li key={j} className="text-[11px] text-slate-500 leading-snug flex items-start gap-1">
-                      <span className="text-slate-600">·</span>
+                    <li key={j} className="text-[11px] text-ink-500 leading-snug flex items-start gap-1">
+                      <span className="text-ink-400">·</span>
                       <span className="flex-1">{m}</span>
                     </li>
                   ))}
@@ -323,12 +323,12 @@ function ExpandedDetail({ route, isDone, onToggleAction, doneCount, onAskFollowu
           <Stat label="Upfront cost" value={fmtNaira(route.real_cost?.money_ngn)} />
           <Stat
             label="Senior ceiling"
-            value={<>{fmtNaira(route.real_pay?.senior_ngn)}<span className="text-emerald-400">+</span></>}
+            value={<>{fmtNaira(route.real_pay?.senior_ngn)}<span className="text-emerald-600">+</span></>}
             accent="emerald"
           />
         </div>
         {route.real_cost?.what_you_give_up && (
-          <p className="mt-2.5 text-[11.5px] text-slate-500 leading-snug italic">
+          <p className="mt-2.5 text-[11.5px] text-ink-500 leading-snug italic">
             What you give up: {route.real_cost.what_you_give_up}
           </p>
         )}
@@ -340,10 +340,10 @@ function ExpandedDetail({ route, isDone, onToggleAction, doneCount, onAskFollowu
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4 }}
-          className="relative overflow-hidden rounded-xl p-4 border border-accent-400/25"
+          className="relative overflow-hidden rounded-xl p-4 border border-accent-300"
           style={{
             background:
-              "radial-gradient(110% 100% at 100% 0%, rgba(45, 212, 191, 0.18) 0%, transparent 55%), radial-gradient(80% 80% at 0% 100%, rgba(16, 185, 129, 0.14) 0%, transparent 60%), rgba(255,255,255,0.02)",
+              "radial-gradient(110% 100% at 100% 0%, rgba(152, 160, 199, 0.18) 0%, transparent 55%), radial-gradient(80% 80% at 0% 100%, rgba(83, 97, 168, 0.14) 0%, transparent 60%), rgba(255,255,255,0.02)",
           }}
         >
           <motion.div
@@ -354,12 +354,12 @@ function ExpandedDetail({ route, isDone, onToggleAction, doneCount, onAskFollowu
             <motion.div
               animate={{ rotate: [0, 6, -6, 0] }}
               transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-              className="w-8 h-8 rounded-lg bg-accent-500/20 border border-accent-400/30 flex items-center justify-center shrink-0"
+              className="w-8 h-8 rounded-lg bg-accent-100 border border-accent-300 flex items-center justify-center shrink-0"
             >
               <CrystalBallIcon />
             </motion.div>
             <div>
-              <div className="eyebrow text-accent-300 flex items-center gap-1.5">
+              <div className="eyebrow text-accent-600 flex items-center gap-1.5">
                 <TrendingUp size={10} /> 2-year projection
               </div>
               <p className="text-[13px] text-teal-50/90 mt-1.5 leading-relaxed">
@@ -378,8 +378,8 @@ function ExpandedDetail({ route, isDone, onToggleAction, doneCount, onAskFollowu
               <span
                 className={`text-[10px] font-bold tabular px-1.5 py-0.5 rounded ${
                   doneCount > 0
-                    ? "bg-emerald-500/20 text-emerald-300 border border-emerald-400/30"
-                    : "bg-white/[0.04] text-slate-400 border border-white/10"
+                    ? "bg-emerald-100 text-emerald-600 border border-emerald-200"
+                    : "bg-ink-100 text-ink-500 border border-ink-200"
                 }`}
               >
                 {doneCount}/{actions.length}
@@ -404,7 +404,7 @@ function ExpandedDetail({ route, isDone, onToggleAction, doneCount, onAskFollowu
                   hidden: { opacity: 0, x: -6 },
                   visible: { opacity: 1, x: 0, transition: { duration: 0.3, ease: [0.2, 0.7, 0.2, 1] } },
                 }}
-                className="flex items-start gap-2.5 text-[12.5px] text-slate-200 leading-relaxed"
+                className="flex items-start gap-2.5 text-[12.5px] text-ink-800 leading-relaxed"
               >
                 <motion.button
                   type="button"
@@ -416,8 +416,8 @@ function ExpandedDetail({ route, isDone, onToggleAction, doneCount, onAskFollowu
                   transition={{ type: "spring", stiffness: 420, damping: 18 }}
                   className={`shrink-0 w-5 h-5 rounded-md inline-flex items-center justify-center mt-0.5 transition min-w-[20px] ${
                     done
-                      ? "bg-emerald-500/25 text-emerald-300 border border-emerald-400/40"
-                      : "bg-white/[0.04] text-slate-400 border border-white/15 hover:border-emerald-400/40 hover:text-emerald-300"
+                      ? "bg-emerald-100 text-emerald-600 border border-emerald-300"
+                      : "bg-ink-100 text-ink-500 border border-ink-200 hover:border-emerald-300 hover:text-emerald-600"
                   }`}
                 >
                   {done ? (
@@ -428,11 +428,11 @@ function ExpandedDetail({ route, isDone, onToggleAction, doneCount, onAskFollowu
                 </motion.button>
                 <span
                   className={`flex-1 transition ${
-                    done ? "line-through text-slate-500" : ""
+                    done ? "line-through text-ink-500" : ""
                   }`}
                 >
                   {m.step}
-                  <span className="text-slate-500 text-[11px]"> · within {m.deadline_days}d</span>
+                  <span className="text-ink-500 text-[11px]"> · within {m.deadline_days}d</span>
                 </span>
               </motion.li>
             );
@@ -452,7 +452,7 @@ function ExpandedDetail({ route, isDone, onToggleAction, doneCount, onAskFollowu
                 transition={{ duration: 0.3, delay: 0.1 + i * 0.08 }}
                 className="flex items-start gap-2.5 text-[13px] text-amber-50/90 leading-relaxed"
               >
-                <Lightbulb size={12} className="text-amber-300 mt-0.5 shrink-0" />
+                <Lightbulb size={12} className="text-amber-600 mt-0.5 shrink-0" />
                 <span className="flex-1">{tip}</span>
               </motion.li>
             ))}
@@ -464,14 +464,14 @@ function ExpandedDetail({ route, isDone, onToggleAction, doneCount, onAskFollowu
       <DossierSection label="This route breaks if" accent="rose">
         <ul className="space-y-2">
           {route.break_reasons?.map((br, i) => (
-            <li key={i} className="flex items-start gap-2.5 text-[13px] text-rose-100/90 leading-relaxed">
+            <li key={i} className="flex items-start gap-2.5 text-[13px] text-rose-700/90 leading-relaxed">
               <SeverityPill severity={br.severity} />
               <span className="flex-1">{br.risk}</span>
             </li>
           ))}
           {route.who_this_breaks && (
-            <li className="flex items-start gap-2.5 text-[12.5px] text-rose-200/70 leading-relaxed italic pt-1 border-t border-rose-400/10 mt-1">
-              <AlertTriangle size={11} className="text-rose-300 mt-0.5 shrink-0" />
+            <li className="flex items-start gap-2.5 text-[12.5px] text-rose-700/70 leading-relaxed italic pt-1 border-t border-rose-400/10 mt-1">
+              <AlertTriangle size={11} className="text-rose-600 mt-0.5 shrink-0" />
               <span className="flex-1">{route.who_this_breaks}</span>
             </li>
           )}
@@ -492,23 +492,23 @@ function ExpandedDetail({ route, isDone, onToggleAction, doneCount, onAskFollowu
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.3, delay: 0.08 + i * 0.06 }}
                 whileHover={{ x: 2 }}
-                className="group flex items-start justify-between gap-3 rounded-lg border border-white/[0.08] bg-white/[0.02] hover:bg-white/[0.05] hover:border-emerald-400/40 px-3.5 py-3 transition min-h-[52px]"
+                className="group flex items-start justify-between gap-3 rounded-lg border border-ink-200 bg-ink-50 hover:bg-ink-100 hover:border-emerald-300 px-3.5 py-3 transition min-h-[52px]"
               >
                 <div className="flex items-start gap-2 min-w-0">
                   <ExternalLink
                     size={13}
-                    className="text-emerald-300 mt-0.5 shrink-0 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                    className="text-emerald-600 mt-0.5 shrink-0 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
                   />
                   <div className="min-w-0">
-                    <div className="text-[13px] font-semibold text-white truncate">
+                    <div className="text-[13px] font-semibold text-ink-900 truncate">
                       {site.name}
                     </div>
-                    <div className="text-[11.5px] text-slate-400 leading-snug mt-0.5">
+                    <div className="text-[11.5px] text-ink-500 leading-snug mt-0.5">
                       {site.why}
                     </div>
                   </div>
                 </div>
-                <span className="text-[10px] text-slate-600 font-mono shrink-0 hidden sm:inline self-center">
+                <span className="text-[10px] text-ink-400 font-mono shrink-0 hidden sm:inline self-center">
                   {hostnameFromUrl(site.url)}
                 </span>
               </motion.a>
@@ -518,7 +518,7 @@ function ExpandedDetail({ route, isDone, onToggleAction, doneCount, onAskFollowu
       )}
 
       {route.nigerian_notes && (
-        <p className="text-[12px] text-slate-500 leading-snug italic border-l-2 border-slate-700 pl-3">
+        <p className="text-[12px] text-ink-500 leading-snug italic border-l-2 border-slate-700 pl-3">
           {route.nigerian_notes}
         </p>
       )}
@@ -534,15 +534,15 @@ function ExpandedDetail({ route, isDone, onToggleAction, doneCount, onAskFollowu
           whileTap={{ scale: 0.99 }}
           className="w-full inline-flex items-center justify-between gap-2 rounded-xl
                      px-4 py-3 text-[13px] font-semibold
-                     bg-emerald-500/10 hover:bg-emerald-500/20
-                     border border-emerald-400/25 hover:border-emerald-400/50
-                     text-emerald-200 transition min-h-[48px] no-print"
+                     bg-emerald-50 hover:bg-emerald-100
+                     border border-emerald-200 hover:border-emerald-300
+                     text-emerald-700 transition min-h-[48px] no-print"
         >
           <span className="inline-flex items-center gap-2">
             <MessageCircleQuestion size={14} />
             Ask a follow-up about this route
           </span>
-          <ArrowUpRight size={12} className="text-emerald-300" />
+          <ArrowUpRight size={12} className="text-emerald-600" />
         </motion.button>
       )}
     </div>
@@ -556,10 +556,10 @@ function ExpandedDetail({ route, isDone, onToggleAction, doneCount, onAskFollowu
 // reads as a structured report rather than a wall of text.
 function DossierSection({ label, accent = "default", children }) {
   const accentMap = {
-    default: "text-slate-400 border-white/[0.08]",
-    amber: "text-amber-300 border-amber-400/20",
-    rose: "text-rose-300 border-rose-400/20",
-    emerald: "text-emerald-300 border-emerald-400/20",
+    default: "text-ink-500 border-ink-200",
+    amber: "text-amber-600 border-amber-200",
+    rose: "text-rose-600 border-rose-200",
+    emerald: "text-emerald-600 border-emerald-200",
   };
   const color = accentMap[accent] ?? accentMap.default;
   return (
@@ -576,10 +576,10 @@ function DossierSection({ label, accent = "default", children }) {
 
 // Inline stat card — used in the Numbers row.
 function Stat({ label, value, accent = "default" }) {
-  const valColor = accent === "emerald" ? "text-emerald-300" : "text-white";
+  const valColor = accent === "emerald" ? "text-emerald-600" : "text-ink-900";
   return (
-    <div className="rounded-xl border border-white/[0.08] bg-white/[0.02] px-3.5 py-2.5">
-      <div className="text-[10px] uppercase tracking-wider text-slate-500 font-semibold">
+    <div className="rounded-xl border border-ink-200 bg-ink-50 px-3.5 py-2.5">
+      <div className="text-[10px] uppercase tracking-wider text-ink-500 font-semibold">
         {label}
       </div>
       <div className={`mt-1 display text-[18px] font-bold tabular tracking-extra-tight ${valColor}`}>
@@ -666,22 +666,22 @@ function Timeline({ roadmap }) {
                 damping: 18,
                 delay: 0.2 + i * 0.14,
               }}
-              className="absolute left-[5px] top-1.5 w-[14px] h-[14px] rounded-full border-2 border-brand-400 bg-ink-800"
+              className="absolute left-[5px] top-1.5 w-[14px] h-[14px] rounded-full border-2 border-brand-400 bg-white"
               style={{
-                boxShadow: "0 0 0 3px rgba(16,185,129,0.2), 0 0 14px -2px rgba(16,185,129,0.55)",
+                boxShadow: "0 0 0 3px rgba(83, 97, 168,0.2), 0 0 14px -2px rgba(83, 97, 168,0.55)",
               }}
             />
-            <div className="rounded-lg border border-white/[0.06] bg-white/[0.02] p-3">
+            <div className="rounded-lg border border-ink-200 bg-ink-50 p-3">
               <div className="flex items-center justify-between gap-2">
                 <div>
-                  <div className="text-[10px] font-semibold uppercase tracking-wider text-brand-300">
+                  <div className="text-[10px] font-semibold uppercase tracking-wider text-brand-600">
                     {ph.period}
                   </div>
-                  <div className="text-[13px] text-white font-semibold mt-0.5">
+                  <div className="text-[13px] text-ink-900 font-semibold mt-0.5">
                     {ph.focus}
                   </div>
                 </div>
-                <div className="text-[11px] tabular text-emerald-300 font-semibold shrink-0">
+                <div className="text-[11px] tabular text-emerald-600 font-semibold shrink-0">
                   {fmtNaira(ph.income_by_end_ngn)}/mo
                 </div>
               </div>
@@ -709,9 +709,9 @@ function Timeline({ roadmap }) {
                         transition: { duration: 0.25, ease: "easeOut" },
                       },
                     }}
-                    className="text-[12px] text-slate-300 flex items-start gap-2"
+                    className="text-[12px] text-ink-700 flex items-start gap-2"
                   >
-                    <span className="text-slate-600 mt-0.5">·</span>
+                    <span className="text-ink-400 mt-0.5">·</span>
                     <span>{ms}</span>
                   </motion.li>
                 ))}
@@ -729,7 +729,7 @@ function ConfidenceRing({ score }) {
   const r = 22;
   const c = 2 * Math.PI * r;
   const dash = (pct / 100) * c;
-  const color = pct >= 85 ? "#34d399" : pct >= 70 ? "#fbbf24" : "#2dd4bf";
+  const color = pct >= 85 ? "#5361A8" : pct >= 70 ? "#fbbf24" : "#98A0C7";
   return (
     <motion.div
       initial={{ scale: 0.7, opacity: 0 }}
@@ -765,7 +765,7 @@ function ConfidenceRing({ score }) {
       </svg>
       <div className="absolute flex flex-col items-center leading-none">
         <AnimatedPercent value={pct} />
-        <span className="text-[8.5px] uppercase tracking-[0.14em] text-slate-500 font-bold mt-0.5">
+        <span className="text-[8.5px] uppercase tracking-[0.14em] text-ink-500 font-bold mt-0.5">
           fit
         </span>
       </div>
@@ -790,9 +790,9 @@ function AnimatedPercent({ value }) {
     return () => cancelAnimationFrame(raf);
   }, [value]);
   return (
-    <span className="text-[17px] font-extrabold text-white tabular leading-none">
+    <span className="text-[17px] font-extrabold text-ink-900 tabular leading-none">
       {display}
-      <span className="text-brand-300 text-[10px] font-bold">%</span>
+      <span className="text-brand-600 text-[10px] font-bold">%</span>
     </span>
   );
 }
@@ -810,10 +810,10 @@ function DemandChip({ demand }) {
 }
 
 function GuidedStat({ icon: Icon, label, value, accent = "brand" }) {
-  const valColor = accent === "emerald" ? "text-emerald-300" : "text-white";
+  const valColor = accent === "emerald" ? "text-emerald-600" : "text-ink-900";
   return (
-    <div className="rounded-lg border border-white/[0.06] bg-white/[0.02] px-3 py-2">
-      <div className="flex items-center gap-1.5 text-[10px] uppercase tracking-wider text-slate-500 font-semibold">
+    <div className="rounded-lg border border-ink-200 bg-ink-50 px-3 py-2">
+      <div className="flex items-center gap-1.5 text-[10px] uppercase tracking-wider text-ink-500 font-semibold">
         <Icon size={10} />
         {label}
       </div>
@@ -827,10 +827,10 @@ function GuidedStat({ icon: Icon, label, value, accent = "brand" }) {
 function SeverityPill({ severity }) {
   const color =
     severity === "High"
-      ? "bg-rose-500/20 text-rose-200 border-rose-400/30"
+      ? "bg-rose-100 text-rose-700 border-rose-200"
       : severity === "Medium"
-      ? "bg-amber-500/20 text-amber-200 border-amber-400/30"
-      : "bg-white/[0.04] text-slate-300 border-white/10";
+      ? "bg-amber-100 text-amber-700 border-amber-200"
+      : "bg-ink-100 text-ink-700 border-ink-200";
   return (
     <span className={`text-[9.5px] font-semibold rounded border px-1.5 py-0.5 shrink-0 mt-0.5 ${color}`}>
       {severity}
@@ -847,13 +847,13 @@ function Column({ title, icon: Icon, danger, children }) {
     <div
       className={`rounded-xl border p-3 ${
         danger
-          ? "border-rose-400/20 bg-rose-500/[0.04]"
-          : "border-white/[0.06] bg-white/[0.015]"
+          ? "border-rose-200 bg-rose-50"
+          : "border-ink-200 bg-ink-50"
       }`}
     >
       <div
         className={`eyebrow flex items-center gap-1.5 mb-2 ${
-          danger ? "text-rose-300" : "text-brand-300/80"
+          danger ? "text-rose-600" : "text-brand-600/80"
         }`}
       >
         {Icon && <Icon size={10} />} {title}
@@ -867,10 +867,10 @@ function DL({ children }) {
   return <dl className="grid grid-cols-[auto_1fr] gap-x-3 gap-y-1 text-[12px]">{children}</dl>;
 }
 function DT({ children }) {
-  return <dt className="text-slate-500">{children}</dt>;
+  return <dt className="text-ink-500">{children}</dt>;
 }
 function DD({ children, className = "" }) {
-  return <dd className={`text-slate-200 font-semibold tabular ${className}`}>{children}</dd>;
+  return <dd className={`text-ink-800 font-semibold tabular ${className}`}>{children}</dd>;
 }
 
 // Inline crystal-ball SVG for the "2-year projection" callout. lucide doesn't
@@ -881,8 +881,8 @@ function CrystalBallIcon() {
       <defs>
         <radialGradient id="orb" cx="0.35" cy="0.35" r="0.75">
           <stop offset="0%" stopColor="rgba(255,255,255,0.9)" />
-          <stop offset="45%" stopColor="#5eead4" />
-          <stop offset="100%" stopColor="#0f766e" />
+          <stop offset="45%" stopColor="#B3B9DB" />
+          <stop offset="100%" stopColor="#292F53" />
         </radialGradient>
       </defs>
       <circle cx="12" cy="11" r="7" fill="url(#orb)" />

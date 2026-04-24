@@ -97,7 +97,7 @@ export function FollowupDrawer({ open, onClose, route, intake }) {
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
             onClick={onClose}
-            className="fixed inset-0 z-40 bg-black/60 backdrop-blur-sm"
+            className="fixed inset-0 z-40 bg-ink-900/40 backdrop-blur-sm"
           />
 
           {/* Drawer — bottom sheet on mobile, right-side drawer on desktop */}
@@ -107,27 +107,27 @@ export function FollowupDrawer({ open, onClose, route, intake }) {
             exit={{ y: "100%", opacity: 0 }}
             transition={{ duration: 0.35, ease: [0.2, 0.7, 0.2, 1] }}
             className="fixed inset-x-0 bottom-0 z-50 md:inset-y-0 md:left-auto md:right-0 md:bottom-0 md:top-0 md:w-[480px] md:h-full
-                       bg-ink-800 border-t md:border-t-0 md:border-l border-white/10
+                       bg-white border-t md:border-t-0 md:border-l border-ink-200
                        flex flex-col max-h-[92vh] md:max-h-none"
             style={{
               boxShadow: "0 -24px 60px -10px rgba(0,0,0,0.8)",
             }}
           >
             {/* Header */}
-            <div className="shrink-0 flex items-start gap-3 p-4 sm:p-5 border-b border-white/[0.06]">
-              <div className="w-9 h-9 rounded-lg flex items-center justify-center shrink-0 bg-emerald-500/15 border border-emerald-400/25 text-emerald-300">
+            <div className="shrink-0 flex items-start gap-3 p-4 sm:p-5 border-b border-ink-200">
+              <div className="w-9 h-9 rounded-lg flex items-center justify-center shrink-0 bg-emerald-50 border border-emerald-200 text-emerald-600">
                 <MessageCircleQuestion size={18} />
               </div>
               <div className="flex-1 min-w-0">
-                <div className="eyebrow text-emerald-300/80">Ask a follow-up</div>
-                <div className="text-[13.5px] font-semibold text-white mt-0.5 leading-snug line-clamp-2">
+                <div className="eyebrow text-emerald-600/80">Ask a follow-up</div>
+                <div className="text-[13.5px] font-semibold text-ink-900 mt-0.5 leading-snug line-clamp-2">
                   {route?.title}
                 </div>
               </div>
               <button
                 type="button"
                 onClick={onClose}
-                className="shrink-0 p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-white/[0.06] transition"
+                className="shrink-0 p-1.5 rounded-lg text-ink-500 hover:text-ink-900 hover:bg-ink-100 transition"
                 aria-label="Close"
               >
                 <X size={16} />
@@ -138,7 +138,7 @@ export function FollowupDrawer({ open, onClose, route, intake }) {
             <div className="flex-1 overflow-y-auto pretty-scroll p-4 sm:p-5 space-y-4">
               {state === "idle" ? (
                 <>
-                  <p className="text-[12.5px] text-slate-400 leading-relaxed">
+                  <p className="text-[12.5px] text-ink-500 leading-relaxed">
                     Pick a question or type your own. Answered with the same Nigerian
                     context the atlas uses.
                   </p>
@@ -149,13 +149,13 @@ export function FollowupDrawer({ open, onClose, route, intake }) {
                         type="button"
                         onClick={() => ask(q)}
                         whileHover={{ x: 2 }}
-                        className="group w-full text-left inline-flex items-start gap-2 rounded-xl border border-white/[0.08] bg-white/[0.03] hover:bg-white/[0.07] hover:border-emerald-400/30 px-3.5 py-3 text-[12.5px] text-slate-200 transition min-h-[48px]"
+                        className="group w-full text-left inline-flex items-start gap-2 rounded-xl border border-ink-200 bg-ink-50 hover:bg-ink-100 hover:border-emerald-200 px-3.5 py-3 text-[12.5px] text-ink-800 transition min-h-[48px]"
                       >
-                        <Sparkles size={12} className="text-emerald-300 mt-0.5 shrink-0" />
+                        <Sparkles size={12} className="text-emerald-600 mt-0.5 shrink-0" />
                         <span className="flex-1">{q}</span>
                         <ArrowRight
                           size={12}
-                          className="text-slate-500 group-hover:text-emerald-300 group-hover:translate-x-0.5 transition mt-0.5 shrink-0"
+                          className="text-ink-500 group-hover:text-emerald-600 group-hover:translate-x-0.5 transition mt-0.5 shrink-0"
                         />
                       </motion.button>
                     ))}
@@ -163,15 +163,15 @@ export function FollowupDrawer({ open, onClose, route, intake }) {
                 </>
               ) : (
                 <div className="space-y-3">
-                  <div className="rounded-xl border border-white/[0.08] bg-white/[0.03] p-3.5">
-                    <div className="eyebrow text-slate-400 mb-1">You asked</div>
-                    <div className="text-[13px] text-slate-200 leading-relaxed">
+                  <div className="rounded-xl border border-ink-200 bg-ink-50 p-3.5">
+                    <div className="eyebrow text-ink-500 mb-1">You asked</div>
+                    <div className="text-[13px] text-ink-800 leading-relaxed">
                       {question}
                     </div>
                   </div>
 
-                  <div className="rounded-xl border border-emerald-400/20 bg-emerald-500/[0.05] p-3.5">
-                    <div className="eyebrow text-emerald-300 flex items-center gap-1.5 mb-2">
+                  <div className="rounded-xl border border-emerald-200 bg-emerald-50 p-3.5">
+                    <div className="eyebrow text-emerald-600 flex items-center gap-1.5 mb-2">
                       {state === "streaming" && (
                         <Loader2 size={10} className="animate-spin" />
                       )}
@@ -179,7 +179,7 @@ export function FollowupDrawer({ open, onClose, route, intake }) {
                     </div>
                     <div
                       ref={answerRef}
-                      className="text-[13px] text-slate-100 leading-relaxed whitespace-pre-wrap max-h-[420px] overflow-y-auto pretty-scroll"
+                      className="text-[13px] text-ink-900 leading-relaxed whitespace-pre-wrap max-h-[420px] overflow-y-auto pretty-scroll"
                     >
                       {answer}
                       {state === "streaming" && (
@@ -189,7 +189,7 @@ export function FollowupDrawer({ open, onClose, route, intake }) {
                   </div>
 
                   {state === "error" && (
-                    <div className="rounded-xl border border-rose-400/25 bg-rose-500/[0.06] p-3 text-[12px] text-rose-200">
+                    <div className="rounded-xl border border-rose-200 bg-rose-50 p-3 text-[12px] text-rose-700">
                       {error}
                     </div>
                   )}
@@ -212,7 +212,7 @@ export function FollowupDrawer({ open, onClose, route, intake }) {
             </div>
 
             {/* Composer — always visible at bottom so the user can type anytime */}
-            <div className="shrink-0 border-t border-white/[0.06] p-3 sm:p-4">
+            <div className="shrink-0 border-t border-ink-200 p-3 sm:p-4">
               <form
                 onSubmit={(e) => {
                   e.preventDefault();
@@ -233,7 +233,7 @@ export function FollowupDrawer({ open, onClose, route, intake }) {
                 <button
                   type="submit"
                   disabled={!question.trim() || state === "streaming"}
-                  className="inline-flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-lg text-[12.5px] font-semibold bg-emerald-500/25 hover:bg-emerald-500/40 border border-emerald-400/40 text-emerald-100 transition disabled:opacity-40 disabled:cursor-not-allowed shrink-0"
+                  className="inline-flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-lg text-[12.5px] font-semibold bg-emerald-100 hover:bg-emerald-500/40 border border-emerald-300 text-emerald-100 transition disabled:opacity-40 disabled:cursor-not-allowed shrink-0"
                   aria-label="Ask"
                 >
                   {state === "streaming" ? (

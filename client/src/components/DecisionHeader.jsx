@@ -27,9 +27,9 @@ function getConfidence(fitScore) {
   if (s >= 85) {
     return {
       label: "High",
-      text: "text-emerald-300",
-      bg: "bg-emerald-500/15",
-      border: "border-emerald-400/40",
+      text: "text-emerald-600",
+      bg: "bg-emerald-50",
+      border: "border-emerald-300",
       barFill: "bg-emerald-400",
       bars: 3,
     };
@@ -37,18 +37,18 @@ function getConfidence(fitScore) {
   if (s >= 65) {
     return {
       label: "Medium",
-      text: "text-amber-300",
-      bg: "bg-amber-500/15",
-      border: "border-amber-400/40",
+      text: "text-amber-600",
+      bg: "bg-amber-50",
+      border: "border-amber-300",
       barFill: "bg-amber-300",
       bars: 2,
     };
   }
   return {
     label: "Low",
-    text: "text-rose-300",
-    bg: "bg-rose-500/15",
-    border: "border-rose-400/40",
+    text: "text-rose-600",
+    bg: "bg-rose-50",
+    border: "border-rose-300",
     barFill: "bg-rose-300",
     bars: 1,
   };
@@ -69,19 +69,19 @@ export function DecisionHeader({ atlas }) {
       {/* Subtle backdrop so the header reads as "chapter cover", not card */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -top-16 right-0 w-80 h-40 rounded-full bg-emerald-500/10 blur-3xl"
+        className="pointer-events-none absolute -top-16 right-0 w-80 h-40 rounded-full bg-emerald-50 blur-3xl"
       />
 
       <div className="relative">
         {/* Eyebrow */}
-        <div className="flex items-center justify-between gap-3 flex-wrap pb-3 border-b border-white/[0.08]">
+        <div className="flex items-center justify-between gap-3 flex-wrap pb-3 border-b border-ink-200">
           <div className="flex items-center gap-2">
-            <FileText size={12} className="text-slate-400" />
-            <span className="text-[10.5px] font-bold uppercase tracking-[0.2em] text-slate-400">
+            <FileText size={12} className="text-ink-500" />
+            <span className="text-[10.5px] font-bold uppercase tracking-[0.2em] text-ink-500">
               Decision summary
             </span>
           </div>
-          <span className="text-[10.5px] text-slate-500 tabular">
+          <span className="text-[10.5px] text-ink-500 tabular">
             {routes.length} routes analyzed · ranked best-fit first
           </span>
         </div>
@@ -98,7 +98,7 @@ export function DecisionHeader({ atlas }) {
             icon={Crown}
             label="Top recommendation"
             value={
-              <span className="block text-[14px] sm:text-[15px] md:text-[16px] font-bold text-white leading-tight line-clamp-2">
+              <span className="block text-[14px] sm:text-[15px] md:text-[16px] font-bold text-ink-900 leading-tight line-clamp-2">
                 {top?.title ?? "—"}
               </span>
             }
@@ -110,7 +110,7 @@ export function DecisionHeader({ atlas }) {
             value={
               <div className="flex items-baseline gap-1">
                 <AnimatedBigNumber value={Math.round(top?.fit_score ?? 0)} />
-                <span className="display text-[14px] font-bold text-emerald-300">%</span>
+                <span className="display text-[14px] font-bold text-emerald-600">%</span>
               </div>
             }
             emphasized
@@ -134,7 +134,7 @@ export function DecisionHeader({ atlas }) {
             icon={Clock}
             label="Time to first income"
             value={
-              <span className="display text-[20px] sm:text-[22px] font-extrabold text-white tabular tracking-extra-tight leading-none">
+              <span className="display text-[20px] sm:text-[22px] font-extrabold text-ink-900 tabular tracking-extra-tight leading-none">
                 {humanMonths(top?.real_cost?.time_months)}
               </span>
             }
@@ -153,10 +153,10 @@ function Cell({ icon: Icon, label, value, emphasized = false, span2 = false, wid
       className={`flex flex-col min-w-0 ${span2 ? "col-span-2 md:col-span-1" : ""} ${
         wide ? "col-span-2 md:col-span-1" : ""
       } md:border-l md:first:border-l-0 md:pl-5 md:first:pl-0 ${
-        emphasized ? "md:bg-emerald-500/[0.04] md:rounded-lg md:-my-2 md:py-2 md:px-4" : ""
+        emphasized ? "md:bg-emerald-50 md:rounded-lg md:-my-2 md:py-2 md:px-4" : ""
       }`}
     >
-      <div className="flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-[0.16em] text-slate-500">
+      <div className="flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-[0.16em] text-ink-500">
         {Icon && <Icon size={10} />}
         {label}
       </div>
@@ -167,7 +167,7 @@ function Cell({ icon: Icon, label, value, emphasized = false, span2 = false, wid
 
 function BigNumber({ value }) {
   return (
-    <span className="display text-[32px] sm:text-[36px] font-extrabold text-white tabular tracking-extra-tight leading-none">
+    <span className="display text-[32px] sm:text-[36px] font-extrabold text-ink-900 tabular tracking-extra-tight leading-none">
       {value}
     </span>
   );
@@ -190,7 +190,7 @@ function AnimatedBigNumber({ value }) {
     return () => cancelAnimationFrame(raf);
   }, [value]);
   return (
-    <span className="display text-[40px] sm:text-[44px] font-extrabold text-emerald-300 tabular tracking-extra-tight leading-none">
+    <span className="display text-[40px] sm:text-[44px] font-extrabold text-emerald-600 tabular tracking-extra-tight leading-none">
       {display}
     </span>
   );
@@ -206,7 +206,7 @@ function ConfidenceBars({ barFill, bars }) {
           <div
             key={i}
             className={`w-1.5 rounded-[1px] transition ${
-              active ? barFill : "bg-white/[0.08]"
+              active ? barFill : "bg-ink-100"
             }`}
             style={{ height: `${i * 5 + 2}px` }}
           />
