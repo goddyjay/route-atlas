@@ -5,6 +5,7 @@ import { AtlasForm } from "../components/AtlasForm.jsx";
 import { AtlasView } from "../components/AtlasView.jsx";
 import { streamRouteAtlas } from "../lib/api.js";
 import { DEMO_PRESETS } from "../lib/presets.js";
+import { saveLocalAtlas } from "../lib/savedAtlases.js";
 
 // Rough char count of a complete atlas — drives the progress bar fill.
 // Overshoots are clamped to 95% so the bar never sits at 100% while the
@@ -71,6 +72,10 @@ export default function AtlasPage() {
         }
       });
       setAtlas(data);
+      // Persist to Saved Routes. We only save atlases the user generated
+      // themselves — preset runs skip this block because they take the
+      // cached-atlas path in runPreset.
+      saveLocalAtlas(data);
       setTimeout(() => {
         if (window.matchMedia("(max-width: 1023px)").matches) {
           resultsRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });

@@ -5,6 +5,7 @@ import AtlasPage from "./routes/AtlasPage.jsx";
 import LandingPage from "./routes/LandingPage.jsx";
 import SharedAtlasPage from "./routes/SharedAtlasPage.jsx";
 import CvCheckPage from "./routes/CvCheckPage.jsx";
+import SavedAtlasesPage from "./routes/SavedAtlasesPage.jsx";
 import { warmBackend } from "./lib/api.js";
 
 // App shell: fills the viewport. Navbar is a fixed-height row; everything
@@ -24,6 +25,7 @@ export default function App() {
         <Route path="/" element={<LandingPage />} />
         <Route path="/app" element={<AtlasPage />} />
         <Route path="/cv" element={<CvCheckPage />} />
+        <Route path="/saved" element={<SavedAtlasesPage />} />
         <Route path="/atlas/:id" element={<SharedAtlasPage />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>

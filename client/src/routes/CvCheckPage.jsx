@@ -15,7 +15,7 @@ import {
 } from "lucide-react";
 import { checkCv } from "../lib/api.js";
 
-// CV ATS checker. Paste CV → Opus 4.7 returns a structured dossier showing
+// CV ATS checker. Paste CV → the analysis returns a structured dossier showing
 // ATS score, critical fixes, keyword gaps, formatting issues, and rewritten
 // sections. Complements the atlas: atlas tells you WHICH route, job_sites
 // tell you WHERE, this page makes sure your CV passes the filter.
@@ -156,7 +156,7 @@ export default function CvCheckPage() {
               )}
             </motion.button>
             <p className="text-center text-[11px] text-ink-500">
-              ~20 seconds · Opus 4.7 with Nigerian recruitment context
+              ~20 seconds · Nigerian recruitment context
             </p>
           </form>
         </section>
@@ -194,8 +194,8 @@ function Header() {
         Will your CV clear the ATS?
       </h1>
       <p className="text-ink-500 text-[14px] sm:text-[15px] mt-3 leading-relaxed">
-        Paste your CV. Claude Opus 4.7 grades it against Nigerian recruitment norms and
-        global ATS filters, then rewrites the weak sections.
+        Paste your CV. We grade it against Nigerian recruitment norms and
+        global ATS filters, then rewrite the weak sections.
       </p>
     </motion.div>
   );

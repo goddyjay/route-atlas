@@ -175,7 +175,7 @@ export function FollowupDrawer({ open, onClose, route, intake }) {
                       {state === "streaming" && (
                         <Loader2 size={10} className="animate-spin" />
                       )}
-                      Opus 4.7
+                      Answer
                     </div>
                     <div
                       ref={answerRef}

@@ -1,75 +1,103 @@
-import { motion } from "framer-motion";
-import { Link, useLocation } from "react-router-dom";
-import { ArrowRight, Github, ShieldCheck } from "lucide-react";
+import { useEffect, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+import { Link, NavLink, useLocation } from "react-router-dom";
+import { Menu, X } from "lucide-react";
 import { LogoMark } from "./Logo.jsx";
 
+// Top navigation bar. Sticky, same canvas colour as the page (no contrast
+// block), thin bottom border for separation. Mobile collapses into a slide-
+// down menu.
+const NAV_ITEMS = [
+  { label: "Home", to: "/" },
+  { label: "Start Analysis", to: "/app" },
+  { label: "Saved Routes", to: "/saved" },
+];
+
 export function Navbar() {
+  const [mobileOpen, setMobileOpen] = useState(false);
   const location = useLocation();
-  const onLanding = location.pathname === "/";
-  const onCv = location.pathname === "/cv";
+
+  // Close the mobile menu whenever the route changes.
+  useEffect(() => {
+    setMobileOpen(false);
+  }, [location.pathname]);
+
   return (
     <motion.header
-      initial={{ opacity: 0, y: -10 }}
+      initial={{ opacity: 0, y: -8 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, ease: [0.2, 0.7, 0.2, 1] }}
-      className="shrink-0 z-30 backdrop-blur-xl bg-white/80 border-b border-ink-200"
+      transition={{ duration: 0.4, ease: [0.2, 0.7, 0.2, 1] }}
+      className="sticky top-0 shrink-0 z-30 bg-ink-50/85 backdrop-blur-xl border-b border-ink-200"
     >
       <div className="w-full px-4 md:px-6 h-14 flex items-center justify-between">
         <Link to="/" className="no-underline">
           <LogoMark />
         </Link>
 
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.6, duration: 0.4 }}
-          className="flex items-center gap-2"
+        {/* Desktop nav */}
+        <nav className="hidden md:flex items-center gap-1">
+          {NAV_ITEMS.map((item) => (
+            <NavLink
+              key={item.to}
+              to={item.to}
+              end={item.to === "/"}
+              className={({ isActive }) =>
+                `px-3 py-1.5 rounded-lg text-[13px] font-semibold transition duration-200 ${
+                  isActive
+                    ? "text-ink-900 bg-ink-100"
+                    : "text-ink-600 hover:text-ink-900 hover:bg-ink-100"
+                }`
+              }
+            >
+              {item.label}
+            </NavLink>
+          ))}
+        </nav>
+
+        {/* Mobile trigger */}
+        <button
+          type="button"
+          onClick={() => setMobileOpen((v) => !v)}
+          aria-label={mobileOpen ? "Close menu" : "Open menu"}
+          aria-expanded={mobileOpen}
+          className="md:hidden p-2 rounded-lg text-ink-700 hover:bg-ink-100 transition duration-200"
         >
-          {!onCv && (
-            <Link
-              to="/cv"
-              className="hidden sm:inline-flex items-center gap-1.5 rounded-lg px-2.5 py-1.5 text-[11.5px] font-semibold bg-ink-100 hover:bg-ink-100 border border-ink-200 hover:border-emerald-200 text-ink-700 transition"
-            >
-              <ShieldCheck size={11} />
-              CV check
-            </Link>
-          )}
-          {onLanding ? (
-            <Link
-              to="/app"
-              className="inline-flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-[12px] font-semibold bg-emerald-50 hover:bg-emerald-100 border border-emerald-200 text-emerald-700 transition"
-            >
-              Open the app
-              <ArrowRight size={12} />
-            </Link>
-          ) : onCv ? (
-            <Link
-              to="/app"
-              className="inline-flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-[12px] font-semibold bg-emerald-50 hover:bg-emerald-100 border border-emerald-200 text-emerald-700 transition"
-            >
-              Atlas
-              <ArrowRight size={12} />
-            </Link>
-          ) : (
-            <span className="hidden md:inline-flex chip">
-              <span className="relative flex h-1.5 w-1.5">
-                <span className="absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-60 animate-ping" />
-                <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-emerald-400" />
-              </span>
-              Powered by Opus 4.7
-            </span>
-          )}
-          <a
-            href="https://github.com/goddyjay/route-atlas"
-            target="_blank"
-            rel="noreferrer"
-            className="p-2 rounded-lg border border-ink-200 bg-ink-50 text-ink-500 hover:text-ink-900 hover:bg-ink-100 hover:border-ink-300 transition"
-            aria-label="GitHub"
-          >
-            <Github size={14} />
-          </a>
-        </motion.div>
+          {mobileOpen ? <X size={18} /> : <Menu size={18} />}
+        </button>
       </div>
+
+      {/* Mobile slide-down */}
+      <AnimatePresence>
+        {mobileOpen && (
+          <motion.nav
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.25, ease: [0.2, 0.7, 0.2, 1] }}
+            className="md:hidden overflow-hidden border-t border-ink-200 bg-ink-50/95 backdrop-blur-xl"
+          >
+            <ul className="px-3 py-2">
+              {NAV_ITEMS.map((item) => (
+                <li key={item.to}>
+                  <NavLink
+                    to={item.to}
+                    end={item.to === "/"}
+                    className={({ isActive }) =>
+                      `block px-3 py-3 rounded-lg text-[14px] font-semibold transition duration-200 ${
+                        isActive
+                          ? "text-ink-900 bg-ink-100"
+                          : "text-ink-600 hover:text-ink-900 hover:bg-ink-100"
+                      }`
+                    }
+                  >
+                    {item.label}
+                  </NavLink>
+                </li>
+              ))}
+            </ul>
+          </motion.nav>
+        )}
+      </AnimatePresence>
     </motion.header>
   );
 }
