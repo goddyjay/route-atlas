@@ -16,6 +16,7 @@ import {
 } from "lucide-react";
 import { RouteCard } from "./RouteCard.jsx";
 import { CompareView } from "./CompareView.jsx";
+import { RouteComparisonBar } from "./RouteComparisonBar.jsx";
 import { FollowupDrawer } from "./FollowupDrawer.jsx";
 import { Logo } from "./Logo.jsx";
 import {
@@ -229,6 +230,8 @@ function Atlas({ atlas }) {
           </motion.div>
         )}
       </motion.header>
+
+      {view === "cards" && <RouteComparisonBar routes={routes} />}
 
       <AnimatePresence mode="wait">
         {view === "cards" ? (

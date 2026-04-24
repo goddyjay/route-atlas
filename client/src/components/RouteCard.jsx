@@ -108,6 +108,8 @@ export function RouteCard({
 
   return (
     <motion.article
+      id={`route-${route.id}`}
+      style={{ scrollMarginTop: "16px" }}
       initial={{ opacity: 0, y: 18, scale: 0.97 }}
       animate={{ opacity: 1, y: 0, scale: 1 }}
       transition={{ duration: 0.5, delay: index * 0.08, ease: [0.2, 0.7, 0.2, 1] }}
