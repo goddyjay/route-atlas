@@ -17,6 +17,7 @@ import {
 import { RouteCard } from "./RouteCard.jsx";
 import { CompareView } from "./CompareView.jsx";
 import { RouteComparisonBar } from "./RouteComparisonBar.jsx";
+import { DecisionHeader } from "./DecisionHeader.jsx";
 import { FollowupDrawer } from "./FollowupDrawer.jsx";
 import { Logo } from "./Logo.jsx";
 import {
@@ -153,6 +154,8 @@ function Atlas({ atlas }) {
       transition={{ duration: 0.25 }}
       className="space-y-5 atlas-printable"
     >
+      <DecisionHeader atlas={atlas} />
+
       <SnapshotCard
         snapshot={atlas.user_snapshot}
         insight={atlas.headline_insight}
