@@ -13,6 +13,8 @@ import {
   Share2,
   Copy,
   Check,
+  X as XIcon,
+  Ban,
 } from "lucide-react";
 import { RouteCard } from "./RouteCard.jsx";
 import { CompareView } from "./CompareView.jsx";
@@ -426,31 +428,59 @@ function SnapshotCard({ snapshot, insight, topFit, totalDone = 0, totalActions =
   );
 }
 
+// Muted "Routes Not Recommended" section — shows the routes the model
+// considered and rejected for this user. Each rejection cites a specific
+// user constraint (the backend prompt enforces this).
+//
+// Visual treatment: lower emphasis than the main recommendation cards —
+// dashed border, near-transparent background, muted slate text, line-
+// through on route names. Still readable but immediately scannable as
+// "these are NOT your recommendations."
 function FilteredOut({ items }) {
   return (
-    <motion.div
+    <motion.section
       initial={{ opacity: 0, y: 8 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4, delay: 0.15 }}
-      className="card p-5"
+      className="rounded-2xl border border-dashed border-white/[0.1] bg-white/[0.01] p-4 sm:p-5"
+      aria-label="Routes not recommended"
     >
-      <div className="eyebrow text-slate-400 flex items-center gap-1.5 mb-3">
-        <XCircle size={11} /> Considered and ruled out
-      </div>
-      <div className="space-y-2">
+      <header className="flex items-center justify-between gap-3 flex-wrap pb-3 mb-3 border-b border-white/[0.05]">
+        <div className="flex items-center gap-1.5">
+          <Ban size={11} className="text-slate-500" />
+          <span className="text-[10.5px] font-bold uppercase tracking-[0.18em] text-slate-500">
+            Routes not recommended
+          </span>
+        </div>
+        <span className="text-[10.5px] text-slate-600 tabular">
+          {items.length} considered · ruled out for your situation
+        </span>
+      </header>
+
+      <ul className="space-y-3">
         {items.map((it, i) => (
-          <div
+          <motion.li
             key={i}
-            className="grid grid-cols-[auto_1fr] gap-3 items-start text-[12.5px] border-b border-white/[0.04] pb-2 last:border-b-0 last:pb-0"
+            initial={{ opacity: 0, x: -4 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.3, delay: 0.1 + i * 0.05 }}
+            className="flex items-start gap-3 group"
           >
-            <span className="text-slate-200 font-semibold whitespace-nowrap">
-              {it.route}
+            <span className="shrink-0 mt-0.5 inline-flex items-center justify-center w-5 h-5 rounded-md border border-white/[0.08] bg-white/[0.02] text-slate-600">
+              <XIcon size={10} strokeWidth={2.5} />
             </span>
-            <span className="text-slate-400 leading-snug">{it.reason}</span>
-          </div>
+            <div className="flex-1 min-w-0">
+              <div className="text-[12.5px] font-semibold text-slate-400 leading-snug decoration-slate-700 line-through underline-offset-2">
+                {it.route}
+              </div>
+              <div className="text-[12px] text-slate-500 leading-relaxed mt-0.5">
+                {it.reason}
+              </div>
+            </div>
+          </motion.li>
         ))}
-      </div>
-    </motion.div>
+      </ul>
+    </motion.section>
   );
 }
 
