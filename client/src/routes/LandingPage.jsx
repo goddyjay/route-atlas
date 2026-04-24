@@ -134,8 +134,8 @@ function Hero() {
             className="md:col-span-5 relative"
           >
             <ContextualImage
-              src={HERO_IMAGE}
-              alt="A young professional working at a laptop, thinking through their next career move"
+              src={NYSC_IMAGE}
+              alt="Nigerian NYSC corps members in their green uniforms at camp"
               aspect="aspect-[4/3]"
             />
             {/* Small accent: subtle floating stat chip anchored off the corner */}
@@ -274,8 +274,8 @@ function WhyDifferent() {
             className="md:col-span-5 order-2 md:order-1"
           >
             <ContextualImage
-              src={NYSC_IMAGE}
-              alt="Nigerian NYSC corps members in their green uniforms at camp"
+              src={HERO_IMAGE}
+              alt="A young professional working at a laptop, thinking through their next career move"
               aspect="aspect-[4/3]"
             />
           </motion.div>
