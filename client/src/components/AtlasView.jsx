@@ -174,10 +174,10 @@ function Atlas({ atlas }) {
       >
         <div>
           <h2 className="display text-[22px] md:text-[26px] tracking-extra-tight text-white leading-tight">
-            Based on your profile, here are your best paths
+            Your best-fit routes
           </h2>
           <p className="text-[12px] text-slate-500 mt-1">
-            {routes.length} routes · ranked best-fit first · expand any route to open the full map
+            {routes.length} routes · ranked best-fit first · expand any card for the full breakdown
           </p>
         </div>
         <div className="flex items-center gap-2 no-print flex-wrap">
@@ -535,10 +535,10 @@ function EmptyState() {
           <Logo size={84} className="relative" />
         </motion.div>
         <h3 className="display text-xl tracking-extra-tight text-white">
-          Your atlas is blank
+          No atlas generated yet
         </h3>
         <p className="text-sm text-slate-400 mt-2 max-w-sm mx-auto leading-relaxed">
-          Fill the intake — or click <span className="text-emerald-300 font-semibold">Try Demo</span> — and we'll map 4 real routes forward from your exact situation.
+          Fill the intake or click <span className="text-emerald-300 font-semibold">Try a demo</span>. Output: 4 ranked routes with pay, timelines, and first-week actions.
         </p>
       </div>
     </motion.div>
@@ -634,7 +634,7 @@ function LoadingState({ progress = 0, streamChars = 0 }) {
           <span>
             {streamChars > 0
               ? `Streaming · ${streamChars.toLocaleString()} chars received`
-              : "Opus 4.7 is reasoning through your situation"}
+              : "Reasoning through your intake"}
           </span>
           <span className="tabular text-slate-400 font-semibold">{pct}%</span>
         </div>
@@ -677,15 +677,15 @@ function Shimmer() {
 }
 
 const LOADING_MESSAGES_THINKING = [
-  "Reading your situation…",
-  "Mapping the Nigerian landscape…",
+  "Parsing intake…",
+  "Scanning Nigerian market…",
 ];
 const LOADING_MESSAGES_STREAMING = [
-  "Weighing your savings and obligations…",
-  "Ruling out routes that don't fit…",
-  "Drawing the first Monday actions…",
+  "Weighing savings against obligations…",
+  "Eliminating routes that don't fit your constraints…",
+  "Drafting Monday actions…",
   "Calibrating 2-year projections…",
-  "Finalizing pro tips…",
+  "Writing insider edges…",
 ];
 function LoadingMessage({ streaming }) {
   const [idx, setIdx] = useState(0);

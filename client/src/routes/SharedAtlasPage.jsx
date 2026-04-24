@@ -91,10 +91,10 @@ function ErrorShared({ message }) {
       <div className="flex items-start gap-3">
         <AlertCircle className="text-rose-300 shrink-0 mt-0.5" size={20} />
         <div className="flex-1">
-          <h3 className="font-semibold text-rose-100">Can't load this atlas</h3>
+          <h3 className="font-semibold text-rose-100">Atlas unavailable</h3>
           <p className="text-sm text-rose-200/80 mt-1">{message}</p>
           <p className="text-xs text-rose-200/60 mt-2">
-            Shared atlases expire after 30 days. You can draw a fresh one any time.
+            Shared atlases expire after 30 days. Draw a fresh one below.
           </p>
           <Link to="/app" className="btn-secondary mt-3 inline-flex">
             <ArrowLeft size={14} />

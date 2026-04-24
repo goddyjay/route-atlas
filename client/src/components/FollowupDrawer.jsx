@@ -139,8 +139,8 @@ export function FollowupDrawer({ open, onClose, route, intake }) {
               {state === "idle" ? (
                 <>
                   <p className="text-[12.5px] text-slate-400 leading-relaxed">
-                    Pick a question or type your own. Claude Opus 4.7 answers with
-                    the same Nigerian context the atlas uses.
+                    Pick a question or type your own. Answered with the same Nigerian
+                    context the atlas uses.
                   </p>
                   <div className="space-y-2">
                     {SUGGESTED_QUESTIONS.map((q) => (

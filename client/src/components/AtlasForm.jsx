@@ -149,7 +149,7 @@ export function AtlasForm({ onSubmit, loading, seed }) {
     >
       <FormHero />
 
-      <Section icon={<GraduationCap size={14} />} color="emerald" title="Education" subtitle="What you studied and where">
+      <Section icon={<GraduationCap size={14} />} color="emerald" title="Education" subtitle="Degree, class, institution tier">
         <Grid cols={2}>
           <Field label="Degree" error={errors.degree?.message}>
             <select className="field-select" {...register("degree")}>
@@ -179,7 +179,7 @@ export function AtlasForm({ onSubmit, loading, seed }) {
         </Grid>
       </Section>
 
-      <Section icon={<MapPin size={14} />} color="sky" title="NYSC + location" subtitle="Where you are right now">
+      <Section icon={<MapPin size={14} />} color="sky" title="NYSC + location" subtitle="State, city, NYSC status">
         <Grid cols={2}>
           <Field label="NYSC status" error={errors.nysc_status?.message}>
             <select className="field-select" {...register("nysc_status")}>
@@ -216,7 +216,7 @@ export function AtlasForm({ onSubmit, loading, seed }) {
         </Grid>
       </Section>
 
-      <Section icon={<Wallet size={14} />} color="amber" title="Money + obligations" subtitle="The numbers that shape what's possible">
+      <Section icon={<Wallet size={14} />} color="amber" title="Money + obligations" subtitle="Savings, income, dependents, family remittance">
         <Grid cols={2}>
           <Field label="Savings (₦)" error={errors.savings_ngn?.message}>
             <input
@@ -271,7 +271,7 @@ export function AtlasForm({ onSubmit, loading, seed }) {
         </Grid>
       </Section>
 
-      <Section icon={<Heart size={14} />} color="rose" title="Relationship + family" subtitle="Married? Partner? Kids? This shifts the whole map">
+      <Section icon={<Heart size={14} />} color="rose" title="Relationship + family" subtitle="Partner, children, household income">
         <Grid cols={2}>
           <Field label="Relationship status" error={errors.marital_status?.message}>
             <select className="field-select" {...register("marital_status")}>
@@ -319,7 +319,7 @@ export function AtlasForm({ onSubmit, loading, seed }) {
         )}
       </Section>
 
-      <Section icon={<Shield size={14} />} color="violet" title="Constraints" subtitle="Anything that narrows the map">
+      <Section icon={<Shield size={14} />} color="violet" title="Constraints" subtitle="Health, relocation limits, other blockers">
         <Grid cols={1}>
           <Field label="Health constraints (optional)">
             <textarea
@@ -332,7 +332,7 @@ export function AtlasForm({ onSubmit, loading, seed }) {
         </Grid>
       </Section>
 
-      <Section icon={<Target size={14} />} color="teal" title="Orientation" subtitle="How you'd like the map drawn">
+      <Section icon={<Target size={14} />} color="teal" title="Orientation" subtitle="JAPA appetite, risk tolerance, horizon">
         <Grid cols={2}>
           <Field label="JAPA appetite" error={errors.japa_appetite?.message}>
             <select className="field-select" {...register("japa_appetite")}>
@@ -440,7 +440,7 @@ export function AtlasForm({ onSubmit, loading, seed }) {
         )}
       </motion.button>
       <motion.p variants={sectionVariants} className="mt-2 text-center text-[11px] text-slate-500">
-        Streaming live · Opus 4.7 with Nigerian context · 5 ranked routes
+        4 ranked routes · Nigerian context · ~90s live stream
       </motion.p>
     </motion.form>
   );
@@ -485,7 +485,7 @@ function FormHero() {
           Where you stand,<br />in your own numbers.
         </h2>
         <p className="text-[12.5px] text-slate-400 mt-2 leading-relaxed max-w-[42ch]">
-          The atlas only works if the intake is honest. No platitudes in — no platitudes out.
+          Honest inputs, honest routes. Guessing here weakens every downstream recommendation.
         </p>
       </div>
     </motion.div>

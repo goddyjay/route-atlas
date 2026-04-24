@@ -47,7 +47,7 @@ export function RouteComparisonBar({ routes }) {
       <div className="flex items-center justify-between gap-2 mb-2.5 px-1">
         <span className="eyebrow text-slate-400">Quick compare</span>
         <span className="text-[10.5px] text-slate-500 hidden sm:inline">
-          Tap any route to jump to it
+          Click a tile to open its full card
         </span>
       </div>
 

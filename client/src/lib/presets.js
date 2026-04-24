@@ -12,7 +12,7 @@ export const DEMO_PRESETS = [
     id: "microbio-ibadan",
     emoji: "🧫",
     title: "Microbiology grad, Ibadan",
-    tagline: "1 year post-NYSC, teaching lessons, mother has diabetes",
+    tagline: "1 yr post-NYSC · ₦40k teaching income · diabetic mother",
     cachedAtlasUrl: "/presets/microbio-ibadan.json",
     intake: {
       degree: "Microbiology",
@@ -42,7 +42,7 @@ export const DEMO_PRESETS = [
     id: "philosophy-kano",
     emoji: "📚",
     title: "Philosophy grad, Kano",
-    tagline: "NYSC just ended, ₦0 savings, no clear path",
+    tagline: "NYSC complete · ₦0 savings · humanities degree",
     cachedAtlasUrl: "/presets/philosophy-kano.json",
     intake: {
       degree: "Philosophy",
@@ -71,7 +71,7 @@ export const DEMO_PRESETS = [
     id: "masscomm-lagos",
     emoji: "🎙️",
     title: "Mass Comm grad, Lagos",
-    tagline: "2 years post-NYSC, social media manager, wants remote USD",
+    tagline: "2 yrs post-NYSC · agency social media role · targeting remote USD",
     cachedAtlasUrl: "/presets/masscomm-lagos.json",
     intake: {
       degree: "Mass Communication",

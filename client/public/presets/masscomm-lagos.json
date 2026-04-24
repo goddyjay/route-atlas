@@ -30,454 +30,452 @@
       "Commission-only sales"
     ]
   },
-  "user_snapshot": "Two years post-NYSC, grinding as an agency social media manager in Yaba on ₦150k with ₦450k saved, ₦30k monthly family load, and a committed JAPA plan inside 18 months.",
-  "headline_insight": "Your current ₦150k agency role is undervaluing skills (SMM + video + writing) that pay $1.5-4k/mo remote — which means your JAPA runway should be USD-funded, not naira-funded. Stop saving in naira; start earning in USD within 6 months.",
+  "user_snapshot": "Mass Comm grad, 2 years post-NYSC, running social media at a Lagos agency for ₦150k while sitting on ₦450k savings. JAPA-committed, single, low family pressure, high risk tolerance — you have runway most of your peers don't.",
+  "headline_insight": "Your ₦150k agency salary is a floor you can abandon — with no dependents and ₦450k saved, the real question isn't survival but whether you burn 18 months building a USD-paying remote brand or use savings as JAPA down-payment. You cannot do both well.",
   "routes": [
     {
       "id": "remote-content-marketing-usd",
-      "title": "Remote Content Marketing / Social Manager (USD clients)",
+      "title": "Remote Content Marketing / Social at Foreign Startup (USD)",
       "category": "Remote Digital",
-      "one_liner": "Replace your ₦150k agency salary with $1.5-3k/mo remote retainers, then fund JAPA from USD earnings.",
+      "one_liner": "Leverage your agency portfolio into a USD-paying remote role at a Western SaaS or creator-economy company within 9-12 months.",
       "fit_score": 91,
       "fit_reasons": [
         {
           "dimension": "Skills",
-          "note": "Your SMM + content + video editing + writing stack is exactly what US/UK SaaS brands pay retainers for."
+          "note": "Your social media management, content creation, video editing and writing stack is exactly what remote B2B SaaS and creator startups hire."
         },
         {
-          "dimension": "JAPA",
-          "note": "Committed 18-month JAPA plan needs USD income; naira ₦150k cannot fund ₦8-15m Canada or UK routes."
+          "dimension": "Savings",
+          "note": "₦450k + ₦150k monthly buys you 6+ months of portfolio-building evenings without quitting the agency."
         }
       ],
       "break_reasons": [
         {
-          "risk": "Cold-pitching without a niche portfolio stalls at $0 for 4-6 months; agency work doesn't auto-translate to client work.",
-          "severity": "Medium"
+          "risk": "Agency workload drains your evenings — 9 months pass with no personal portfolio, no inbound DMs, no offer.",
+          "severity": "High"
         }
       ],
-      "who_this_fits": "Agency creatives who can self-direct, pitch cold, and package existing work into a niche portfolio site.",
-      "who_this_breaks": "People who wait for job posts instead of DMing founders and treating Twitter/LinkedIn as distribution.",
+      "who_this_fits": "Operators who ship in public, post weekly on LinkedIn/Twitter, and treat their own brand as their biggest client.",
+      "who_this_breaks": "People who wait to 'feel ready' and apply cold on LinkedIn to 200 jobs with no portfolio or audience.",
       "real_cost": {
-        "money_ngn": 150000,
-        "time_months": 6,
-        "what_you_give_up": "Evenings and weekends for 6 months building portfolio + outbound, while keeping the ₦150k agency job as base."
+        "money_ngn": 200000,
+        "time_months": 9,
+        "what_you_give_up": "Evenings and Saturdays for 6-9 months. Social life contracts. You keep the ₦150k job until the first USD offer lands."
       },
       "real_pay": {
-        "entry_ngn": 900000,
-        "mid_ngn": 2400000,
-        "senior_ngn": 5000000,
-        "range_note": "USD-pegged: $600 entry / $1.6k mid / $3.5k+ senior monthly retainers. Converted at ₦1,500/$."
+        "entry_ngn": 1200000,
+        "mid_ngn": 2800000,
+        "senior_ngn": 6500000,
+        "range_note": "USD-pegged: entry ~$800/mo, mid ~$2k, senior $4-5k. Converted at ₦1,500/$. Naira figure swings with FX."
       },
-      "demand": "High",
-      "two_year_projection": "In 2 years, if you niche into B2B SaaS or creator-economy content, you're on $2.5-3.5k/mo (₦3.7-5.2m) retainers, landed in Toronto on a study permit or UK Graduate visa, funded from your own USD savings.",
+      "demand": "Medium",
+      "two_year_projection": "In 2 years, if you execute, you're earning $2,000-2,500/mo (~₦3m) as a Content Lead at a Series A US or EU startup, working from a Lekki 1-bed, and funding your own Canada Express Entry or UK Global Talent application.",
       "pro_tips": [
-        "Niche down: pick B2B SaaS, fintech, or creator tools — not 'social media' broadly.",
-        "Pitch founders on Twitter/LinkedIn directly, not job boards; reply rate is 10x higher."
+        "Ghostwrite 3 LinkedIn posts weekly for one SaaS founder free — referrals follow.",
+        "Package agency wins as case studies with real numbers on Notion."
       ],
       "job_sites": [
         {
           "name": "Contra",
           "url": "https://contra.com",
-          "why": "Zero-commission freelance platform where SaaS founders hire social/content retainers directly."
+          "why": "Primary platform for remote content/social freelancers paying USD — profiles surface to Western founders."
         },
         {
           "name": "Wellfound",
           "url": "https://wellfound.com",
-          "why": "Startup job board with remote content marketing roles open to Nigeria-based applicants."
+          "why": "Startup-heavy; remote content marketing roles at seed-to-Series B companies post here first."
         },
         {
-          "name": "LinkedIn Jobs",
-          "url": "https://linkedin.com/jobs",
-          "why": "Filter 'remote, worldwide' for content marketer and social manager roles at US/UK startups."
+          "name": "Remotive",
+          "url": "https://remotive.com",
+          "why": "Curated remote board with strong marketing category — fewer scams than cold LinkedIn."
         }
       ],
       "monday_actions": [
         {
-          "step": "Buy yourname.com, put 4 agency case studies on it with metrics (reach, CTR, conversions).",
-          "deadline_days": 5
+          "step": "Rewrite LinkedIn headline to 'Content & Social for B2B SaaS | ex-[agency]' and post a case study of your best agency campaign with metrics.",
+          "deadline_days": 3
         },
         {
-          "step": "Post 3 Twitter threads breaking down a brand's social strategy; tag the founder.",
+          "step": "Create Contra profile with 3 productised services (LinkedIn ghostwriting, short-form video edits, launch content) priced in USD.",
           "deadline_days": 7
         },
         {
-          "step": "Create Contra + Wellfound profiles tagged 'B2B SaaS social' and apply to 10 listings.",
-          "deadline_days": 7
+          "step": "DM 10 Nigerian remote content marketers on Twitter/X (Mark Essien, Victor Fatanmi alumni, Stears ex-staff) asking one specific question about their first USD client.",
+          "deadline_days": 10
         }
       ],
       "roadmap": [
         {
           "period": "0-90 days",
-          "focus": "Portfolio + first retainer",
+          "focus": "Portfolio + public presence",
           "milestones": [
-            "Portfolio site live with 4 case studies",
-            "Build to 2k followers on Twitter or LinkedIn",
-            "Land first $500-1k/mo client"
+            "3 case studies live on Notion",
+            "Post 3x/week on LinkedIn for 12 weeks",
+            "First $200-500 Contra gig closed"
           ],
-          "income_by_end_ngn": 900000
+          "income_by_end_ngn": 250000
         },
         {
           "period": "3-12 months",
-          "focus": "Stack 2-3 retainers, quit agency",
+          "focus": "First USD retainer",
           "milestones": [
-            "Quit ₦150k agency job around month 5",
-            "Reach $2k/mo stable",
-            "Save ₦6m for JAPA"
+            "Land one $1-1.5k/mo retainer",
+            "Quit agency when retainer hits ₦1m/mo net",
+            "Second client referred inbound"
           ],
-          "income_by_end_ngn": 3000000
+          "income_by_end_ngn": 1500000
         },
         {
           "period": "Year 2",
-          "focus": "Relocate with income intact",
+          "focus": "Full-time remote offer",
           "milestones": [
-            "Land in Canada/UK via study or Express Entry",
-            "Retain clients through the move",
-            "Hit $3k+/mo"
+            "Full-time Content Lead role at US/EU startup $2-2.5k/mo",
+            "₦3-5m saved for JAPA",
+            "Express Entry profile submitted"
           ],
-          "income_by_end_ngn": 4500000
+          "income_by_end_ngn": 3000000
         }
       ],
-      "nigerian_notes": "Open a Geegpay, Grey, or Payoneer USD account NOW — don't wait for first client. Domiciliary naira conversion eats 2-4% if you route through local banks."
+      "nigerian_notes": "Get a Grey or Geegpay USD account before the first invoice. Use Pied Piper or a US LLC (Doola, ~$300) once monthly income crosses $2k to avoid Naira haircuts."
     },
     {
-      "id": "uk-msc-digital-marketing-graduate-visa",
-      "title": "UK MSc (Digital Marketing / Media) → Graduate Visa → Skilled Worker",
+      "id": "canada-express-entry-marketing",
+      "title": "Canada Express Entry via Marketing/Comms NOC",
       "category": "JAPA",
-      "one_liner": "1-year taught MSc in the UK, then 2-year post-study work visa, route into an agency or in-house marketing role.",
-      "fit_score": 82,
+      "one_liner": "Stack 3 years of agency experience + IELTS + WES into a PR application as a Marketing Specialist (NOC 11202) by month 18.",
+      "fit_score": 83,
       "fit_reasons": [
         {
           "dimension": "JAPA",
-          "note": "Committed 18-month horizon fits UK September intake perfectly — apply now for Sept 2026."
+          "note": "Your 'committed' JAPA appetite + 18-month horizon fits Express Entry's 6-12 month processing perfectly."
         },
         {
-          "dimension": "Degree",
-          "note": "Mass Comm 2:1 from a private university meets UK MSc entry bar without a GRE or bridging year."
+          "dimension": "Savings",
+          "note": "₦450k covers IELTS (₦150k), WES (₦120k), and first instalment of the ₦1.5-2m fee stack."
         }
       ],
       "break_reasons": [
         {
-          "risk": "₦450k savings covers nothing — you need ₦18-25m total; funding gap must come from family, loan, or USD income route above.",
+          "risk": "CRS cut-offs for general draws sit at 500+ in 2026 — without category-based draws for marketing, you may sit in the pool unnoticed.",
           "severity": "High"
         }
       ],
-      "who_this_fits": "Grads who can raise ₦20m via family, LAPO/AELEX loan, or 12 months of USD freelance stacking.",
-      "who_this_breaks": "Anyone assuming Leverage Edu or an agent will 'sort the funds' — proof-of-funds is real and audited.",
+      "who_this_fits": "Disciplined test-takers who treat IELTS like JAMB — 3 months of daily practice, CLB 9 minimum.",
+      "who_this_breaks": "Applicants who skip French (NCLC 7 gives +50 CRS points) and rely on age/education alone.",
       "real_cost": {
-        "money_ngn": 22000000,
+        "money_ngn": 2200000,
         "time_months": 12,
-        "what_you_give_up": "₦22m+ in tuition and living costs, plus one year of Nigerian income while studying full-time."
+        "what_you_give_up": "₦2m+ of your USD earnings over 12 months. Mental bandwidth split between remote hustle and test prep."
       },
       "real_pay": {
-        "entry_ngn": 4200000,
-        "mid_ngn": 7500000,
-        "senior_ngn": 12000000,
-        "range_note": "UK post-study: £28-35k entry / £45-55k mid / £70k+ senior annually. Converted at ₦1,850/£."
+        "entry_ngn": 3500000,
+        "mid_ngn": 6500000,
+        "senior_ngn": 11000000,
+        "range_note": "Canadian marketing specialist entry CAD $55-65k, mid $80-95k, senior $120k+. Converted at ₦1,100/CAD. Toronto/Vancouver higher; Prairies lower."
       },
       "demand": "Medium",
-      "two_year_projection": "In 2 years, if you land Sept 2026 intake, you graduate mid-2027 on a Graduate visa, working a £32-38k junior marketing role in Manchester or Birmingham (cheaper than London), earning ~₦5m/mo equivalent.",
+      "two_year_projection": "In 2 years, if you clear IELTS CLB 9 and submit, you've either landed PR with a Confirmation of Permanent Residence and are job-hunting in Toronto on ₦3.5m-equivalent entry, or you're 3 months from ITA sitting on a 480 CRS score.",
       "pro_tips": [
-        "Target Russell Group unis with scholarships: Sheffield, Leeds, Cardiff — avoid pay-to-enrol London commuter schools.",
-        "Apply January-March for September; late applicants lose CAS and scholarship windows."
+        "Write IELTS General, not Academic — it's easier and Express Entry accepts it.",
+        "Start French Duolingo at month 3 — TEF NCLC 7 adds 50 points."
       ],
       "job_sites": [
         {
-          "name": "Jobs.ac.uk",
-          "url": "https://jobs.ac.uk",
-          "why": "UK academic and research portal — finds MSc scholarships and graduate research assistant roles."
+          "name": "Job Bank Canada",
+          "url": "https://jobbank.gc.ca",
+          "why": "Official portal; employers here sometimes give LMIA-backed offers that add 50-200 CRS points."
         },
         {
-          "name": "UK Indeed",
-          "url": "https://uk.indeed.com",
-          "why": "Largest UK job board for post-MSc marketing and comms roles on Graduate visa."
-        },
-        {
-          "name": "LinkedIn Jobs UK",
+          "name": "LinkedIn Jobs Canada",
           "url": "https://linkedin.com/jobs",
-          "why": "Best for filtering 'Graduate visa sponsors' and junior marketing openings at UK agencies."
+          "why": "Filter by Canada + remote-Canada marketing roles to build contact list before landing."
+        },
+        {
+          "name": "On The Move Canada",
+          "url": "https://onthemovecanada.com",
+          "why": "Immigrant-focused board; coaches connect newcomers to first marketing roles in Ontario/Alberta."
         }
       ],
       "monday_actions": [
         {
-          "step": "Shortlist 6 MSc programmes on ucas.com with tuition under £18k and scholarships for Nigerians.",
-          "deadline_days": 10
+          "step": "Book IELTS General at British Council Lagos (Ikoyi) for a date 10-12 weeks out — cost ₦150,000.",
+          "deadline_days": 5
         },
         {
-          "step": "Book IELTS for a date within 6 weeks; register on ieltsnigeria.com.",
-          "deadline_days": 7
+          "step": "Open WES Canada ECA file at wes.org/ca and request transcript from your private uni registrar.",
+          "deadline_days": 14
         },
         {
-          "step": "Join UK Study Admissions Nigeria Telegram for live CAS and scholarship intel.",
-          "deadline_days": 3
+          "step": "Run free CRS calculator at cic.gc.ca — screenshot your score, identify the 2 weakest levers.",
+          "deadline_days": 2
         }
       ],
       "roadmap": [
         {
           "period": "0-90 days",
-          "focus": "Applications + IELTS",
+          "focus": "IELTS + ECA",
           "milestones": [
-            "IELTS 7.0+ done",
-            "Applied to 5 MScs",
-            "First offers received"
+            "IELTS CLB 9 on all four bands",
+            "WES ECA completed",
+            "Express Entry profile created"
           ],
-          "income_by_end_ngn": 150000
+          "income_by_end_ngn": 200000
         },
         {
           "period": "3-12 months",
-          "focus": "CAS, funds, visa",
+          "focus": "CRS optimisation + wait",
           "milestones": [
-            "CAS from chosen uni",
-            "£1,334/mo x 9mo proof of funds",
-            "Visa approved, land by Sept"
+            "French A2 → B1",
+            "Provincial Nominee applications (Ontario, BC, Alberta)",
+            "CRS pushed past 480"
           ],
-          "income_by_end_ngn": 0
+          "income_by_end_ngn": 1800000
         },
         {
           "period": "Year 2",
-          "focus": "MSc + placement",
+          "focus": "Landing + first Canadian job",
           "milestones": [
-            "MSc dissertation submitted",
-            "Graduate visa granted",
-            "First UK marketing role £28-35k"
+            "ITA received",
+            "PR approved, landed in Toronto/Calgary",
+            "First marketing coordinator role at C$55-65k"
           ],
-          "income_by_end_ngn": 4200000
+          "income_by_end_ngn": 3500000
         }
       ],
-      "nigerian_notes": "Don't use unregistered agents; use the university's direct application portal. Proof-of-funds must sit in a CBN-approved bank for 28 days before CAS — plan liquidity accordingly."
+      "nigerian_notes": "Use a registered Canadian immigration consultant (ICCRC-licensed) only — reject 'agents' promising guaranteed PR. ConnectSafe Nigeria on Twitter flags current scams."
     },
     {
-      "id": "fintech-inhouse-content-lead",
-      "title": "In-House Content / Social Lead at Nigerian Fintech",
-      "category": "Local Formal",
-      "one_liner": "Move from agency grind to in-house content lead at Paystack, Moniepoint, Kuda, or PiggyVest — 3-4x your current pay.",
-      "fit_score": 78,
+      "id": "personal-content-brand-creator",
+      "title": "Build Your Own Content Brand (Creator / Small Agency)",
+      "category": "Entrepreneurship",
+      "one_liner": "Turn your video editing + writing into a personal brand that earns from brand deals, courses, and a 2-person productised agency by Year 2.",
+      "fit_score": 74,
       "fit_reasons": [
         {
-          "dimension": "Skills",
-          "note": "Agency SMM + video + writing is the exact stack fintech content teams hire for at the ₦450-700k level."
+          "dimension": "Risk",
+          "note": "Your 'high' risk tolerance + no dependents + low family pressure means you can tolerate 6-9 months of uneven income."
         },
         {
-          "dimension": "Location",
-          "note": "Yaba puts you 20 minutes from Paystack, Flutterwave, and Kuda offices for interviews and networking."
+          "dimension": "Skills",
+          "note": "Video editing + social media management + writing is the exact triple-stack solo creators monetise in Nigeria."
         }
       ],
       "break_reasons": [
         {
-          "risk": "Fintech content roles attract 400+ applicants; without a personal brand or referral you stay stuck in agency pay bands.",
+          "risk": "Solo creator burnout — posting daily while running client work kills consistency by month 4, audience stalls at 3-5k followers.",
+          "severity": "High"
+        }
+      ],
+      "who_this_fits": "Founders who enjoy being on camera or writing in public, comfortable with public failure.",
+      "who_this_breaks": "Introverts who hate posting and secretly want a salary. The calendar eats you.",
+      "real_cost": {
+        "money_ngn": 350000,
+        "time_months": 12,
+        "what_you_give_up": "Steady ₦150k salary within 6-9 months. Weekends gone. You eat ramen for Q1-Q2."
+      },
+      "real_pay": {
+        "entry_ngn": 200000,
+        "mid_ngn": 800000,
+        "senior_ngn": 3000000,
+        "range_note": "Highly variable. Nigerian creators with 20k engaged followers earn ₦500k-1.5m/mo via brand deals + services. Top 5% hit ₦3-8m."
+      },
+      "demand": "Medium",
+      "two_year_projection": "In 2 years, if you stay consistent, you're running a 2-person content studio from a Yaba co-working space, earning ₦1-1.5m/mo from 3 retainer clients + 1 Nigerian brand deal/quarter, with 15-25k followers on one platform.",
+      "pro_tips": [
+        "Pick one niche (fintech content, afrobeats marketing, founder storytelling) — generalists die.",
+        "Sell a ₦50k Notion template or mini-course by month 4 to test audience willingness to pay."
+      ],
+      "job_sites": [
+        {
+          "name": "Techpoint Africa",
+          "url": "https://techpoint.africa",
+          "why": "Nigerian founders here commission content + sponsor creator features — warm market for your first retainers."
+        },
+        {
+          "name": "Zikoko / Big Cabal Media",
+          "url": "https://bigcabal.com",
+          "why": "Freelance commissions and contributor slots convert into creator-brand visibility."
+        },
+        {
+          "name": "Contra",
+          "url": "https://contra.com",
+          "why": "Productise 'done-for-you short-form video editing' as a ₦300-600k/mo retainer offer."
+        }
+      ],
+      "monday_actions": [
+        {
+          "step": "Pick your niche in one sentence and write it on Notion: '[Name] helps [who] with [what content].'",
+          "deadline_days": 2
+        },
+        {
+          "step": "Post a 60-second intro video on TikTok, Instagram Reels and LinkedIn the same day — same script, 3 platforms.",
+          "deadline_days": 7
+        },
+        {
+          "step": "DM 5 Nigerian fintech/SaaS founders (Mono, Bamboo, Chaka, Risevest, Cowrywise) offering to ghost-edit one video free for a testimonial.",
+          "deadline_days": 10
+        }
+      ],
+      "roadmap": [
+        {
+          "period": "0-90 days",
+          "focus": "Niche + first 30 posts",
+          "milestones": [
+            "Niche locked",
+            "30 pieces of content shipped",
+            "First 1k niche followers",
+            "2 free-work testimonials"
+          ],
+          "income_by_end_ngn": 200000
+        },
+        {
+          "period": "3-12 months",
+          "focus": "First 3 retainers",
+          "milestones": [
+            "3 clients at ₦300-500k/mo each",
+            "Quit agency",
+            "10k followers on primary platform"
+          ],
+          "income_by_end_ngn": 1200000
+        },
+        {
+          "period": "Year 2",
+          "focus": "Productise + hire",
+          "milestones": [
+            "Hire 1 junior editor",
+            "First Nigerian brand deal (₦500k-2m)",
+            "Mini-course earns ₦500k/launch"
+          ],
+          "income_by_end_ngn": 2000000
+        }
+      ],
+      "nigerian_notes": "Register a business name with CAC (₦20k) before first brand deal — Nigerian brands withhold payment without an invoice from a registered entity."
+    },
+    {
+      "id": "senior-comms-fintech-lagos",
+      "title": "In-House Senior Social / Comms at Lagos Fintech",
+      "category": "Local Formal",
+      "one_liner": "Jump from agency to in-house Senior Social Media Manager at a tier-1 Nigerian fintech at ₦450-700k/mo within 6 months.",
+      "fit_score": 68,
+      "fit_reasons": [
+        {
+          "dimension": "Skills",
+          "note": "Agency social-media-manager experience is the exact background Paystack, Moniepoint, Kuda screen for on senior social roles."
+        },
+        {
+          "dimension": "Location",
+          "note": "You're already in Yaba — every major fintech HQ is within 45 minutes (VI, Ikoyi, Lekki)."
+        }
+      ],
+      "break_reasons": [
+        {
+          "risk": "The in-house Naira ceiling (~₦700k) locks in your earning power and delays JAPA savings versus the USD route.",
           "severity": "Medium"
         }
       ],
-      "who_this_fits": "Agency creatives who can show B2C metrics (growth, conversion, viral posts) and have a warm referral in.",
-      "who_this_breaks": "People who apply cold via Jobberman without building inbound through Twitter/LinkedIn first.",
+      "who_this_fits": "Operators who want structure, HMO, pension, and a Lagos LinkedIn brand before JAPA.",
+      "who_this_breaks": "Anyone who wants creative control — in-house comms is mostly brand-safe approvals and Slack threads.",
       "real_cost": {
-        "money_ngn": 20000,
+        "money_ngn": 50000,
         "time_months": 3,
-        "what_you_give_up": "3 months of intense outbound + portfolio rebuild while holding current agency role."
+        "what_you_give_up": "Agency freedom. Some evenings to portfolio interviews. Three months of focused applications."
       },
       "real_pay": {
         "entry_ngn": 450000,
-        "mid_ngn": 850000,
-        "senior_ngn": 1800000,
-        "range_note": "Tier-1 fintech (Paystack, Moniepoint) pays top of range; tier-2 (Kuda, PiggyVest, Cowrywise) pays ₦400-700k entry."
+        "mid_ngn": 750000,
+        "senior_ngn": 1500000,
+        "range_note": "Tier-1 fintech (Paystack, Flutterwave, Moniepoint) pays top of band; tier-2 (Kuda, Carbon, FairMoney) pays ₦350-550k at senior."
       },
-      "demand": "Medium",
-      "two_year_projection": "In 2 years, if you land a fintech content role, you're Senior Content Manager at Moniepoint or Cowrywise on ₦1-1.5m/mo, with ₦8-12m saved — which makes the UK MSc or Canada PR route actually fundable.",
+      "demand": "High",
+      "two_year_projection": "In 2 years, if you land this, you're Senior Social Media Manager at Moniepoint or Kuda earning ₦650-800k/mo with HMO, managing a 2-person team, ₦4-6m saved, Canada PR application mid-flight.",
       "pro_tips": [
-        "DM the current content lead, not HR — ask for a 15-min coffee, not a job.",
-        "Build one Twitter thread per week breaking down a Nigerian fintech's marketing — tag them."
+        "Build a one-page deck of 3 fintech campaign ideas before each interview.",
+        "Apply Tuesdays — Nigerian fintech HR reviews applications in Monday sprints."
       ],
       "job_sites": [
         {
           "name": "TechCabal Jobs",
           "url": "https://techcabal.com/jobs",
-          "why": "Primary Nigerian tech job board — Paystack, Kuda, Moniepoint post content roles here first."
+          "why": "Primary board where Paystack, Flutterwave and Moniepoint post comms/social roles before LinkedIn."
         },
         {
           "name": "Paystack Careers",
           "url": "https://paystack.com/careers",
-          "why": "Direct careers page; content roles rarely hit aggregators and close within 10 days."
+          "why": "Direct portal — social/content roles open 2-3x yearly, applications reviewed within 2 weeks."
         },
         {
-          "name": "LinkedIn Jobs Nigeria",
-          "url": "https://linkedin.com/jobs",
-          "why": "Fintech recruiters source content and social leads here with referral tags visible."
+          "name": "MyJobMag",
+          "url": "https://myjobmag.com",
+          "why": "Tier-2 fintech and FMCG social roles (Kuda, Carbon, Nestlé, PZ) concentrate here."
         }
       ],
       "monday_actions": [
         {
-          "step": "List 8 Nigerian fintechs, find each one's content/marketing lead on LinkedIn, send tailored DMs.",
+          "step": "Build a 1-page PDF case study of your best agency campaign with reach, engagement, CAC-style metrics.",
+          "deadline_days": 5
+        },
+        {
+          "step": "Apply to open Senior Social roles at Paystack, Moniepoint, Kuda, Flutterwave, Carbon via their career pages — 5 applications same day.",
           "deadline_days": 7
         },
         {
-          "step": "Publish a Twitter breakdown of Kuda's or Cowrywise's social strategy with data.",
+          "step": "Message 3 current/ex fintech social managers on LinkedIn for 15-min coffee chats referencing a specific campaign they ran.",
           "deadline_days": 10
-        },
-        {
-          "step": "Apply to every open content/social role on techcabal.com/jobs and workatastartup-style boards.",
-          "deadline_days": 14
         }
       ],
       "roadmap": [
         {
           "period": "0-90 days",
-          "focus": "Inbound + interviews",
+          "focus": "Offer locked",
           "milestones": [
-            "8 DMs sent to content leads",
-            "3 interviews booked",
-            "Offer at ₦450-700k"
+            "Portfolio PDF ready",
+            "15+ applications out",
+            "2-3 interview processes",
+            "Offer signed"
           ],
           "income_by_end_ngn": 500000
         },
         {
           "period": "3-12 months",
-          "focus": "Prove in-house value",
+          "focus": "Prove + build brand",
           "milestones": [
-            "Own one growth metric",
-            "Promoted or poached to ₦800k-1m",
-            "Save ₦4-6m"
+            "One flagship campaign owned",
+            "Team of 2 managed",
+            "LinkedIn brand grows to 5k"
           ],
-          "income_by_end_ngn": 900000
+          "income_by_end_ngn": 650000
         },
         {
           "period": "Year 2",
-          "focus": "Senior + JAPA prep",
+          "focus": "Stack for JAPA",
           "milestones": [
-            "Senior Content Manager title",
-            "₦1.2m+ salary",
-            "Use role as sponsor leverage for UK/Canada move"
+            "Promoted to Lead or senior IC",
+            "₦5-6m saved",
+            "Canada or UK skilled worker application filed"
           ],
-          "income_by_end_ngn": 1300000
+          "income_by_end_ngn": 850000
         }
       ],
-      "nigerian_notes": "Nigerian fintech roles rarely get visa sponsorship abroad, but the experience + title makes UK Skilled Worker and Canada Express Entry applications significantly stronger 18 months in."
-    },
-    {
-      "id": "creator-economy-niche-brand",
-      "title": "Build a Niche Content Brand (YouTube/TikTok/Newsletter)",
-      "category": "Entrepreneurship",
-      "one_liner": "Build a niche content asset in a high-CPM topic (money, tech, career) that pays ad + sponsor revenue in USD.",
-      "fit_score": 68,
-      "fit_reasons": [
-        {
-          "dimension": "Skills",
-          "note": "Video editing + writing + SMM is the exact three-stack needed to run a one-person creator business."
-        },
-        {
-          "dimension": "Risk",
-          "note": "High risk tolerance and low family pressure means you can invest 12 months with minimal revenue."
-        }
-      ],
-      "break_reasons": [
-        {
-          "risk": "Monetisation typically starts month 9-14; most Nigerian creators quit at month 4 when income is still ₦0.",
-          "severity": "High"
-        }
-      ],
-      "who_this_fits": "Obsessive creators who can publish 2-3x weekly for 12 months before seeing meaningful revenue.",
-      "who_this_breaks": "Anyone who needs validation (views, likes) to keep posting, or treats it as a side-side hustle.",
-      "real_cost": {
-        "money_ngn": 300000,
-        "time_months": 12,
-        "what_you_give_up": "10-15 hours weekly for 12 months with near-zero revenue until month 9; social life compressed."
-      },
-      "real_pay": {
-        "entry_ngn": 200000,
-        "mid_ngn": 1500000,
-        "senior_ngn": 6000000,
-        "range_note": "YouTube AdSense + sponsors, USD-pegged. Top Nigerian creators in tech/money hit $4-8k/mo by year 2-3."
-      },
-      "demand": "Medium",
-      "two_year_projection": "In 2 years, if you ship consistently in one niche, you have 30-80k subscribers, $1-2.5k/mo (₦1.5-3.7m) in AdSense + sponsors, and a portable brand you take to Canada or the UK.",
-      "pro_tips": [
-        "Pick one platform and one niche — don't cross-post to 4 platforms in month one.",
-        "High-CPM niches for Nigerians: personal finance, tech careers, JAPA — avoid lifestyle/vlog."
-      ],
-      "job_sites": [
-        {
-          "name": "YouTube Creator Academy",
-          "url": "https://creatoracademy.youtube.com",
-          "why": "Official monetisation rules and niche CPM data — critical for picking a paying vertical."
-        },
-        {
-          "name": "Passionfroot",
-          "url": "https://passionfroot.me",
-          "why": "Sponsor booking platform where US/UK brands hire niche creators directly in USD."
-        },
-        {
-          "name": "Beehiiv",
-          "url": "https://beehiiv.com",
-          "why": "Best newsletter platform for ad-network monetisation — pays per-subscriber in USD."
-        }
-      ],
-      "monday_actions": [
-        {
-          "step": "Pick ONE niche (fintech explainers, JAPA tactics, career breakdowns) and ONE platform.",
-          "deadline_days": 3
-        },
-        {
-          "step": "Publish first 3 pieces of content this week — don't wait for perfect setup.",
-          "deadline_days": 7
-        },
-        {
-          "step": "Study 5 top creators in your niche — reverse-engineer their first 20 posts.",
-          "deadline_days": 10
-        }
-      ],
-      "roadmap": [
-        {
-          "period": "0-90 days",
-          "focus": "Ship + find voice",
-          "milestones": [
-            "30 pieces published",
-            "First 1k followers/subs",
-            "₦0 revenue, that's normal"
-          ],
-          "income_by_end_ngn": 0
-        },
-        {
-          "period": "3-12 months",
-          "focus": "Audience to 10k",
-          "milestones": [
-            "Hit 10k subs/followers",
-            "First sponsor deal $300-800",
-            "AdSense enabled"
-          ],
-          "income_by_end_ngn": 400000
-        },
-        {
-          "period": "Year 2",
-          "focus": "Monetise + relocate",
-          "milestones": [
-            "30-80k audience",
-            "$1.5-2.5k/mo stable",
-            "Brand moves with you to UK/Canada"
-          ],
-          "income_by_end_ngn": 2200000
-        }
-      ],
-      "nigerian_notes": "Run this IN PARALLEL with the remote-client or fintech route — not as primary income. Nigerian creators who treat it as only-plan burn out by month 6 when rent is due."
+      "nigerian_notes": "Negotiate HMO (Avon or Hygeia) and 13th month before signing — standard at tier-1 fintechs, often forgotten by first-time in-house hires."
     }
   ],
   "routes_filtered_out": [
     {
-      "route": "MLM / affiliate network marketing (LiveGood, Longrich, etc.)",
-      "reason": "Explicit hard no in intake — excluded regardless of fit."
+      "route": "MSc in UK/Canada on the school route",
+      "reason": "Tuition + living costs ₦18-30m vastly exceed your ₦450k savings; would require 3-5 years of USD earnings first. Express Entry is cheaper and faster for your profile."
     },
     {
-      "route": "Commission-only sales (insurance, real estate, FMCG promoter)",
-      "reason": "Explicit hard no in intake — excluded regardless of fit."
+      "route": "Commission-heavy ad sales / FMCG field sales",
+      "reason": "Explicitly listed in your hard_nos (Commission-only sales). Also poor use of your content production stack."
     },
     {
-      "route": "Big 4 audit / banking graduate trainee (KPMG, GTB MAP)",
-      "reason": "Graduate programme windows close ~12 months post-NYSC; you're at 24 months with a non-finance degree."
+      "route": "Tech bootcamp pivot (AltSchool, Decagon) into software engineering",
+      "reason": "Throws away 3 years of Mass Comm + agency leverage to start junior in a saturated 2026 market. Remote content marketing converts your existing skills to USD faster."
     },
     {
-      "route": "Canada SDS study permit",
-      "reason": "SDS closed late 2024; standard study permit needs ₦8-15m you don't have, and UK MSc is a faster, better-fit route."
-    },
-    {
-      "route": "Tech bootcamp (AltSchool, Decagon) to pivot into dev",
-      "reason": "Junior dev market is saturated in 2026; your existing content/SMM stack pays USD faster without a ₦1m bootcamp bet."
+      "route": "Traditional PR agency senior hire (X3M Ideas, Insight Publicis)",
+      "reason": "Ceiling at ₦400-500k similar to fintech in-house but slower JAPA pipeline and weaker portable brand. Fintech route dominates it."
     }
   ]
 }

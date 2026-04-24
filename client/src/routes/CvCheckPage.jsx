@@ -90,7 +90,7 @@ export default function CvCheckPage() {
                 className="field-input"
               />
               <p className="text-[11px] text-slate-500 mt-1.5">
-                Leave blank to analyze against general Nigerian recruitment best practices.
+                Leave blank for general Nigerian recruitment analysis.
               </p>
             </div>
 
@@ -191,11 +191,11 @@ function Header() {
         New · Pairs with your Route Atlas
       </div>
       <h1 className="display text-[28px] sm:text-[34px] md:text-[40px] leading-[1.08] tracking-extra-tight text-white">
-        Will your CV survive the ATS filter?
+        Will your CV clear the ATS?
       </h1>
       <p className="text-slate-400 text-[14px] sm:text-[15px] mt-3 leading-relaxed">
-        Paste your CV. Claude Opus 4.7 grades it against Nigerian recruitment reality
-        and global ATS best practices, and rewrites the parts that are holding you back.
+        Paste your CV. Claude Opus 4.7 grades it against Nigerian recruitment norms and
+        global ATS filters, then rewrites the weak sections.
       </p>
     </motion.div>
   );
@@ -227,12 +227,11 @@ function EmptyState() {
           <FileText size={24} className="text-white" />
         </motion.div>
         <h3 className="display text-xl tracking-extra-tight text-white">
-          Your CV dossier will land here
+          Awaiting your CV
         </h3>
         <p className="text-sm text-slate-400 mt-2 max-w-sm mx-auto leading-relaxed">
-          Paste your CV and click <span className="text-emerald-300 font-semibold">Check my CV</span> —
-          you'll get an ATS score, critical fixes, keyword gaps, formatting issues, and
-          rewritten sections in about 20 seconds.
+          Paste your CV. Output: ATS score, priority fixes, keyword gaps, formatting risks,
+          and rewritten sections. ~20 seconds.
         </p>
       </div>
     </motion.div>
@@ -253,10 +252,10 @@ function LoadingState() {
           <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-400" />
         </span>
         <Loader2 size={14} className="animate-spin text-emerald-300" />
-        <span className="text-sm font-medium">Analyzing your CV against the ATS…</span>
+        <span className="text-sm font-medium">Running ATS analysis…</span>
       </div>
       <p className="text-[11px] text-slate-500 mt-2 ml-5">
-        Usually 15–25 seconds · scoring, keyword match, rewrites, formatting review
+        15–25 seconds · score, keyword match, formatting risks, rewrites
       </p>
 
       <div className="mt-6 space-y-4">

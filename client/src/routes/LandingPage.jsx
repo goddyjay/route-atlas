@@ -200,11 +200,10 @@ function Hero() {
           transition={{ duration: 0.5, delay: 0.3 }}
           className="text-slate-300 text-[14px] sm:text-[15.5px] md:text-[17px] leading-relaxed max-w-[720px] mx-auto mt-4 sm:mt-5 px-2"
         >
-          A free web app for Nigerian graduates. Tell it your situation — degree, state,
-          savings, family, NYSC status. In about a minute, it draws{" "}
-          <span className="text-white font-semibold">4 ranked career paths</span> forward, each
-          with real Naira pay bands, first-week actions, and a 2-year projection of where you'd
-          land.
+          For Nigerian graduates. Submit your situation — degree, state, savings, family, NYSC
+          status. Within a minute, get{" "}
+          <span className="text-white font-semibold">4 ranked paths</span> with real ₦ pay
+          bands, first-week actions, and a 2-year projection.
         </motion.p>
 
         <motion.div
@@ -246,7 +245,7 @@ function Hero() {
           transition={{ duration: 0.5, delay: 0.55 }}
           className="mt-5 text-[11.5px] text-slate-500"
         >
-          Free · No sign-up · 4-second demo · Opus 4.7 reasoning, Nigerian context
+          Free · No sign-up · Demo runs in 4 seconds · Powered by Opus 4.7
         </motion.p>
       </div>
     </section>
@@ -271,19 +270,17 @@ function ProblemStory() {
           </h2>
           <div className="mt-6 space-y-4 text-slate-300 text-[15px] leading-relaxed">
             <p>
-              A Microbiology graduate posts out in November with a 2:1, ₦200k saved, and no clear
-              next move. Six months later she's teaching JSS chemistry lessons for ₦40k a month,
-              sending ₦25k home to her mother, and watching her coursemates drift the same way.
+              A Microbiology graduate passes out in November with a 2:1, ₦200k saved, no clear
+              next move. Six months later she teaches JSS chemistry lessons for ₦40k a month,
+              remits ₦25k to her mother, watches her coursemates drift the same way.
             </p>
             <p>
-              LinkedIn shows jobs, not routes. Parents give advice from a 1990s job market. Generic
-              AI doesn't know the Sagamu-Ota pharma corridor exists, can't tell her an
-              ACCA-eligible audit associate has a fast-track UK Skilled Worker visa path, and has
-              never heard of Igba Boi.
+              LinkedIn shows jobs, not routes. Parents advise from a 1990s job market. Generic
+              AI doesn't know the Sagamu–Ota pharma corridor, can't place an ACCA-eligible audit
+              associate on the UK Skilled Worker fast-track, has never heard of Igba Boi.
             </p>
             <p className="text-white">
-              The decision that shapes the next 10 years of her life gets made on vibes and
-              proximity.
+              A 10-year decision gets made on vibes and proximity.
             </p>
           </div>
         </motion.div>
@@ -369,9 +366,9 @@ function WhatItKnows() {
             What this atlas knows that generic AI doesn't.
           </h2>
           <p className="text-slate-400 text-[14.5px] mt-3 max-w-[680px] leading-relaxed">
-            ~7,000 tokens of dense Nigerian context encoded into the system prompt. Real companies,
-            real WhatsApp groups, real ₦ figures from 2026. No hallucinations about "opportunities
-            in Nigeria" — specific routes with specific costs.
+            ~7,000 tokens of encoded Nigerian context. Real companies, real WhatsApp groups, real
+            ₦ figures from 2026. Specific routes with specific costs — no hallucinated
+            "opportunities."
           </p>
         </motion.div>
 
@@ -434,8 +431,8 @@ function SampleRoute() {
             This is what Opus 4.7 writes when it knows Nigeria.
           </h2>
           <p className="text-slate-400 text-[14.5px] mt-3 leading-relaxed">
-            The top route returned for a Microbiology grad in Ibadan with ₦200k savings, a
-            diabetic mother, and a ₦40k teaching hustle. Copy-pasted from the live atlas.
+            Top route for a Microbiology grad in Ibadan: ₦200k savings, diabetic mother,
+            ₦40k teaching income. Copy-pasted from the live atlas.
           </p>
         </motion.div>
 
@@ -607,8 +604,8 @@ function FinalCta() {
           transition={{ duration: 0.5, delay: 0.1 }}
           className="text-slate-400 text-[14.5px] mt-3 max-w-[540px] mx-auto leading-relaxed"
         >
-          Fill the intake, or click a preset. 4 seconds for a demo persona. ~90 seconds for your
-          own situation. No sign-up, no email, no follow-ups.
+          Demo preset: 4 seconds. Your own intake: ~90 seconds. No sign-up, no email, no
+          follow-ups.
         </motion.p>
         <motion.div
           initial={{ opacity: 0, y: 10 }}
