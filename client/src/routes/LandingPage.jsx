@@ -9,8 +9,7 @@ import { Logo } from "../components/Logo.jsx";
 // the <ContextualImage> wrapper falls back to a brand-tinted gradient so
 // the layout never breaks visually. Swap URLs for your own licensed
 // photos before a final demo.
-const HERO_IMAGE =
-  "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=1000&q=80";
+const HERO_IMAGE = "/hero-professional.jpg";
 const WORK_IMAGE =
   "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1000&q=80";
 const PLANNING_IMAGE =
@@ -138,8 +137,8 @@ function Hero() {
           >
             <ContextualImage
               src={HERO_IMAGE}
-              alt="A Nigerian graduate planning their next move after NYSC"
-              aspect="aspect-[4/5]"
+              alt="A young professional working at a laptop, thinking through their next career move"
+              aspect="aspect-[4/3]"
             />
             {/* Small accent: subtle floating stat chip anchored off the corner */}
             <div
