@@ -12,8 +12,7 @@ import { Logo } from "../components/Logo.jsx";
 const HERO_IMAGE = "/hero-professional.jpg";
 const WORK_IMAGE =
   "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1000&q=80";
-const PLANNING_IMAGE =
-  "https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1000&q=80";
+const PLANNING_IMAGE = "/routes-workplace.jpg";
 
 // Image container with onError fallback. Renders the photo when it loads,
 // otherwise a brand-tinted gradient placeholder keeps the layout intact.
@@ -375,7 +374,7 @@ function PlanningBeat() {
           >
             <ContextualImage
               src={PLANNING_IMAGE}
-              alt="A graduate reviewing notes and weighing options"
+              alt="A young professional standing confidently in a Nigerian workplace"
               aspect="aspect-[4/3]"
             />
           </motion.div>
