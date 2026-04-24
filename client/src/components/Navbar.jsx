@@ -1,11 +1,12 @@
 import { motion } from "framer-motion";
 import { Link, useLocation } from "react-router-dom";
-import { ArrowRight, Github } from "lucide-react";
+import { ArrowRight, Github, ShieldCheck } from "lucide-react";
 import { LogoMark } from "./Logo.jsx";
 
 export function Navbar() {
   const location = useLocation();
   const onLanding = location.pathname === "/";
+  const onCv = location.pathname === "/cv";
   return (
     <motion.header
       initial={{ opacity: 0, y: -10 }}
@@ -24,12 +25,29 @@ export function Navbar() {
           transition={{ delay: 0.6, duration: 0.4 }}
           className="flex items-center gap-2"
         >
+          {!onCv && (
+            <Link
+              to="/cv"
+              className="hidden sm:inline-flex items-center gap-1.5 rounded-lg px-2.5 py-1.5 text-[11.5px] font-semibold bg-white/[0.04] hover:bg-white/[0.09] border border-white/10 hover:border-emerald-400/30 text-slate-300 transition"
+            >
+              <ShieldCheck size={11} />
+              CV check
+            </Link>
+          )}
           {onLanding ? (
             <Link
               to="/app"
               className="inline-flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-[12px] font-semibold bg-emerald-500/15 hover:bg-emerald-500/25 border border-emerald-400/30 text-emerald-200 transition"
             >
               Open the app
+              <ArrowRight size={12} />
+            </Link>
+          ) : onCv ? (
+            <Link
+              to="/app"
+              className="inline-flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-[12px] font-semibold bg-emerald-500/15 hover:bg-emerald-500/25 border border-emerald-400/30 text-emerald-200 transition"
+            >
+              Atlas
               <ArrowRight size={12} />
             </Link>
           ) : (

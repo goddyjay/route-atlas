@@ -4,6 +4,7 @@ import { Navbar } from "./components/Navbar.jsx";
 import AtlasPage from "./routes/AtlasPage.jsx";
 import LandingPage from "./routes/LandingPage.jsx";
 import SharedAtlasPage from "./routes/SharedAtlasPage.jsx";
+import CvCheckPage from "./routes/CvCheckPage.jsx";
 import { warmBackend } from "./lib/api.js";
 
 // App shell: fills the viewport. Navbar is a fixed-height row; everything
@@ -22,6 +23,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/app" element={<AtlasPage />} />
+        <Route path="/cv" element={<CvCheckPage />} />
         <Route path="/atlas/:id" element={<SharedAtlasPage />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
@@ -36,7 +38,9 @@ export default function App() {
 // shell can host both without fighting each other.
 function AppShell({ children }) {
   const location = useLocation();
-  const isApp = location.pathname.startsWith("/app");
+  // /app is the only route that needs the full-viewport split-pane layout.
+  // Everything else (landing, CV check, shared atlas) scrolls naturally.
+  const isApp = location.pathname === "/app";
   return (
     <div className={`${isApp ? "lg:h-screen" : "min-h-screen"} flex flex-col relative`}>
       <div

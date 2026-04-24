@@ -3,6 +3,7 @@ import cors from "cors";
 import helmet from "helmet";
 import recommendationsRoutes from "./routes/recommendations.js";
 import atlasRoutes from "./routes/atlas.js";
+import cvRoutes from "./routes/cv.js";
 
 const app = express();
 
@@ -16,6 +17,7 @@ app.get("/health", (req, res) => {
 
 app.use("/api/recommendations", recommendationsRoutes);
 app.use("/api/atlas", atlasRoutes);
+app.use("/api/cv", cvRoutes);
 
 app.use((req, res) => {
   res.status(404).json({ success: false, message: "Route not found" });

@@ -7,6 +7,7 @@ import {
 } from "../services/claude.js";
 import { getModule, MODULE_TYPES } from "../modules/index.js";
 import followupModule from "../modules/followup.js";
+import cvCheckModule from "../modules/cvCheck.js";
 
 // Envelope validators always run before dispatching to a module.
 const typeValidator = body("type")
@@ -166,6 +167,51 @@ export async function handleRecommendationsStream(req, res) {
  * this emits each raw text delta as it arrives (not just a chars counter)
  * so the UI can show the answer typing in real time.
  */
+/**
+ * Non-streaming CV analysis. Runs Opus over the submitted CV, returns the
+ * full JSON dossier in one response. ~15-25s typically. We keep this
+ * synchronous (not streamed) because the output is a structured dossier
+ * users read holistically — no benefit to watching tokens land.
+ */
+export async function handleCvCheck(req, res) {
+  const mod = cvCheckModule;
+
+  for (const chain of mod.validators) {
+    await chain.run(req);
+  }
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    return res.status(400).json({ success: false, errors: errors.array() });
+  }
+
+  try {
+    const { data, usage } = await runClaudeModule(mod, req.body);
+    return res.status(200).json({ success: true, data, usage });
+  } catch (err) {
+    if (err instanceof Anthropic.AuthenticationError) {
+      return res
+        .status(500)
+        .json({ success: false, message: "AI service authentication failed." });
+    }
+    if (err instanceof Anthropic.RateLimitError) {
+      return res
+        .status(429)
+        .json({ success: false, message: "AI rate limit reached. Try again shortly." });
+    }
+    if (err instanceof ClaudeJsonError) {
+      console.error(`[CvCheck] JSON error:`, err.message);
+      console.error(`[CvCheck] Raw:`, err.rawText);
+      return res
+        .status(502)
+        .json({ success: false, message: "AI returned an unexpected response." });
+    }
+    console.error(`[CvCheck]`, err);
+    return res
+      .status(500)
+      .json({ success: false, message: "Something went wrong. Please try again." });
+  }
+}
+
 export async function handleFollowupStream(req, res) {
   const mod = followupModule;
 

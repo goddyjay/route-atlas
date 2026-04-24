@@ -135,6 +135,24 @@ export async function streamFollowup(payload, onDelta) {
   return finalText;
 }
 
+/**
+ * Submit a CV for ATS analysis. Blocking call — returns the full dossier
+ * when the model finishes (usually 15-25s). Body: { cv_text, target_role? }.
+ */
+export async function checkCv({ cv_text, target_role }) {
+  const res = await fetch(`${API_BASE}/api/cv/check`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ cv_text, target_role }),
+  });
+  const body = await res.json().catch(() => null);
+  if (!res.ok || !body?.success) {
+    const fieldErrors = body?.errors?.map((e) => `${e.path}: ${e.msg}`).join(", ");
+    throw new Error(fieldErrors || body?.message || `Request failed (${res.status})`);
+  }
+  return body.data;
+}
+
 /** Load a previously-shared atlas by its short ID. */
 export async function fetchSharedAtlas(id) {
   const res = await fetch(`${API_BASE}/api/atlas/${encodeURIComponent(id)}`);
